@@ -1,0 +1,32 @@
+experiment_id: baseline_tfidf_dair_v001
+seed: 42
+
+dataset:
+  config: ml/configs/dair_ai_emotion.yaml
+  processed_dir: data/processed/dair_ai_emotion
+  text_column: text
+  label_column: label
+  label_name_column: label_name
+  example_id_column: example_id
+
+vectorizer:
+  lowercase: true
+  ngram_range: [1, 2]
+  min_df: 2
+  max_df: 0.98
+  max_features: 30000
+  sublinear_tf: true
+
+model:
+  C: 1.0
+  max_iter: 1000
+  solver: lbfgs
+  class_weight: null
+
+artifacts:
+  model: ml/artifacts/models/baseline_tfidf_dair_v001.joblib
+  metrics: ml/artifacts/metrics/baseline_tfidf_dair_v001_metrics.json
+  confusion_matrix: ml/artifacts/figures/baseline_tfidf_dair_v001_confusion_matrix.png
+  validation_predictions: ml/artifacts/predictions/baseline_tfidf_dair_v001_validation_predictions.csv
+  test_predictions: ml/artifacts/predictions/baseline_tfidf_dair_v001_test_predictions.csv
+  config_snapshot: ml/artifacts/configs/baseline_tfidf_dair_v001_config_snapshot.yaml

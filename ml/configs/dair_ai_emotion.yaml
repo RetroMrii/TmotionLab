@@ -1,0 +1,40 @@
+dataset_name: dair_ai_emotion
+source: huggingface
+hf_id: dair-ai/emotion
+hf_config: split
+# Verified against the Hugging Face dataset repository on 2026-08-20.
+# Pinning the repository revision makes the dataset contract reproducible.
+revision: cab853a1dbdf4c42c2b3ef2173804746df8825fe
+language: en
+task_type: single_label
+text_column: text
+label_column: label
+splits:
+  train: train
+  validation: validation
+  test: test
+expected_split_sizes:
+  train: 16000
+  validation: 2000
+  test: 2000
+labels:
+  - sadness
+  - joy
+  - love
+  - anger
+  - fear
+  - surprise
+label_ids:
+  sadness: 0
+  joy: 1
+  love: 2
+  anger: 3
+  fear: 4
+  surprise: 5
+license:
+  huggingface_tag: other
+  usage_note: educational and research purposes only
+processed_dir: data/processed/dair_ai_emotion
+preprocessing:
+  lowercase: true
+  max_sequence_length: 64

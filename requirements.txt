@@ -1,0 +1,13 @@
+# Versions will be pinned after environment verification.
+numpy
+pandas
+scikit-learn
+torch
+datasets
+pyyaml
+matplotlib
+fastapi
+uvicorn[standard]
+pydantic
+pytest
+httpx

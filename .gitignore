@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Data: keep reproducible code/config, not raw or generated corpora
+/data/raw/*
+/data/interim/*
+/data/processed/*
+!/data/raw/.gitkeep
+!/data/interim/.gitkeep
+!/data/processed/.gitkeep
+
+# Generated ML artifacts
+/ml/artifacts/models/*
+/ml/artifacts/metrics/*
+/ml/artifacts/logs/*
+/ml/artifacts/figures/*
+/ml/artifacts/configs/*
+/ml/artifacts/tokenizers/*
+/ml/artifacts/predictions/*
+/ml/artifacts/comparisons/*
+/ml/artifacts/interpretations/*
+/ml/artifacts/errors/*
+!/ml/artifacts/**/.gitkeep
