@@ -67,3 +67,31 @@ This file records project decisions that affect scope, architecture, evaluation,
 **Decision:** Promote `numpy_mlp_dair_v002` as the educational NumPy model.
 **Reason:** v002 achieved test accuracy 0.8770, macro F1 0.8058, and weighted F1 0.8742, outperforming the TF-IDF Logistic Regression baseline.
 **Impact:** v002 becomes the NumPy reference model for later Compare Lab evaluation.
+## Decision: Complete core three-model comparison
+
+**Date:** 2026-08-22
+**Status:** accepted
+**Context:** Logistic Regression, NumPy MLP v002, and TextCNN v001 were evaluated on the same 2,000 held-out DAIR.AI Emotion test examples using stable example identifiers.
+**Decision:** Use the generated P6 comparison artifacts and `reports/model_comparison.md` as the canonical cross-model comparison for the first TmotionLab milestone.
+**Reason:** TextCNN achieved the strongest aggregate performance while the aligned prediction artifacts reveal both model-specific improvements and shared failure cases.
+**Impact:** `baseline_tfidf_dair_v001`, `numpy_mlp_dair_v002`, and `textcnn_dair_v001` become the three canonical models used by the future Compare Lab interface.
+## Decision: Complete first TextCNN interpretation layer
+
+**Date:** 2026-08-22
+**Status:** accepted
+**Context:** The promoted `textcnn_dair_v001` model was instrumented to expose convolutional activation regions without changing its prediction path or weights.
+**Decision:** Use exact high-activation convolutional token spans, filter/kernel metadata, padding-overlap diagnostics, and held-out correct/error examples as the first TmotionLab interpretation method.
+**Reason:** The method is architecture-native, reproducible, and useful for inspecting model behavior while avoiding unsupported causal explanation claims.
+**Impact:** The future Interpret interface will use these artifacts and caveats. Interpretation output remains distinct from Error Lab analyst hypotheses.
+## Decision: Keep first Error Lab benchmark-relative
+
+**Date:** 2026-08-22
+**Status:** accepted
+
+**Context:** Manual spot-checking showed that some model disagreements with the DAIR.AI Emotion labels are semantically plausible and some are shared by all three model families.
+
+**Decision:** The first Error Lab treats prediction-versus-label disagreement as an evaluation error while explicitly avoiding the claim that every disagreement is a clear semantic model failure.
+
+**Reason:** Systematic human adjudication would materially expand project scope and is not required for the first complete TmotionLab milestone.
+
+**Impact:** Error Lab focuses on reproducible confusion structure, high-score disagreements, cross-model behavior, and available interpretation evidence. Human-reviewed annotation analysis is deferred.

@@ -62,3 +62,47 @@ Only after `[OK] Dataset contract validated` should `ml/scripts/prepare_dataset.
 - Do not remap the verified label order silently.
 - Processed examples must receive stable IDs so later models can be aligned exactly in Compare and Error Lab.
 - TextCNN interpretation is architecture-native model evidence, not causal psychological explanation.
+Current phase: P6_model_comparison_lab — complete
+
+Completed:
+- aligned three-model comparison
+- pairwise and all-model agreement analysis
+- TextCNN fix/regression cohorts
+- shared-error cohort
+- three-way disagreement cohort
+- generated model-comparison report
+
+Next exact step:
+P7_textcnn_interpretation_lab
+Current phase: P7_textcnn_interpretation_lab — complete
+
+Completed:
+- TextCNN activation extraction
+- exact token-span reconstruction
+- padding-overlap detection
+- held-out interpretation artifact
+- aggregate filter/span analysis
+- generated interpretation report
+
+Next exact step:
+P8_error_lab
+Current phase: P8_error_lab — complete
+
+Completed:
+- canonical TextCNN benchmark-disagreement dataset
+- confusion-pair analysis
+- high-score disagreement analysis
+- shared cross-model disagreement cohort
+- TextCNN regression cohort
+- partial interpretation metadata integration
+- generated Error Lab report
+- benchmark-relative evaluation caveat
+
+Deferred:
+- manual adjudication
+- human-reviewed error taxonomy
+- dataset relabeling analysis
+- calibration analysis
+
+Next exact step:
+P9_fastapi_backend
