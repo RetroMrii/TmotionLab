@@ -84,9 +84,6 @@ foundation
 ## Documentation
 
 - `PROJECT_PLAN.md` — detailed product and engineering plan.
-- `MAIN_PROMPT.md` — operating contract for AI-assisted development.
-- `CONTEXT_ENGINEERING.md` — source-of-truth and project-state rules.
-- `HARNESS_ENGINEERING.md` — reproducibility, tests, artifact contracts, and promotion gates.
 - `docs/decision_log.md` — accepted, changed, and deprecated project decisions.
 
 ## Current Limitations

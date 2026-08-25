@@ -41,57 +41,42 @@ This file records project decisions that affect scope, architecture, evaluation,
 **Reason:** The files now have different audiences and responsibilities.  
 **Impact:** Future detailed planning changes belong in `PROJECT_PLAN.md`; README should summarize implemented capabilities and actual findings, not mirror the plan.
 
-## Decision: Use the DAIR.AI Emotion `split` configuration for the core benchmark
+## Decision: Keep Error Lab benchmark-relative and defer human adjudication
 
-**Date:** 2026-08-20  
+**Date:** 2026-08-25  
 **Status:** accepted  
-**Context:** P2 requires a stable single-label benchmark with fixed held-out examples so all three model families can be compared fairly.  
-**Decision:** Use Hugging Face `dair-ai/emotion`, configuration `split`, with the upstream train/validation/test boundaries and verified six-label order. Pin the dataset repository revision in the dataset config for reproducibility.  
-**Alternatives considered:** Use the 416,809-row `unsplit` configuration and create new local splits; switch immediately to GoEmotions.  
-**Reason:** The provided 16k/2k/2k split is simple, reproducible, and directly supports the project's same-held-out-example comparison requirement.  
-**Impact:** `ml/configs/dair_ai_emotion.yaml`, dataset inspection/preparation, all initial model experiments, and later comparison/error artifacts must preserve these upstream split boundaries and label IDs.
-## Decision: Use max sequence length 64 for DAIR.AI Emotion
+**Context:** During P8, several high-score model/dataset disagreements were semantically plausible alternatives, and in some cases all three model families selected the same non-benchmark label. Treating every mismatch as an unambiguous semantic model failure would overstate what the dataset supports.  
+**Decision:** Error Lab will continue to define an evaluation error reproducibly as `prediction != dataset label`, while user-facing language will prefer **benchmark disagreement** or **evaluation error**. Systematic manual relabeling, annotation adjudication, and reviewer-agreement studies are deferred.  
+**Alternatives considered:** Manually review and categorize all 207 TextCNN disagreements; relabel questionable dataset cases; present every mismatch as a model mistake.  
+**Reason:** The benchmark-relative definition is reproducible and supports the Error Lab without introducing an incomplete or subjective annotation study.  
+**Impact:** Reports, API responses, and frontend copy must state that benchmark disagreement does not prove semantic model failure. Existing review-queue tooling is not required for the current Definition of Done.
 
-**Date:** 2026-08-20
-**Status:** accepted
-**Context:** Training-set token-length analysis showed p95=41, p99=52, max=66, and only 14 of 16,000 examples above 60 tokens.
-**Decision:** Use `max_sequence_length: 64` for the first DAIR.AI Emotion neural-model pipeline.
-**Alternatives considered:** 80 tokens from the original planning draft; 60 tokens; exact maximum of 66.
-**Reason:** 64 covers essentially the full observed distribution while avoiding unnecessary padding and retaining a convenient fixed sequence length.
-**Impact:** NumPy sequence encoding, TextCNN batching, inference preprocessing, smoke tests, and tokenizer metadata should use length 64.
-## Decision: Promote NumPy MLP v002
+## Decision: Freeze the first FastAPI serving contract around TextCNN live inference plus saved analysis artifacts
 
-**Date:** 2026-08-21
-**Status:** accepted
-**Context:** The initial NumPy MLP v001 trained for only 15 epochs and underfit badly. A controlled v002 experiment changed only the training duration from 15 to 50 epochs.
-**Decision:** Promote `numpy_mlp_dair_v002` as the educational NumPy model.
-**Reason:** v002 achieved test accuracy 0.8770, macro F1 0.8058, and weighted F1 0.8742, outperforming the TF-IDF Logistic Regression baseline.
-**Impact:** v002 becomes the NumPy reference model for later Compare Lab evaluation.
-## Decision: Complete core three-model comparison
+**Date:** 2026-08-25  
+**Status:** accepted  
+**Context:** P6-P8 already produce reproducible comparison, interpretation, metrics, and error-analysis artifacts. Loading all three trained models for every frontend feature would add serving complexity and would blur the distinction between live inference and held-out benchmark analysis.  
+**Decision:** The P9 backend loads the promoted TextCNN once for live `/predict` and `/interpret` requests, while `/compare`, `/metrics`, `/errors`, and `/errors/confusions` serve previously generated benchmark artifacts. Baseline and NumPy MLP are not loaded into the live serving path. API version `0.3.0` is the frozen contract for the first React frontend implementation.  
+**Alternatives considered:** Load all three models for arbitrary live comparison; recompute benchmark analysis per request; let the frontend read artifact files directly.  
+**Reason:** The chosen design keeps runtime serving small, preserves the exact held-out comparison contract, and separates live model behavior from reproducible offline evaluation.  
+**Impact:** `/compare/{example_id}` is held-out-example based, `/models` reports TextCNN as the only runtime-loaded model, and React consumes stable FastAPI contracts instead of duplicating analysis logic.
 
-**Date:** 2026-08-22
-**Status:** accepted
-**Context:** Logistic Regression, NumPy MLP v002, and TextCNN v001 were evaluated on the same 2,000 held-out DAIR.AI Emotion test examples using stable example identifiers.
-**Decision:** Use the generated P6 comparison artifacts and `reports/model_comparison.md` as the canonical cross-model comparison for the first TmotionLab milestone.
-**Reason:** TextCNN achieved the strongest aggregate performance while the aligned prediction artifacts reveal both model-specific improvements and shared failure cases.
-**Impact:** `baseline_tfidf_dair_v001`, `numpy_mlp_dair_v002`, and `textcnn_dair_v001` become the three canonical models used by the future Compare Lab interface.
-## Decision: Complete first TextCNN interpretation layer
+## Decision: Build the frontend as an ML laboratory with six explicit views
 
-**Date:** 2026-08-22
-**Status:** accepted
-**Context:** The promoted `textcnn_dair_v001` model was instrumented to expose convolutional activation regions without changing its prediction path or weights.
-**Decision:** Use exact high-activation convolutional token spans, filter/kernel metadata, padding-overlap diagnostics, and held-out correct/error examples as the first TmotionLab interpretation method.
-**Reason:** The method is architecture-native, reproducible, and useful for inspecting model behavior while avoiding unsupported causal explanation claims.
-**Impact:** The future Interpret interface will use these artifacts and caveats. Interpretation output remains distinct from Error Lab analyst hypotheses.
-## Decision: Keep first Error Lab benchmark-relative
+**Date:** 2026-08-25  
+**Status:** accepted  
+**Context:** The portfolio thesis requires the interface to demonstrate model behavior rather than look like a generic emotion-classification demo.  
+**Decision:** The React frontend is organized into Home, Predict, Compare, Interpret, Error Lab, Metrics, and About/Methodology routes, with the four thesis views—Predict, Compare, Interpret, Error Lab—treated as first-class interactions.  
+**Alternatives considered:** Single-page classifier UI; combine all analysis into one dashboard; expose only live prediction.  
+**Reason:** Separate views make each experimental question legible and keep the UI aligned with the underlying ML workflow and saved artifacts.  
+**Impact:** React routing, shared API types, navigation, responsive behavior, and frontend integration tests/manual gates are part of P10. Compare remains benchmark-example based, Interpret preserves non-causal wording, and Error Lab preserves benchmark-relative semantics.
 
-**Date:** 2026-08-22
-**Status:** accepted
+## Decision: Keep score language conservative across API and frontend
 
-**Context:** Manual spot-checking showed that some model disagreements with the DAIR.AI Emotion labels are semantically plausible and some are shared by all three model families.
-
-**Decision:** The first Error Lab treats prediction-versus-label disagreement as an evaluation error while explicitly avoiding the claim that every disagreement is a clear semantic model failure.
-
-**Reason:** Systematic human adjudication would materially expand project scope and is not required for the first complete TmotionLab milestone.
-
-**Impact:** Error Lab focuses on reproducible confusion structure, high-score disagreements, cross-model behavior, and available interpretation evidence. Human-reviewed annotation analysis is deferred.
+**Date:** 2026-08-25  
+**Status:** accepted  
+**Context:** TextCNN returns softmax probabilities, but no calibration experiment has been performed. Baseline, NumPy MLP, and TextCNN also produce scores from different model families and decision functions.  
+**Decision:** Use **probability** or **raw model score** rather than calibrated confidence. Do not assume raw scores are directly comparable across model families.  
+**Alternatives considered:** Label every top score as confidence; normalize scores in the UI without a calibration study.  
+**Reason:** The conservative language matches what has actually been measured and avoids implying probabilistic guarantees that the experiments do not establish.  
+**Impact:** API schemas, Predict, Compare, Error Lab, Metrics, and About copy must preserve this distinction until calibration is explicitly implemented and evaluated.
