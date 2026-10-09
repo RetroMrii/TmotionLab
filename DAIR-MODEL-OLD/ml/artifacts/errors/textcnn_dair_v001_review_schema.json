@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "model_id": "textcnn_dair_v001",
+  "purpose": "Human review of disagreements between TextCNN predictions and benchmark labels.",
+  "important_rule": "The benchmark label remains unchanged. Review fields record analyst assessment and do not overwrite ground truth.",
+  "review_outcomes": {
+    "clear_model_error": "The benchmark label is substantially better supported by the available text than the model prediction.",
+    "plausible_model_prediction": "The model prediction is semantically reasonable, although the benchmark label is also defensible.",
+    "ambiguous_label_boundary": "Two or more emotion labels are strongly defensible from the available text.",
+    "possible_annotation_mismatch": "The available text appears to support the model prediction substantially more strongly than the benchmark label.",
+    "insufficient_context": "The sentence does not contain enough context to confidently adjudicate the benchmark/model disagreement."
+  },
+  "mechanism_tags": {
+    "semantic_overlap": "Emotion classes overlap semantically.",
+    "negation": "Negation may materially affect the interpretation of the sentence.",
+    "sarcasm_or_irony": "Literal wording may not reflect the intended emotional meaning.",
+    "rare_label": "The disagreement involves a relatively rare emotion class.",
+    "mixed_emotion": "The text contains evidence for multiple emotions.",
+    "preprocessing_artifact": "Tokenization or preprocessing may obscure important information.",
+    "lexical_bias": "One or more strong lexical cues may dominate the model decision.",
+    "other": "A mechanism not covered by another tag."
+  },
+  "review_status_values": [
+    "unreviewed",
+    "reviewed",
+    "needs_second_review"
+  ]
+}

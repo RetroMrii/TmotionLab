@@ -80,3 +80,36 @@ This file records project decisions that affect scope, architecture, evaluation,
 **Alternatives considered:** Label every top score as confidence; normalize scores in the UI without a calibration study.  
 **Reason:** The conservative language matches what has actually been measured and avoids implying probabilistic guarantees that the experiments do not establish.  
 **Impact:** API schemas, Predict, Compare, Error Lab, Metrics, and About copy must preserve this distinction until calibration is explicitly implemented and evaluated.
+
+
+## Decision: Replace the active DAIR ML track with
+## independent GoEmotions multi-label development
+
+**Date:** 2026-10-09
+**Status:** accepted
+
+**Context:** The original DAIR single-label laboratory was
+completed through P10. The next research objective is
+fine-grained multi-label emotion modeling and synthetic
+training-data experimentation.
+
+**Decision:**
+- Archive the previous ML directory in DAIR-MODEL-OLD.
+- Develop the new ML system independently.
+- Use the full GoEmotions simplified label taxonomy.
+- Begin with a multi-label classical baseline and RoBERTa.
+- Follow with controlled synthetic-data research.
+- Preserve existing backend, frontend, and test files.
+- Defer compatibility and product integration until
+  new model experiments are complete.
+- Keep the historical project state in the old model archive.
+- Continue the shared decision log.
+
+**Reason:** The new research task has different target
+semantics, model requirements, evaluation methods, and
+data-processing requirements. Backward compatibility
+during initial development is unnecessary.
+
+**Impact:** Existing backend imports and tests may fail
+temporarily. The original DAIR work remains archived.
+New models receive independent configs and artifacts.

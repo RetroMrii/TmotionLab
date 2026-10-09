@@ -1,0 +1,395 @@
+{
+  "prediction": {
+    "label_id": 4,
+    "label": "fear",
+    "score": 0.999885082244873
+  },
+  "scores": [
+    {
+      "label": "fear",
+      "score": 0.999885082244873
+    },
+    {
+      "label": "surprise",
+      "score": 4.401757541927509e-05
+    },
+    {
+      "label": "love",
+      "score": 2.4372675397899002e-05
+    },
+    {
+      "label": "anger",
+      "score": 2.3207849153550342e-05
+    },
+    {
+      "label": "joy",
+      "score": 1.9603801774792373e-05
+    },
+    {
+      "label": "sadness",
+      "score": 3.6950416415493237e-06
+    }
+  ],
+  "token_count": 12,
+  "top_activations": [
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 29,
+      "activation": 6.346951961517334,
+      "token_start": 2,
+      "token_end_exclusive": 7,
+      "span_tokens": [
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow",
+        "but"
+      ],
+      "span_text": "extremely nervous about tomorrow but",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 119,
+      "activation": 5.07072639465332,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 19,
+      "activation": 4.3332085609436035,
+      "token_start": 2,
+      "token_end_exclusive": 5,
+      "span_tokens": [
+        "extremely",
+        "nervous",
+        "about"
+      ],
+      "span_text": "extremely nervous about",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 11,
+      "activation": 4.326817035675049,
+      "token_start": 3,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 110,
+      "activation": 4.289456367492676,
+      "token_start": 1,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 13,
+      "activation": 4.2319793701171875,
+      "token_start": 1,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 1,
+      "kernel_size": 4,
+      "filter_index": 72,
+      "activation": 4.200252532958984,
+      "token_start": 0,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "i",
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "i feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 92,
+      "activation": 4.188120365142822,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 1,
+      "kernel_size": 4,
+      "filter_index": 1,
+      "activation": 4.151012420654297,
+      "token_start": 3,
+      "token_end_exclusive": 7,
+      "span_tokens": [
+        "nervous",
+        "about",
+        "tomorrow",
+        "but"
+      ],
+      "span_text": "nervous about tomorrow but",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 75,
+      "activation": 3.696321487426758,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    }
+  ],
+  "top_text_spans": [
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 29,
+      "activation": 6.346951961517334,
+      "token_start": 2,
+      "token_end_exclusive": 7,
+      "span_tokens": [
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow",
+        "but"
+      ],
+      "span_text": "extremely nervous about tomorrow but",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 119,
+      "activation": 5.07072639465332,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 19,
+      "activation": 4.3332085609436035,
+      "token_start": 2,
+      "token_end_exclusive": 5,
+      "span_tokens": [
+        "extremely",
+        "nervous",
+        "about"
+      ],
+      "span_text": "extremely nervous about",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 11,
+      "activation": 4.326817035675049,
+      "token_start": 3,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 110,
+      "activation": 4.289456367492676,
+      "token_start": 1,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 0,
+      "kernel_size": 3,
+      "filter_index": 13,
+      "activation": 4.2319793701171875,
+      "token_start": 1,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 1,
+      "kernel_size": 4,
+      "filter_index": 72,
+      "activation": 4.200252532958984,
+      "token_start": 0,
+      "token_end_exclusive": 4,
+      "span_tokens": [
+        "i",
+        "feel",
+        "extremely",
+        "nervous"
+      ],
+      "span_text": "i feel extremely nervous",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 92,
+      "activation": 4.188120365142822,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 1,
+      "kernel_size": 4,
+      "filter_index": 1,
+      "activation": 4.151012420654297,
+      "token_start": 3,
+      "token_end_exclusive": 7,
+      "span_tokens": [
+        "nervous",
+        "about",
+        "tomorrow",
+        "but"
+      ],
+      "span_text": "nervous about tomorrow but",
+      "contains_padding": false,
+      "valid_text_span": true
+    },
+    {
+      "kernel_index": 2,
+      "kernel_size": 5,
+      "filter_index": 75,
+      "activation": 3.696321487426758,
+      "token_start": 1,
+      "token_end_exclusive": 6,
+      "span_tokens": [
+        "feel",
+        "extremely",
+        "nervous",
+        "about",
+        "tomorrow"
+      ],
+      "span_text": "feel extremely nervous about tomorrow",
+      "contains_padding": false,
+      "valid_text_span": true
+    }
+  ],
+  "padding_activation_count": 33,
+  "text": "I feel extremely nervous about tomorrow but also a little excited.",
+  "tokens": [
+    "i",
+    "feel",
+    "extremely",
+    "nervous",
+    "about",
+    "tomorrow",
+    "but",
+    "also",
+    "a",
+    "little",
+    "excited",
+    "."
+  ],
+  "model_id": "textcnn_dair_v001"
+}

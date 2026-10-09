@@ -1,0 +1,100 @@
+{
+  "experiment_id": "baseline_tfidf_dair_v001",
+  "dataset": "dair_ai_emotion",
+  "task_type": "single_label",
+  "model_family": "tfidf_logistic_regression",
+  "seed": 42,
+  "validation": {
+    "accuracy": 0.8325,
+    "macro_f1": 0.758967586881227,
+    "weighted_f1": 0.8229356216160791,
+    "per_class": {
+      "sadness": {
+        "precision": 0.8231511254019293,
+        "recall": 0.9309090909090909,
+        "f1": 0.8737201365187713,
+        "support": 550
+      },
+      "joy": {
+        "precision": 0.7932242990654206,
+        "recall": 0.9644886363636364,
+        "f1": 0.8705128205128205,
+        "support": 704
+      },
+      "love": {
+        "precision": 0.883495145631068,
+        "recall": 0.5112359550561798,
+        "f1": 0.6476868327402135,
+        "support": 178
+      },
+      "anger": {
+        "precision": 0.9330357142857143,
+        "recall": 0.76,
+        "f1": 0.8376753507014028,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.8867924528301887,
+        "recall": 0.6650943396226415,
+        "f1": 0.7601078167115903,
+        "support": 212
+      },
+      "surprise": {
+        "precision": 0.9166666666666666,
+        "recall": 0.4074074074074074,
+        "f1": 0.5641025641025641,
+        "support": 81
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.832,
+    "macro_f1": 0.7300825727541865,
+    "weighted_f1": 0.8208498670035066,
+    "per_class": {
+      "sadness": {
+        "precision": 0.8631921824104235,
+        "recall": 0.9122203098106713,
+        "f1": 0.8870292887029289,
+        "support": 581
+      },
+      "joy": {
+        "precision": 0.7788018433179723,
+        "recall": 0.9726618705035971,
+        "f1": 0.8650031989763276,
+        "support": 695
+      },
+      "love": {
+        "precision": 0.8586956521739131,
+        "recall": 0.4968553459119497,
+        "f1": 0.6294820717131474,
+        "support": 159
+      },
+      "anger": {
+        "precision": 0.9054054054054054,
+        "recall": 0.730909090909091,
+        "f1": 0.8088531187122736,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.8655913978494624,
+        "recall": 0.71875,
+        "f1": 0.7853658536585366,
+        "support": 224
+      },
+      "surprise": {
+        "precision": 0.9444444444444444,
+        "recall": 0.25757575757575757,
+        "f1": 0.40476190476190477,
+        "support": 66
+      }
+    }
+  },
+  "artifacts": {
+    "model": "ml/artifacts/models/baseline_tfidf_dair_v001.joblib",
+    "confusion_matrix": "ml/artifacts/figures/baseline_tfidf_dair_v001_confusion_matrix.png",
+    "validation_predictions": "ml/artifacts/predictions/baseline_tfidf_dair_v001_validation_predictions.csv",
+    "test_predictions": "ml/artifacts/predictions/baseline_tfidf_dair_v001_test_predictions.csv",
+    "config_snapshot": "ml/artifacts/configs/baseline_tfidf_dair_v001_config_snapshot.yaml"
+  }
+}

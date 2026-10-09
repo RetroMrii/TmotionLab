@@ -1,0 +1,23 @@
+true_label_name,textcnn_prediction,confusion_pair,count,mean_textcnn_score,max_textcnn_score,high_score_errors
+joy,love,joy -> love,40,0.8119935149999999,0.99885535,24
+love,joy,love -> joy,28,0.8112492714285714,0.99446326,17
+sadness,joy,sadness -> joy,24,0.6488023579166667,0.91489977,7
+sadness,anger,sadness -> anger,15,0.8103719500000001,0.9998921,10
+surprise,fear,surprise -> fear,13,0.8032386446153846,0.99471444,7
+anger,sadness,anger -> sadness,11,0.8043154245454546,0.9841393,7
+fear,sadness,fear -> sadness,11,0.80412109,0.99364954,7
+fear,surprise,fear -> surprise,10,0.727276063,0.9722959,4
+anger,fear,anger -> fear,9,0.6122681555555556,0.9510945,2
+fear,anger,fear -> anger,7,0.8304740371428572,0.9692402,5
+surprise,joy,surprise -> joy,7,0.7456529771428572,0.9346655,3
+anger,joy,anger -> joy,7,0.7068617671428571,0.9784379,3
+sadness,fear,sadness -> fear,6,0.765949235,0.99325633,2
+joy,surprise,joy -> surprise,4,0.8266232725,0.96698016,2
+joy,sadness,joy -> sadness,4,0.7587935575,0.99315876,2
+joy,anger,joy -> anger,3,0.5932564766666667,0.74171853,0
+sadness,love,sadness -> love,3,0.4229895633333334,0.54949325,0
+love,anger,love -> anger,1,0.9345926,0.9345926,1
+love,surprise,love -> surprise,1,0.8746629,0.8746629,1
+fear,love,fear -> love,1,0.7523814,0.7523814,0
+surprise,sadness,surprise -> sadness,1,0.51969284,0.51969284,0
+surprise,love,surprise -> love,1,0.41484782,0.41484782,0

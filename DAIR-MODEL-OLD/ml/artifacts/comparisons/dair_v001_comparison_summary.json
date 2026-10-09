@@ -1,0 +1,34 @@
+{
+  "num_examples": 2000,
+  "models": {
+    "baseline": "baseline_tfidf_dair_v001",
+    "numpy": "numpy_mlp_dair_v002",
+    "textcnn": "textcnn_dair_v001"
+  },
+  "accuracy_from_saved_predictions": {
+    "baseline": 0.832,
+    "numpy": 0.877,
+    "textcnn": 0.8965
+  },
+  "agreement": {
+    "all_three_rate": 0.8265,
+    "baseline_numpy_rate": 0.8925,
+    "baseline_textcnn_rate": 0.8515,
+    "numpy_textcnn_rate": 0.8985,
+    "three_way_disagreement_rate": 0.0105
+  },
+  "counts": {
+    "all_models_agree": 1653,
+    "all_models_correct": 1560,
+    "all_models_wrong": 107,
+    "all_agree_and_correct": 1560,
+    "all_agree_and_wrong": 93,
+    "baseline_wrong_textcnn_correct": 205,
+    "baseline_correct_textcnn_wrong": 76,
+    "numpy_wrong_textcnn_correct": 115,
+    "numpy_correct_textcnn_wrong": 76,
+    "baseline_wrong_numpy_correct": 142,
+    "baseline_correct_numpy_wrong": 52,
+    "three_way_disagreement": 21
+  }
+}

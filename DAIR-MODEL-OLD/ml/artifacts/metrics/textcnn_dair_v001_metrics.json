@@ -1,0 +1,100 @@
+{
+  "experiment_id": "textcnn_dair_v001",
+  "model_family": "textcnn",
+  "seed": 42,
+  "device": "cpu",
+  "best_epoch": 8,
+  "validation": {
+    "accuracy": 0.909,
+    "macro_f1": 0.8853354179560696,
+    "weighted_f1": 0.9093749785965926,
+    "per_class": {
+      "sadness": {
+        "precision": 0.9495327102803738,
+        "recall": 0.9236363636363636,
+        "f1": 0.936405529953917,
+        "support": 550
+      },
+      "joy": {
+        "precision": 0.9316239316239316,
+        "recall": 0.9289772727272727,
+        "f1": 0.930298719772404,
+        "support": 704
+      },
+      "love": {
+        "precision": 0.7878787878787878,
+        "recall": 0.8764044943820225,
+        "f1": 0.8297872340425532,
+        "support": 178
+      },
+      "anger": {
+        "precision": 0.8807017543859649,
+        "recall": 0.9127272727272727,
+        "f1": 0.8964285714285715,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.8932038834951457,
+        "recall": 0.8679245283018868,
+        "f1": 0.8803827751196173,
+        "support": 212
+      },
+      "surprise": {
+        "precision": 0.8783783783783784,
+        "recall": 0.8024691358024691,
+        "f1": 0.8387096774193549,
+        "support": 81
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.8965,
+    "macro_f1": 0.8509521664313278,
+    "weighted_f1": 0.8967377661649667,
+    "per_class": {
+      "sadness": {
+        "precision": 0.9517857142857142,
+        "recall": 0.9173838209982789,
+        "f1": 0.9342681858019282,
+        "support": 581
+      },
+      "joy": {
+        "precision": 0.9070422535211268,
+        "recall": 0.9266187050359712,
+        "f1": 0.9167259786476868,
+        "support": 695
+      },
+      "love": {
+        "precision": 0.7413793103448276,
+        "recall": 0.8113207547169812,
+        "f1": 0.7747747747747747,
+        "support": 159
+      },
+      "anger": {
+        "precision": 0.9051094890510949,
+        "recall": 0.9018181818181819,
+        "f1": 0.9034608378870674,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.874439461883408,
+        "recall": 0.8705357142857143,
+        "f1": 0.87248322147651,
+        "support": 224
+      },
+      "surprise": {
+        "precision": 0.7457627118644068,
+        "recall": 0.6666666666666666,
+        "f1": 0.704,
+        "support": 66
+      }
+    }
+  },
+  "artifacts": {
+    "model": "ml/artifacts/models/textcnn_dair_v001.pt",
+    "epoch_log": "ml/artifacts/logs/textcnn_dair_v001_epochs.csv",
+    "validation_predictions": "ml/artifacts/predictions/textcnn_dair_v001_validation_predictions.csv",
+    "test_predictions": "ml/artifacts/predictions/textcnn_dair_v001_test_predictions.csv",
+    "confusion_matrix": "ml/artifacts/figures/textcnn_dair_v001_confusion_matrix.png"
+  }
+}

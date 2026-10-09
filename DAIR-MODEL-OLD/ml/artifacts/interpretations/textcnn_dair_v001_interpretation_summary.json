@@ -1,0 +1,350 @@
+{
+  "model_id": "textcnn_dair_v001",
+  "num_examples": 40,
+  "top_spans_per_example": 10,
+  "cohort_counts": {
+    "correct_high_score": 10,
+    "correct_low_score": 10,
+    "wrong_high_score": 10,
+    "wrong_low_score": 10
+  },
+  "predicted_label_counts": {
+    "sadness": 10,
+    "joy": 8,
+    "anger": 10,
+    "fear": 6,
+    "love": 6
+  },
+  "correct_count": 20,
+  "wrong_count": 20,
+  "padding": {
+    "mean_padding_max_filters": 87.575,
+    "median_padding_max_filters": 75.0,
+    "max_padding_max_filters": 286,
+    "min_padding_max_filters": 0
+  },
+  "top_filter_patterns": [
+    {
+      "kernel_size": 3,
+      "filter_index": 120,
+      "predicted_label": "sadness",
+      "occurrences": 5,
+      "unique_examples": 5,
+      "mean_activation": 4.648814105987549,
+      "mean_rank": 3.6
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 67,
+      "predicted_label": "sadness",
+      "occurrences": 5,
+      "unique_examples": 5,
+      "mean_activation": 4.144253921508789,
+      "mean_rank": 6.8
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 112,
+      "predicted_label": "fear",
+      "occurrences": 5,
+      "unique_examples": 5,
+      "mean_activation": 3.43998646736145,
+      "mean_rank": 3.2
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 97,
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 4.91900759935379,
+      "mean_rank": 3.0
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 16,
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 4.599338114261627,
+      "mean_rank": 3.25
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 22,
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 4.520718336105347,
+      "mean_rank": 4.75
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 83,
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 4.250218570232391,
+      "mean_rank": 5.75
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 84,
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 3.6556097269058228,
+      "mean_rank": 6.25
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 29,
+      "predicted_label": "anger",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 3.6421075463294983,
+      "mean_rank": 3.5
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 51,
+      "predicted_label": "joy",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 3.5874049067497253,
+      "mean_rank": 5.0
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 91,
+      "predicted_label": "joy",
+      "occurrences": 4,
+      "unique_examples": 4,
+      "mean_activation": 3.5684720873832703,
+      "mean_rank": 5.5
+    },
+    {
+      "kernel_size": 5,
+      "filter_index": 17,
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 5.3163018226623535,
+      "mean_rank": 2.0
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 22,
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 4.319759686787923,
+      "mean_rank": 8.0
+    },
+    {
+      "kernel_size": 3,
+      "filter_index": 63,
+      "predicted_label": "fear",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 4.02729852994283,
+      "mean_rank": 3.3333333333333335
+    },
+    {
+      "kernel_size": 5,
+      "filter_index": 113,
+      "predicted_label": "anger",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 3.787043571472168,
+      "mean_rank": 3.0
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 64,
+      "predicted_label": "anger",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 3.7589970429738364,
+      "mean_rank": 1.3333333333333333
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 74,
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 3.381976842880249,
+      "mean_rank": 2.0
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 83,
+      "predicted_label": "love",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 2.8133269945780435,
+      "mean_rank": 6.333333333333333
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 24,
+      "predicted_label": "love",
+      "occurrences": 3,
+      "unique_examples": 3,
+      "mean_activation": 2.802702267964681,
+      "mean_rank": 6.0
+    },
+    {
+      "kernel_size": 4,
+      "filter_index": 48,
+      "predicted_label": "fear",
+      "occurrences": 2,
+      "unique_examples": 2,
+      "mean_activation": 5.425300359725952,
+      "mean_rank": 1.0
+    }
+  ],
+  "top_span_patterns": [
+    {
+      "span_text_normalized": "just feel troubled",
+      "predicted_label": "sadness",
+      "occurrences": 9,
+      "unique_examples": 1,
+      "mean_activation": 3.5172608428531222
+    },
+    {
+      "span_text_normalized": "school feeling miserable",
+      "predicted_label": "sadness",
+      "occurrences": 6,
+      "unique_examples": 1,
+      "mean_activation": 3.6975945631663003
+    },
+    {
+      "span_text_normalized": "do feel superior",
+      "predicted_label": "joy",
+      "occurrences": 6,
+      "unique_examples": 1,
+      "mean_activation": 3.193670153617859
+    },
+    {
+      "span_text_normalized": "feeling of sweet",
+      "predicted_label": "love",
+      "occurrences": 5,
+      "unique_examples": 1,
+      "mean_activation": 3.676725673675537
+    },
+    {
+      "span_text_normalized": "feel dumb and",
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 1,
+      "mean_activation": 4.34291410446167
+    },
+    {
+      "span_text_normalized": "feel so exhausted by",
+      "predicted_label": "sadness",
+      "occurrences": 4,
+      "unique_examples": 1,
+      "mean_activation": 4.3420862555503845
+    },
+    {
+      "span_text_normalized": "feeling it will not be",
+      "predicted_label": "love",
+      "occurrences": 4,
+      "unique_examples": 1,
+      "mean_activation": 3.0358938574790955
+    },
+    {
+      "span_text_normalized": "felt anger when at",
+      "predicted_label": "fear",
+      "occurrences": 4,
+      "unique_examples": 1,
+      "mean_activation": 2.283064365386963
+    },
+    {
+      "span_text_normalized": "feel humiliated embarrassed",
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 5.275355180104573
+    },
+    {
+      "span_text_normalized": "feel humiliated embarrassed or foolish",
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 4.967237949371338
+    },
+    {
+      "span_text_normalized": "i feel ecstatic and",
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 4.329397837320964
+    },
+    {
+      "span_text_normalized": "fresh feeling of sweet",
+      "predicted_label": "love",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 4.012190818786621
+    },
+    {
+      "span_text_normalized": "feel totally useless today",
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.8379263877868652
+    },
+    {
+      "span_text_normalized": "feel ecstatic and",
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.805346727371216
+    },
+    {
+      "span_text_normalized": "feel a little stunned but",
+      "predicted_label": "love",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.724865118662516
+    },
+    {
+      "span_text_normalized": "really do feel superior",
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.6305226484934487
+    },
+    {
+      "span_text_normalized": "smell the sweet",
+      "predicted_label": "love",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.614679495493571
+    },
+    {
+      "span_text_normalized": "feel so blessed and",
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.5743370850880942
+    },
+    {
+      "span_text_normalized": "feel so blessed",
+      "predicted_label": "joy",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 3.50166924794515
+    },
+    {
+      "span_text_normalized": "of school feeling miserable",
+      "predicted_label": "sadness",
+      "occurrences": 3,
+      "unique_examples": 1,
+      "mean_activation": 2.869909127553304
+    }
+  ]
+}

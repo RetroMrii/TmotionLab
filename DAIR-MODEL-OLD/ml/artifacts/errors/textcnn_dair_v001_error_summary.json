@@ -1,0 +1,167 @@
+{
+  "model_id": "textcnn_dair_v001",
+  "total_test_examples": 2000,
+  "error_count": 207,
+  "correct_count": 1793,
+  "error_rate": 0.1035,
+  "high_score_threshold": 0.8,
+  "high_score_error_count": 104,
+  "high_score_error_rate_among_errors": 0.5024154589371981,
+  "interpretation_available_count": 20,
+  "all_models_agree_and_wrong_count": 93,
+  "baseline_correct_textcnn_wrong_count": 76,
+  "numpy_correct_textcnn_wrong_count": 76,
+  "three_way_disagreement_count": 9,
+  "num_confusion_pairs": 22,
+  "top_confusion_pairs": [
+    {
+      "true_label_name": "joy",
+      "textcnn_prediction": "love",
+      "confusion_pair": "joy -> love",
+      "count": 40,
+      "mean_textcnn_score": 0.8119935149999999,
+      "max_textcnn_score": 0.99885535,
+      "high_score_errors": 24
+    },
+    {
+      "true_label_name": "love",
+      "textcnn_prediction": "joy",
+      "confusion_pair": "love -> joy",
+      "count": 28,
+      "mean_textcnn_score": 0.8112492714285714,
+      "max_textcnn_score": 0.99446326,
+      "high_score_errors": 17
+    },
+    {
+      "true_label_name": "sadness",
+      "textcnn_prediction": "joy",
+      "confusion_pair": "sadness -> joy",
+      "count": 24,
+      "mean_textcnn_score": 0.6488023579166667,
+      "max_textcnn_score": 0.91489977,
+      "high_score_errors": 7
+    },
+    {
+      "true_label_name": "sadness",
+      "textcnn_prediction": "anger",
+      "confusion_pair": "sadness -> anger",
+      "count": 15,
+      "mean_textcnn_score": 0.8103719500000001,
+      "max_textcnn_score": 0.9998921,
+      "high_score_errors": 10
+    },
+    {
+      "true_label_name": "surprise",
+      "textcnn_prediction": "fear",
+      "confusion_pair": "surprise -> fear",
+      "count": 13,
+      "mean_textcnn_score": 0.8032386446153846,
+      "max_textcnn_score": 0.99471444,
+      "high_score_errors": 7
+    },
+    {
+      "true_label_name": "anger",
+      "textcnn_prediction": "sadness",
+      "confusion_pair": "anger -> sadness",
+      "count": 11,
+      "mean_textcnn_score": 0.8043154245454546,
+      "max_textcnn_score": 0.9841393,
+      "high_score_errors": 7
+    },
+    {
+      "true_label_name": "fear",
+      "textcnn_prediction": "sadness",
+      "confusion_pair": "fear -> sadness",
+      "count": 11,
+      "mean_textcnn_score": 0.80412109,
+      "max_textcnn_score": 0.99364954,
+      "high_score_errors": 7
+    },
+    {
+      "true_label_name": "fear",
+      "textcnn_prediction": "surprise",
+      "confusion_pair": "fear -> surprise",
+      "count": 10,
+      "mean_textcnn_score": 0.727276063,
+      "max_textcnn_score": 0.9722959,
+      "high_score_errors": 4
+    },
+    {
+      "true_label_name": "anger",
+      "textcnn_prediction": "fear",
+      "confusion_pair": "anger -> fear",
+      "count": 9,
+      "mean_textcnn_score": 0.6122681555555556,
+      "max_textcnn_score": 0.9510945,
+      "high_score_errors": 2
+    },
+    {
+      "true_label_name": "fear",
+      "textcnn_prediction": "anger",
+      "confusion_pair": "fear -> anger",
+      "count": 7,
+      "mean_textcnn_score": 0.8304740371428572,
+      "max_textcnn_score": 0.9692402,
+      "high_score_errors": 5
+    },
+    {
+      "true_label_name": "surprise",
+      "textcnn_prediction": "joy",
+      "confusion_pair": "surprise -> joy",
+      "count": 7,
+      "mean_textcnn_score": 0.7456529771428572,
+      "max_textcnn_score": 0.9346655,
+      "high_score_errors": 3
+    },
+    {
+      "true_label_name": "anger",
+      "textcnn_prediction": "joy",
+      "confusion_pair": "anger -> joy",
+      "count": 7,
+      "mean_textcnn_score": 0.7068617671428571,
+      "max_textcnn_score": 0.9784379,
+      "high_score_errors": 3
+    },
+    {
+      "true_label_name": "sadness",
+      "textcnn_prediction": "fear",
+      "confusion_pair": "sadness -> fear",
+      "count": 6,
+      "mean_textcnn_score": 0.765949235,
+      "max_textcnn_score": 0.99325633,
+      "high_score_errors": 2
+    },
+    {
+      "true_label_name": "joy",
+      "textcnn_prediction": "surprise",
+      "confusion_pair": "joy -> surprise",
+      "count": 4,
+      "mean_textcnn_score": 0.8266232725,
+      "max_textcnn_score": 0.96698016,
+      "high_score_errors": 2
+    },
+    {
+      "true_label_name": "joy",
+      "textcnn_prediction": "sadness",
+      "confusion_pair": "joy -> sadness",
+      "count": 4,
+      "mean_textcnn_score": 0.7587935575,
+      "max_textcnn_score": 0.99315876,
+      "high_score_errors": 2
+    }
+  ],
+  "error_categories": {
+    "status": "manual_review_required",
+    "allowed_categories": [
+      "semantic_overlap",
+      "sarcasm_or_irony",
+      "ambiguous_text",
+      "rare_emotion_label",
+      "weak_context",
+      "negation_failure",
+      "confidence_overestimation",
+      "preprocessing_artifact",
+      "other"
+    ]
+  }
+}

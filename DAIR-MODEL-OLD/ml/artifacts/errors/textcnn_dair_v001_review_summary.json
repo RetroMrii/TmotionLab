@@ -1,0 +1,31 @@
+{
+  "model_id": "textcnn_dair_v001",
+  "num_disagreements": 207,
+  "num_unreviewed": 207,
+  "all_three_same_prediction_count": 93,
+  "interpretation_available_count": 20,
+  "priority_group_counts": {
+    "all_models_same_wrong_prediction": 93,
+    "high_score_textcnn_disagreement": 46,
+    "baseline_correct_textcnn_wrong": 43,
+    "other_textcnn_disagreement": 20,
+    "three_way_disagreement": 5
+  },
+  "review_outcomes": [
+    "clear_model_error",
+    "plausible_model_prediction",
+    "ambiguous_label_boundary",
+    "possible_annotation_mismatch",
+    "insufficient_context"
+  ],
+  "mechanism_tags": [
+    "semantic_overlap",
+    "negation",
+    "sarcasm_or_irony",
+    "rare_label",
+    "mixed_emotion",
+    "preprocessing_artifact",
+    "lexical_bias",
+    "other"
+  ]
+}

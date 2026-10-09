@@ -1,0 +1,273 @@
+span_text_normalized,predicted_label,occurrences,unique_examples,mean_activation
+just feel troubled,sadness,9,1,3.5172608428531222
+school feeling miserable,sadness,6,1,3.6975945631663003
+do feel superior,joy,6,1,3.193670153617859
+feeling of sweet,love,5,1,3.676725673675537
+feel dumb and,sadness,4,1,4.34291410446167
+feel so exhausted by,sadness,4,1,4.3420862555503845
+feeling it will not be,love,4,1,3.0358938574790955
+felt anger when at,fear,4,1,2.283064365386963
+feel humiliated embarrassed,sadness,3,1,5.275355180104573
+feel humiliated embarrassed or foolish,sadness,3,1,4.967237949371338
+i feel ecstatic and,joy,3,1,4.329397837320964
+fresh feeling of sweet,love,3,1,4.012190818786621
+feel totally useless today,sadness,3,1,3.8379263877868652
+feel ecstatic and,joy,3,1,3.805346727371216
+feel a little stunned but,love,3,1,3.724865118662516
+really do feel superior,joy,3,1,3.6305226484934487
+smell the sweet,love,3,1,3.614679495493571
+feel so blessed and,joy,3,1,3.5743370850880942
+feel so blessed,joy,3,1,3.50166924794515
+of school feeling miserable,sadness,3,1,2.869909127553304
+i feel and talk like,sadness,3,1,2.578286568323771
+am waiting for half,sadness,3,1,2.508371035257975
+will sometimes let them,anger,3,1,2.4840522607167563
+test and flunked for,joy,3,1,2.1483265161514282
+met a girl who drew,fear,3,1,2.026668071746826
+watched the news at the,sadness,3,1,1.9885203838348389
+feel ive ignored,sadness,2,1,5.151158332824707
+make random awkward jokes honestly,sadness,2,1,5.0732409954071045
+feel ive ignored it too,sadness,2,1,4.988063812255859
+feel ecstatic and privileged,joy,2,1,4.890693187713623
+feel humiliated embarrassed or,sadness,2,1,4.881544589996338
+me feel dumb,sadness,2,1,4.873464822769165
+so weird and,fear,2,1,4.814741373062134
+so strange is this,sadness,2,1,4.807723522186279
+angry frustrated irritated hopeless,anger,2,1,4.779135465621948
+so exhausted by,sadness,2,1,4.632433176040649
+make random awkward jokes,sadness,2,1,4.560092449188232
+uncomfortable and feeling weird,fear,2,1,4.537563800811768
+angry frustrated irritated,anger,2,1,4.4303789138793945
+feel ive ignored it,sadness,2,1,4.4098169803619385
+feeling weird feelings but wasn,fear,2,1,4.287747144699097
+feel dumb and dumber,sadness,2,1,4.191145420074463
+so uncomfortable and feeling weird,fear,2,1,3.906045079231262
+feel so weird and,fear,2,1,3.8753116130828857
+the sweet scent,love,2,1,3.793416976928711
+feel so weird and scattered,fear,2,1,3.667635679244995
+neither hated nor,anger,2,1,3.650040864944458
+just feel totally useless,sadness,2,1,3.639884829521179
+feel complacent and,joy,2,1,3.630197763442993
+just hated myself,anger,2,1,3.569186806678772
+feel totally useless,sadness,2,1,3.5682564973831177
+way im frustrated lord,anger,2,1,3.4724291563034058
+book neither hated nor,anger,2,1,3.4620718955993652
+feel complacent and satisfied,joy,2,1,3.380147337913513
+savage love podcast or car,anger,2,1,3.3698816299438477
+just feel totally useless today,sadness,2,1,3.308724522590637
+like if people accepted,joy,2,1,3.2379485368728638
+feel a little repressed,joy,2,1,3.1823359727859497
+accepted that wed get along,joy,2,1,3.154963731765747
+i feel complacent,joy,2,1,3.1424890756607056
+complacent and satisfied,joy,2,1,3.1202688217163086
+i feel much more energized,anger,2,1,3.0717393159866333
+up until this morning,love,2,1,3.0431365966796875
+me feel a little repressed,joy,2,1,3.0421857833862305
+class leader only choose,fear,2,1,2.9572824239730835
+hated nor loved,anger,2,1,2.8967907428741455
+on a gloomy rainy,anger,2,1,2.8916789293289185
+a feeling of being invaded,fear,2,1,2.8877722024917603
+natural order here it,anger,2,1,2.79809308052063
+throat flipping up the lid,anger,2,1,2.7221148014068604
+are even though i admit,joy,2,1,2.6754143238067627
+feel this weekend is,love,2,1,2.667947292327881
+something terrifyingly bad is,love,2,1,2.6425281763076782
+though i admit,joy,2,1,2.6311635971069336
+be a slutty,love,2,1,2.61851966381073
+throat flipping up,anger,2,1,2.5957469940185547
+took a math bs test,joy,2,1,2.4582345485687256
+a friend dropped,anger,2,1,2.373544216156006
+into a feeling of being,fear,2,1,2.3701891899108887
+feeling of being,fear,2,1,2.2060552835464478
+friend dropped a frog down,anger,2,1,2.1779301166534424
+the news at,sadness,2,1,2.0789453983306885
+watched the news at,sadness,2,1,1.8651963472366333
+a girl who drew,fear,2,1,1.743074655532837
+angry frustrated irritated hopeless and,anger,1,1,6.410770416259766
+i feel humiliated embarrassed,sadness,1,1,6.232893943786621
+feeling weird feelings but,fear,1,1,5.464280128479004
+so weird and scattered,fear,1,1,5.3863205909729
+hated myself why i,anger,1,1,5.199093341827393
+i feel complacent and satisfied,joy,1,1,5.187032699584961
+feeling weird feelings,fear,1,1,5.149239540100098
+if people accepted that wed,joy,1,1,5.134185791015625
+so strange is,sadness,1,1,4.970285415649414
+i feel ive ignored it,sadness,1,1,4.8413825035095215
+so weird and scattered with,fear,1,1,4.835109233856201
+feel depressed angry frustrated irritated,anger,1,1,4.8047614097595215
+irritated hopeless and,anger,1,1,4.778452396392822
+i feel humiliated embarrassed or,sadness,1,1,4.774583339691162
+awkward jokes honestly this,sadness,1,1,4.71137809753418
+sweet scent of,love,1,1,4.627719879150391
+frustrated irritated hopeless and apathetic,anger,1,1,4.617600440979004
+sweet he gave me,love,1,1,4.590532302856445
+toilet to let it,anger,1,1,4.46152400970459
+feel depressed angry frustrated,anger,1,1,4.414687156677246
+i feel ive ignored,sadness,1,1,4.366818428039551
+feel so exhausted,sadness,1,1,4.363552093505859
+feel depressed angry,anger,1,1,4.3345537185668945
+accepted that wed get,joy,1,1,4.320329189300537
+me feel dumb and,sadness,1,1,4.310590744018555
+can t get over,anger,1,1,4.286598205566406
+so strange is this what,sadness,1,1,4.2553582191467285
+ive ignored it,sadness,1,1,4.165855407714844
+ive ignored it too,sadness,1,1,4.165765762329102
+could feel his breath,love,1,1,4.134801387786865
+sweet he gave,love,1,1,4.122071266174316
+random awkward jokes,sadness,1,1,4.120983123779297
+i just hated myself why,anger,1,1,4.092164516448975
+so exhausted by a,sadness,1,1,4.0374956130981445
+enough i have accepted,love,1,1,4.010051727294922
+not be back until,love,1,1,3.9899075031280518
+so uncomfortable and,fear,1,1,3.981043815612793
+me feel dumb and dumber,sadness,1,1,3.970855236053467
+feel so exhausted by a,sadness,1,1,3.9590959548950195
+and feeling weird feelings,fear,1,1,3.9451253414154053
+ecstatic and privileged,joy,1,1,3.9323065280914307
+way im frustrated,anger,1,1,3.9282054901123047
+i feel so exhausted by,sadness,1,1,3.9227373600006104
+i feel so weird,fear,1,1,3.8906984329223633
+i feel ecstatic and privileged,joy,1,1,3.8863365650177
+feel so blessed and honored,joy,1,1,3.857196807861328
+and smell the sweet,love,1,1,3.852504253387451
+hated myself why,anger,1,1,3.815525770187378
+i feel this weekend is,love,1,1,3.755596160888672
+don t always feel,joy,1,1,3.742841958999634
+strong feelings for,anger,1,1,3.7163290977478027
+hellip i just hated myself,anger,1,1,3.697993516921997
+the difference in,joy,1,1,3.6781373023986816
+a little stunned but,love,1,1,3.6627414226531982
+breath on me and smell,love,1,1,3.6473641395568848
+on my mandarin but what,anger,1,1,3.629070281982422
+can t imagine what the,love,1,1,3.6212639808654785
+being invaded and helpless,fear,1,1,3.6073567867279053
+my heart i,anger,1,1,3.591717481613159
+the sweet scent of,love,1,1,3.5869083404541016
+back until tomorrow and strangely,love,1,1,3.5815365314483643
+a gloomy rainy autumn day,anger,1,1,3.573418140411377
+up with anyone trying,anger,1,1,3.519164800643921
+always feel like i have,joy,1,1,3.511103868484497
+want to listen to,anger,1,1,3.470914363861084
+feel so weird,fear,1,1,3.4211506843566895
+im frustrated lord,anger,1,1,3.403264045715332
+don t always feel like,joy,1,1,3.3865792751312256
+strong feelings for this,anger,1,1,3.384941339492798
+no one is,anger,1,1,3.3668832778930664
+something terrifyingly bad is bound,love,1,1,3.350876808166504
+can t get over with,anger,1,1,3.339294672012329
+so blessed and,joy,1,1,3.3390793800354004
+i feel so blessed and,joy,1,1,3.3224918842315674
+if people accepted that,joy,1,1,3.3191113471984863
+a little stunned but can,love,1,1,3.3035130500793457
+just hated myself why,anger,1,1,3.2872235774993896
+can t control,anger,1,1,3.2666149139404297
+i feel complacent and,joy,1,1,3.264164686203003
+one is able,anger,1,1,3.255659818649292
+totally useless today,sadness,1,1,3.2329623699188232
+should be listening to chinesepod,anger,1,1,3.226292610168457
+told by some,fear,1,1,3.2196738719940186
+my way im frustrated lord,anger,1,1,3.1915171146392822
+hated nor loved it,anger,1,1,3.1818158626556396
+the studio up until this,love,1,1,3.1576995849609375
+myself and that is makeup,joy,1,1,3.1514506340026855
+and honored that,joy,1,1,3.14373779296875
+feel much more energized,anger,1,1,3.142946243286133
+wed get along,joy,1,1,3.1398329734802246
+feel like i,anger,1,1,3.090740919113159
+feel like i,joy,1,1,3.090740919113159
+savage love podcast,anger,1,1,3.0776638984680176
+no strong feelings for this,anger,1,1,3.067476749420166
+feel like i have amazing,joy,1,1,3.054872989654541
+amazing style and most days,joy,1,1,3.0476741790771484
+feel much more energized than,anger,1,1,3.0405707359313965
+a few moments where,joy,1,1,3.038585901260376
+stunned but can t imagine,love,1,1,3.0288381576538086
+of being invaded and helpless,fear,1,1,3.0229506492614746
+i feel about myself and,joy,1,1,2.9984970092773438
+catching up with anyone trying,anger,1,1,2.9829511642456055
+gloomy rainy autumn,anger,1,1,2.97405743598938
+an odd feeling of vicious,anger,1,1,2.9562671184539795
+feel about myself and that,joy,1,1,2.954786777496338
+my throat flipping up the,anger,1,1,2.9269304275512695
+be a slutty one,love,1,1,2.925248146057129
+a gloomy rainy,anger,1,1,2.913975238800049
+i feel the vile,anger,1,1,2.8567709922790527
+this weekend is,love,1,1,2.856721878051758
+were a few moments where,joy,1,1,2.8533740043640137
+should be listening to,anger,1,1,2.8244714736938477
+i have accepted,love,1,1,2.8115153312683105
+hate that work stressed,anger,1,1,2.807960271835327
+is able to escape the,anger,1,1,2.7963171005249023
+people accepted that wed,joy,1,1,2.793959140777588
+wed get along a,joy,1,1,2.791804075241089
+the vile rising in my,anger,1,1,2.7807137966156006
+vile rising in,anger,1,1,2.7805395126342773
+even get a chance,love,1,1,2.778005599975586
+that work stressed,anger,1,1,2.775503635406494
+feeling like something,love,1,1,2.768176317214966
+will sometimes let them know,anger,1,1,2.750946283340454
+i feel like i should,anger,1,1,2.7453150749206543
+much more energized than,anger,1,1,2.745145797729492
+or car talk,anger,1,1,2.726815700531006
+able to escape the,anger,1,1,2.716986656188965
+one is able to,anger,1,1,2.707040786743164
+on the toilet,anger,1,1,2.6533327102661133
+feeling it will not,love,1,1,2.6480650901794434
+feeling like something terrifyingly,love,1,1,2.638471841812134
+feeling of being invaded,fear,1,1,2.634615659713745
+to happen to me,love,1,1,2.603450298309326
+wont let me get my,anger,1,1,2.5905802249908447
+weekend is going to be,love,1,1,2.571321487426758
+a friend dropped a frog,anger,1,1,2.570889711380005
+strangely enough i have accepted,love,1,1,2.570399761199951
+stressed me out i hate,anger,1,1,2.562424659729004
+when a friend dropped,anger,1,1,2.5587329864501953
+only choose his friends,fear,1,1,2.557030200958252
+issues and will sometimes let,anger,1,1,2.5528409481048584
+only choose his friends not,fear,1,1,2.549771785736084
+wake up feeling like something,love,1,1,2.5394084453582764
+something terrifyingly bad,love,1,1,2.5370590686798096
+dropped a frog down my,anger,1,1,2.5242128372192383
+last two weeks,sadness,1,1,2.498037815093994
+up feeling like something terrifyingly,love,1,1,2.4888715744018555
+going to be a slutty,love,1,1,2.484717845916748
+the class leader only choose,fear,1,1,2.479456663131714
+i just feel troubled,sadness,1,1,2.4654409885406494
+leader only choose his,fear,1,1,2.426159381866455
+class leader only choose his,fear,1,1,2.4155569076538086
+and am waiting for,sadness,1,1,2.396097183227539
+i really do feel superior,joy,1,1,2.390831708908081
+to be a slutty one,love,1,1,2.3896889686584473
+a disadvantaged child,sadness,1,1,2.367263078689575
+the class leader only,fear,1,1,2.367175340652466
+issues and will sometimes,anger,1,1,2.352731943130493
+choose his friends,fear,1,1,2.343883991241455
+test and flunked,joy,1,1,2.31341552734375
+when a friend dropped a,anger,1,1,2.309738874435425
+feeling of being invaded and,fear,1,1,2.2854292392730713
+child and am waiting for,sadness,1,1,2.2706258296966553
+feelings in unkind ways,anger,1,1,2.2634170055389404
+i felt anger,fear,1,1,2.2380645275115967
+party i met,fear,1,1,2.230219841003418
+a frog down,anger,1,1,2.2271130084991455
+feel and talk,sadness,1,1,2.2197446823120117
+feelings in unkind,anger,1,1,2.1976051330566406
+i disagree with my parents,anger,1,1,2.1888253688812256
+let them know my,anger,1,1,2.173154830932617
+felt anger when,fear,1,1,2.1442158222198486
+the end of a telephone,fear,1,1,2.1254968643188477
+a girl who drew me,fear,1,1,2.0969810485839844
+dropped a frog down,anger,1,1,2.0913848876953125
+watched the news,sadness,1,1,2.0763773918151855
+anger when at,fear,1,1,2.042339563369751
+felt anger when at the,fear,1,1,2.041426181793213
+a telephone call,fear,1,1,1.9719688892364502
+bs test and flunked for,joy,1,1,1.9101983308792114
+girl who drew me to,fear,1,1,1.9090837240219116
+the second time,joy,1,1,1.9054598808288574
+i watched the news,sadness,1,1,1.8870959281921387
+and flunked for,joy,1,1,1.7844198942184448
+met a girl,fear,1,1,1.7811651229858398
+drew me to her,fear,1,1,1.72079598903656
+news at the,sadness,1,1,1.7042169570922852
+i took a math bs,joy,1,1,1.6521166563034058

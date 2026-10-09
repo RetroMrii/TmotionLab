@@ -1,0 +1,21 @@
+{
+  "source_file": "data/processed/dair_ai_emotion/train.csv",
+  "num_examples": 16000,
+  "min_length": 2,
+  "max_length": 66,
+  "mean_length": 19.1663125,
+  "median_length": 17.0,
+  "percentiles": {
+    "p50": 17.0,
+    "p75": 25.0,
+    "p90": 35.0,
+    "p95": 41.0,
+    "p99": 52.0
+  },
+  "counts_above": {
+    "40": 828,
+    "60": 14,
+    "80": 0,
+    "100": 0
+  }
+}

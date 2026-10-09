@@ -1,0 +1,155 @@
+{
+  "dataset_name": "dair_ai_emotion",
+  "hf_id": "dair-ai/emotion",
+  "hf_config": "split",
+  "revision": "cab853a1dbdf4c42c2b3ef2173804746df8825fe",
+  "task_type": "single_label",
+  "text_column": "text",
+  "label_column": "label",
+  "labels": [
+    "sadness",
+    "joy",
+    "love",
+    "anger",
+    "fear",
+    "surprise"
+  ],
+  "splits": {
+    "train": {
+      "actual_split_name": "train",
+      "rows": 16000,
+      "columns": [
+        "text",
+        "label"
+      ],
+      "label_names": [
+        "sadness",
+        "joy",
+        "love",
+        "anger",
+        "fear",
+        "surprise"
+      ],
+      "class_distribution": {
+        "sadness": 4666,
+        "joy": 5362,
+        "love": 1304,
+        "anger": 2159,
+        "fear": 1937,
+        "surprise": 572
+      },
+      "empty_text_count": 0,
+      "examples": [
+        {
+          "index": 0,
+          "text": "i didnt feel humiliated",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 1,
+          "text": "i can go from feeling so hopeless to so damned hopeful just from being around someone who cares and is awake",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 2,
+          "text": "im grabbing a minute to post i feel greedy wrong",
+          "label_id": 3,
+          "label": "anger"
+        }
+      ]
+    },
+    "validation": {
+      "actual_split_name": "validation",
+      "rows": 2000,
+      "columns": [
+        "text",
+        "label"
+      ],
+      "label_names": [
+        "sadness",
+        "joy",
+        "love",
+        "anger",
+        "fear",
+        "surprise"
+      ],
+      "class_distribution": {
+        "sadness": 550,
+        "joy": 704,
+        "love": 178,
+        "anger": 275,
+        "fear": 212,
+        "surprise": 81
+      },
+      "empty_text_count": 0,
+      "examples": [
+        {
+          "index": 0,
+          "text": "im feeling quite sad and sorry for myself but ill snap out of it soon",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 1,
+          "text": "i feel like i am still looking at a blank canvas blank pieces of paper",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 2,
+          "text": "i feel like a faithful servant",
+          "label_id": 2,
+          "label": "love"
+        }
+      ]
+    },
+    "test": {
+      "actual_split_name": "test",
+      "rows": 2000,
+      "columns": [
+        "text",
+        "label"
+      ],
+      "label_names": [
+        "sadness",
+        "joy",
+        "love",
+        "anger",
+        "fear",
+        "surprise"
+      ],
+      "class_distribution": {
+        "sadness": 581,
+        "joy": 695,
+        "love": 159,
+        "anger": 275,
+        "fear": 224,
+        "surprise": 66
+      },
+      "empty_text_count": 0,
+      "examples": [
+        {
+          "index": 0,
+          "text": "im feeling rather rotten so im not very ambitious right now",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 1,
+          "text": "im updating my blog because i feel shitty",
+          "label_id": 0,
+          "label": "sadness"
+        },
+        {
+          "index": 2,
+          "text": "i never make her separate from me because i don t ever want her to feel like i m ashamed with her",
+          "label_id": 0,
+          "label": "sadness"
+        }
+      ]
+    }
+  },
+  "contract_valid": true
+}

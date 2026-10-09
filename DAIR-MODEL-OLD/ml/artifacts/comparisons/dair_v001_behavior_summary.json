@@ -1,0 +1,387 @@
+{
+  "num_examples": 2000,
+  "cohorts": {
+    "textcnn_fixes_baseline": {
+      "count": 205,
+      "rate": 0.1025,
+      "by_true_class": [
+        {
+          "true_label_name": "anger",
+          "count": 52
+        },
+        {
+          "true_label_name": "love",
+          "count": 52
+        },
+        {
+          "true_label_name": "fear",
+          "count": 45
+        },
+        {
+          "true_label_name": "surprise",
+          "count": 28
+        },
+        {
+          "true_label_name": "sadness",
+          "count": 22
+        },
+        {
+          "true_label_name": "joy",
+          "count": 6
+        }
+      ],
+      "baseline_confusions_fixed": [
+        {
+          "true_label_name": "love",
+          "baseline_prediction": "joy",
+          "count": 39
+        },
+        {
+          "true_label_name": "anger",
+          "baseline_prediction": "joy",
+          "count": 28
+        },
+        {
+          "true_label_name": "fear",
+          "baseline_prediction": "joy",
+          "count": 26
+        },
+        {
+          "true_label_name": "anger",
+          "baseline_prediction": "sadness",
+          "count": 19
+        },
+        {
+          "true_label_name": "surprise",
+          "baseline_prediction": "joy",
+          "count": 18
+        },
+        {
+          "true_label_name": "fear",
+          "baseline_prediction": "sadness",
+          "count": 17
+        },
+        {
+          "true_label_name": "sadness",
+          "baseline_prediction": "joy",
+          "count": 16
+        },
+        {
+          "true_label_name": "love",
+          "baseline_prediction": "sadness",
+          "count": 11
+        },
+        {
+          "true_label_name": "sadness",
+          "baseline_prediction": "anger",
+          "count": 5
+        },
+        {
+          "true_label_name": "surprise",
+          "baseline_prediction": "sadness",
+          "count": 5
+        },
+        {
+          "true_label_name": "joy",
+          "baseline_prediction": "sadness",
+          "count": 4
+        },
+        {
+          "true_label_name": "anger",
+          "baseline_prediction": "fear",
+          "count": 4
+        },
+        {
+          "true_label_name": "surprise",
+          "baseline_prediction": "fear",
+          "count": 4
+        },
+        {
+          "true_label_name": "fear",
+          "baseline_prediction": "anger",
+          "count": 2
+        },
+        {
+          "true_label_name": "love",
+          "baseline_prediction": "anger",
+          "count": 2
+        },
+        {
+          "true_label_name": "anger",
+          "baseline_prediction": "love",
+          "count": 1
+        },
+        {
+          "true_label_name": "joy",
+          "baseline_prediction": "love",
+          "count": 1
+        },
+        {
+          "true_label_name": "joy",
+          "baseline_prediction": "fear",
+          "count": 1
+        },
+        {
+          "true_label_name": "sadness",
+          "baseline_prediction": "love",
+          "count": 1
+        },
+        {
+          "true_label_name": "surprise",
+          "baseline_prediction": "anger",
+          "count": 1
+        }
+      ]
+    },
+    "baseline_beats_textcnn": {
+      "count": 76,
+      "rate": 0.038,
+      "by_true_class": [
+        {
+          "true_label_name": "joy",
+          "count": 38
+        },
+        {
+          "true_label_name": "sadness",
+          "count": 19
+        },
+        {
+          "true_label_name": "fear",
+          "count": 11
+        },
+        {
+          "true_label_name": "anger",
+          "count": 5
+        },
+        {
+          "true_label_name": "love",
+          "count": 2
+        },
+        {
+          "true_label_name": "surprise",
+          "count": 1
+        }
+      ],
+      "textcnn_regressions": [
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "love",
+          "count": 30
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "joy",
+          "count": 8
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "anger",
+          "count": 7
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "surprise",
+          "count": 7
+        },
+        {
+          "true_label_name": "anger",
+          "textcnn_prediction": "fear",
+          "count": 4
+        },
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "surprise",
+          "count": 4
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "fear",
+          "count": 3
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "anger",
+          "count": 2
+        },
+        {
+          "true_label_name": "love",
+          "textcnn_prediction": "joy",
+          "count": 2
+        },
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "sadness",
+          "count": 2
+        },
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "anger",
+          "count": 2
+        },
+        {
+          "true_label_name": "anger",
+          "textcnn_prediction": "joy",
+          "count": 1
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "sadness",
+          "count": 1
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "love",
+          "count": 1
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "love",
+          "count": 1
+        },
+        {
+          "true_label_name": "surprise",
+          "textcnn_prediction": "fear",
+          "count": 1
+        }
+      ]
+    },
+    "all_agree_and_wrong": {
+      "count": 93,
+      "rate": 0.0465,
+      "by_true_class": [
+        {
+          "true_label_name": "love",
+          "count": 21
+        },
+        {
+          "true_label_name": "sadness",
+          "count": 17
+        },
+        {
+          "true_label_name": "anger",
+          "count": 16
+        },
+        {
+          "true_label_name": "surprise",
+          "count": 16
+        },
+        {
+          "true_label_name": "fear",
+          "count": 12
+        },
+        {
+          "true_label_name": "joy",
+          "count": 11
+        }
+      ],
+      "shared_confusions": [
+        {
+          "true_label_name": "love",
+          "textcnn_prediction": "joy",
+          "count": 20
+        },
+        {
+          "true_label_name": "surprise",
+          "textcnn_prediction": "fear",
+          "count": 11
+        },
+        {
+          "true_label_name": "anger",
+          "textcnn_prediction": "sadness",
+          "count": 10
+        },
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "love",
+          "count": 10
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "joy",
+          "count": 9
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "sadness",
+          "count": 8
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "anger",
+          "count": 6
+        },
+        {
+          "true_label_name": "anger",
+          "textcnn_prediction": "joy",
+          "count": 4
+        },
+        {
+          "true_label_name": "surprise",
+          "textcnn_prediction": "joy",
+          "count": 4
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "anger",
+          "count": 3
+        },
+        {
+          "true_label_name": "anger",
+          "textcnn_prediction": "fear",
+          "count": 2
+        },
+        {
+          "true_label_name": "sadness",
+          "textcnn_prediction": "fear",
+          "count": 2
+        },
+        {
+          "true_label_name": "joy",
+          "textcnn_prediction": "sadness",
+          "count": 1
+        },
+        {
+          "true_label_name": "fear",
+          "textcnn_prediction": "surprise",
+          "count": 1
+        },
+        {
+          "true_label_name": "love",
+          "textcnn_prediction": "anger",
+          "count": 1
+        },
+        {
+          "true_label_name": "surprise",
+          "textcnn_prediction": "sadness",
+          "count": 1
+        }
+      ]
+    },
+    "three_way_disagreement": {
+      "count": 21,
+      "rate": 0.0105,
+      "by_true_class": [
+        {
+          "true_label_name": "fear",
+          "count": 7
+        },
+        {
+          "true_label_name": "anger",
+          "count": 5
+        },
+        {
+          "true_label_name": "surprise",
+          "count": 5
+        },
+        {
+          "true_label_name": "sadness",
+          "count": 3
+        },
+        {
+          "true_label_name": "love",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

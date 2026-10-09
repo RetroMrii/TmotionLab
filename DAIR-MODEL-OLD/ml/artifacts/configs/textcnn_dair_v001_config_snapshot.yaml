@@ -1,0 +1,36 @@
+experiment_id: textcnn_dair_v001
+seed: 42
+
+dataset:
+  processed_dir: data/processed/dair_ai_emotion
+  text_column: text
+  label_column: label
+  label_name_column: label_name
+  example_id_column: example_id
+
+preprocessing:
+  vocab_path: ml/artifacts/tokenizers/vocab_dair_v001.json
+  lowercase: true
+  max_sequence_length: 64
+
+model:
+  embedding_dim: 128
+  num_filters: 128
+  kernel_sizes: [3, 4, 5]
+  dropout: 0.3
+  num_classes: 6
+
+training:
+  batch_size: 64
+  epochs: 15
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 3
+
+artifacts:
+  model: ml/artifacts/models/textcnn_dair_v001.pt
+  metrics: ml/artifacts/metrics/textcnn_dair_v001_metrics.json
+  epoch_log: ml/artifacts/logs/textcnn_dair_v001_epochs.csv
+  validation_predictions: ml/artifacts/predictions/textcnn_dair_v001_validation_predictions.csv
+  test_predictions: ml/artifacts/predictions/textcnn_dair_v001_test_predictions.csv
+  config_snapshot: ml/artifacts/configs/textcnn_dair_v001_config_snapshot.yaml

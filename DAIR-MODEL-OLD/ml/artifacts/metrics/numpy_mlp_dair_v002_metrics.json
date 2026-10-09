@@ -1,0 +1,100 @@
+{
+  "experiment_id": "numpy_mlp_dair_v002",
+  "model_family": "numpy_mlp",
+  "input_representation": "tfidf_dense_minibatches",
+  "seed": 42,
+  "best_epoch": 49,
+  "validation": {
+    "accuracy": 0.889,
+    "macro_f1": 0.8498032287606013,
+    "weighted_f1": 0.8874682794319755,
+    "per_class": {
+      "sadness": {
+        "precision": 0.9055258467023173,
+        "recall": 0.9236363636363636,
+        "f1": 0.9144914491449145,
+        "support": 550
+      },
+      "joy": {
+        "precision": 0.9004092769440655,
+        "recall": 0.9375,
+        "f1": 0.918580375782881,
+        "support": 704
+      },
+      "love": {
+        "precision": 0.8171428571428572,
+        "recall": 0.8033707865168539,
+        "f1": 0.8101983002832861,
+        "support": 178
+      },
+      "anger": {
+        "precision": 0.9018867924528302,
+        "recall": 0.8690909090909091,
+        "f1": 0.8851851851851852,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.8372093023255814,
+        "recall": 0.8490566037735849,
+        "f1": 0.8430913348946136,
+        "support": 212
+      },
+      "surprise": {
+        "precision": 0.9411764705882353,
+        "recall": 0.5925925925925926,
+        "f1": 0.7272727272727273,
+        "support": 81
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.877,
+    "macro_f1": 0.8058407850601284,
+    "weighted_f1": 0.8741908915472205,
+    "per_class": {
+      "sadness": {
+        "precision": 0.9172413793103448,
+        "recall": 0.9156626506024096,
+        "f1": 0.9164513350559862,
+        "support": 581
+      },
+      "joy": {
+        "precision": 0.8870748299319728,
+        "recall": 0.9381294964028777,
+        "f1": 0.9118881118881119,
+        "support": 695
+      },
+      "love": {
+        "precision": 0.7450980392156863,
+        "recall": 0.7169811320754716,
+        "f1": 0.7307692307692307,
+        "support": 159
+      },
+      "anger": {
+        "precision": 0.8745387453874539,
+        "recall": 0.8618181818181818,
+        "f1": 0.8681318681318682,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.852017937219731,
+        "recall": 0.8482142857142857,
+        "f1": 0.8501118568232662,
+        "support": 224
+      },
+      "surprise": {
+        "precision": 0.7631578947368421,
+        "recall": 0.4393939393939394,
+        "f1": 0.5576923076923077,
+        "support": 66
+      }
+    }
+  },
+  "artifacts": {
+    "model": "ml/artifacts/models/numpy_mlp_dair_v002.npz",
+    "vectorizer": "ml/artifacts/tokenizers/numpy_mlp_dair_v002_tfidf.joblib",
+    "epoch_log": "ml/artifacts/logs/numpy_mlp_dair_v002_epochs.csv",
+    "validation_predictions": "ml/artifacts/predictions/numpy_mlp_dair_v002_validation_predictions.csv",
+    "test_predictions": "ml/artifacts/predictions/numpy_mlp_dair_v002_test_predictions.csv"
+  }
+}

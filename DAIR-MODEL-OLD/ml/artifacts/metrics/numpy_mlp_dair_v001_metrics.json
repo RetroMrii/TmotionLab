@@ -1,0 +1,100 @@
+{
+  "experiment_id": "numpy_mlp_dair_v001",
+  "model_family": "numpy_mlp",
+  "input_representation": "tfidf_dense_minibatches",
+  "seed": 42,
+  "best_epoch": 15,
+  "validation": {
+    "accuracy": 0.5775,
+    "macro_f1": 0.26742914918202276,
+    "weighted_f1": 0.46990556509263404,
+    "per_class": {
+      "sadness": {
+        "precision": 0.47619047619047616,
+        "recall": 0.9090909090909091,
+        "f1": 0.625,
+        "support": 550
+      },
+      "joy": {
+        "precision": 0.6815217391304348,
+        "recall": 0.890625,
+        "f1": 0.7721674876847291,
+        "support": 704
+      },
+      "love": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 178
+      },
+      "anger": {
+        "precision": 0.9090909090909091,
+        "recall": 0.07272727272727272,
+        "f1": 0.13468013468013468,
+        "support": 275
+      },
+      "fear": {
+        "precision": 1.0,
+        "recall": 0.03773584905660377,
+        "f1": 0.07272727272727272,
+        "support": 212
+      },
+      "surprise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 81
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.594,
+    "macro_f1": 0.27400446929310274,
+    "weighted_f1": 0.4855910603775436,
+    "per_class": {
+      "sadness": {
+        "precision": 0.5238568588469185,
+        "recall": 0.9070567986230637,
+        "f1": 0.6641461877756774,
+        "support": 581
+      },
+      "joy": {
+        "precision": 0.6590198123044838,
+        "recall": 0.9093525179856116,
+        "f1": 0.7642079806529625,
+        "support": 695
+      },
+      "love": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 159
+      },
+      "anger": {
+        "precision": 0.85,
+        "recall": 0.06181818181818182,
+        "f1": 0.1152542372881356,
+        "support": 275
+      },
+      "fear": {
+        "precision": 0.8,
+        "recall": 0.05357142857142857,
+        "f1": 0.100418410041841,
+        "support": 224
+      },
+      "surprise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 66
+      }
+    }
+  },
+  "artifacts": {
+    "model": "ml/artifacts/models/numpy_mlp_dair_v001.npz",
+    "vectorizer": "ml/artifacts/tokenizers/numpy_mlp_dair_v001_tfidf.joblib",
+    "epoch_log": "ml/artifacts/logs/numpy_mlp_dair_v001_epochs.csv",
+    "validation_predictions": "ml/artifacts/predictions/numpy_mlp_dair_v001_validation_predictions.csv",
+    "test_predictions": "ml/artifacts/predictions/numpy_mlp_dair_v001_test_predictions.csv"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source_split": "train",
+  "source_file": "data/processed/dair_ai_emotion/train.csv",
+  "vocab_size": 7401,
+  "max_size": 20000,
+  "min_freq": 2,
+  "lowercase": true,
+  "pad_token": "<PAD>",
+  "pad_id": 0,
+  "unk_token": "<UNK>",
+  "unk_id": 1
+}
