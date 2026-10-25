@@ -1,0 +1,32 @@
+
+{
+  "experiment_id": "roberta_goemotions_multilabel_real_v001",
+  "dataset_version": "goemotions_v001",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "num_labels": 28,
+  "max_length": 48,
+  "seed": 42,
+  "training": {
+    "num_train_epochs": 4,
+    "per_device_train_batch_size": 8,
+    "per_device_eval_batch_size": 16,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 0.00002,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "lr_scheduler_type": "linear",
+    "fp16": true
+  },
+  "checkpoint_selection": {
+    "metric": "macro_average_precision",
+    "greater_is_better": true
+  },
+  "threshold_candidates": [
+    0.10, 0.15, 0.20, 0.25, 0.30,
+    0.35, 0.40, 0.45, 0.50, 0.55,
+    0.60, 0.65, 0.70, 0.75, 0.80,
+    0.85, 0.90
+  ],
+  "evaluation_split": "validation"
+}

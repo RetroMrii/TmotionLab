@@ -1,0 +1,74 @@
+{
+  "audit_id": "goemotions_annotation_audit_v001",
+  "source_revision": "add492243ff905527e67aeb8b80c082af02207c3",
+  "raw_annotation_rows": 211225,
+  "unique_raw_comments": 58011,
+  "unclear_annotation_rows": 0,
+  "simplified_split_counts": {
+    "train": 43410,
+    "validation": 5426,
+    "test": 5427
+  },
+  "annotations_per_comment": {
+    "1": 70,
+    "2": 592,
+    "3": 37335,
+    "4": 2104,
+    "5": 17910
+  },
+  "unanimous_multi_annotator_comments": 7846,
+  "disputed_multi_annotator_comments": 50095,
+  "label_vote_counts": {
+    "admiration": 17131,
+    "amusement": 9245,
+    "anger": 8084,
+    "annoyance": 13618,
+    "approval": 17620,
+    "caring": 5999,
+    "confusion": 7359,
+    "curiosity": 9692,
+    "desire": 3817,
+    "disappointment": 8469,
+    "disapproval": 11424,
+    "disgust": 5301,
+    "embarrassment": 2476,
+    "excitement": 5629,
+    "fear": 3197,
+    "gratitude": 11625,
+    "grief": 673,
+    "joy": 7983,
+    "love": 8191,
+    "nervousness": 1810,
+    "optimism": 8715,
+    "pride": 1302,
+    "realization": 8785,
+    "relief": 1289,
+    "remorse": 2525,
+    "sadness": 6758,
+    "surprise": 5514,
+    "neutral": 55298
+  },
+  "raw_source_id_overlap": {
+    "train": 43410,
+    "validation": 5426,
+    "test": 5427
+  },
+  "simplified_cross_split_text_overlap": {
+    "train_vs_validation": 46,
+    "train_vs_test": 37,
+    "validation_vs_test": 11
+  },
+  "raw_candidate_inventory": {
+    "excluded_by_heldout_id": 10853,
+    "excluded_by_heldout_normalized_text": 165,
+    "remaining_comment_ids": 46993,
+    "approved_for_training": false
+  },
+  "limitations": [
+    "Raw candidate counts do not imply additional independent training samples.",
+    "Unanimous and disputed counts are descriptive, not chance-corrected agreement.",
+    "Unclear annotations remain included in raw vote statistics.",
+    "Source-ID and normalized exact-text checks do not detect near duplicates.",
+    "No alternative targets or synthetic examples are approved by this audit."
+  ]
+}

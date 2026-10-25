@@ -1,0 +1,56 @@
+{
+  "dataset_version": "goemotions_v001",
+  "source_version": "goemotions_simplified_v001",
+  "source_revision": "add492243ff905527e67aeb8b80c082af02207c3",
+  "label_names": [
+    "admiration",
+    "amusement",
+    "anger",
+    "annoyance",
+    "approval",
+    "caring",
+    "confusion",
+    "curiosity",
+    "desire",
+    "disappointment",
+    "disapproval",
+    "disgust",
+    "embarrassment",
+    "excitement",
+    "fear",
+    "gratitude",
+    "grief",
+    "joy",
+    "love",
+    "nervousness",
+    "optimism",
+    "pride",
+    "realization",
+    "relief",
+    "remorse",
+    "sadness",
+    "surprise",
+    "neutral"
+  ],
+  "policy": "exclude train/heldout normalized-text overlap",
+  "normalization": "casefold + whitespace collapse",
+  "source_train_rows": 43410,
+  "excluded_train_rows": 158,
+  "processed_splits": {
+    "train": {
+      "rows": 43252,
+      "sha256": "92088f218698907f58a307e03110623c94d07ce8f0099061be1c7929950ff854"
+    },
+    "validation": {
+      "rows": 5426,
+      "sha256": "c1b6a003b8b79d38f18ac2a26bd6a380fd2db232020c19d651dfdde2ac00e8b2"
+    },
+    "test": {
+      "rows": 5427,
+      "sha256": "63e8569b27285735b3bb23c17cda9a205c3b50f343bfb3efb7b7b482726e58c6"
+    }
+  },
+  "excluded_file_sha256": "d63e6d021440725ad88fc57696c43c4b4e69de59ea2d64c940ae71874b54ee96",
+  "validation_test_overlap_preserved": true,
+  "note": "Official validation and test membership preserved. Their mutual text overlap remains an evaluation caveat."
+}

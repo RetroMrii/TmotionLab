@@ -1,0 +1,114 @@
+{
+  "analysis_id": "roberta_token_lengths_v001",
+  "dataset_version": "goemotions_v001",
+  "dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "tokenizer_model": "FacebookAI/roberta-base",
+  "tokenizer_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "special_tokens_included": true,
+  "padding": false,
+  "truncation": false,
+  "splits": {
+    "train": {
+      "count": 43252,
+      "min": 3,
+      "max": 1437,
+      "mean": 18.957065569222234,
+      "median": 18.0,
+      "percentiles": {
+        "50": 18.0,
+        "90": 31.0,
+        "95": 33.0,
+        "99": 37.0,
+        "99.5": 39.0
+      },
+      "candidate_lengths": {
+        "32": {
+          "examples_truncated": 2449,
+          "percentage_truncated": 5.662165911402941,
+          "tokens_removed": 9983
+        },
+        "48": {
+          "examples_truncated": 26,
+          "percentage_truncated": 0.060112827152501616,
+          "tokens_removed": 2220
+        },
+        "64": {
+          "examples_truncated": 10,
+          "percentage_truncated": 0.023120318135577547,
+          "tokens_removed": 1972
+        },
+        "96": {
+          "examples_truncated": 5,
+          "percentage_truncated": 0.011560159067788773,
+          "tokens_removed": 1771
+        },
+        "128": {
+          "examples_truncated": 4,
+          "percentage_truncated": 0.009248127254231018,
+          "tokens_removed": 1642
+        },
+        "192": {
+          "examples_truncated": 3,
+          "percentage_truncated": 0.006936095440673264,
+          "tokens_removed": 1392
+        },
+        "256": {
+          "examples_truncated": 2,
+          "percentage_truncated": 0.004624063627115509,
+          "tokens_removed": 1245
+        }
+      }
+    },
+    "validation": {
+      "count": 5426,
+      "min": 3,
+      "max": 73,
+      "mean": 18.827128639882048,
+      "median": 18.0,
+      "percentiles": {
+        "50": 18.0,
+        "90": 31.0,
+        "95": 33.0,
+        "99": 38.0,
+        "99.5": 39.875
+      },
+      "candidate_lengths": {
+        "32": {
+          "examples_truncated": 328,
+          "percentage_truncated": 6.044968669369701,
+          "tokens_removed": 1101
+        },
+        "48": {
+          "examples_truncated": 2,
+          "percentage_truncated": 0.036859565057132324,
+          "tokens_removed": 34
+        },
+        "64": {
+          "examples_truncated": 1,
+          "percentage_truncated": 0.018429782528566162,
+          "tokens_removed": 9
+        },
+        "96": {
+          "examples_truncated": 0,
+          "percentage_truncated": 0.0,
+          "tokens_removed": 0
+        },
+        "128": {
+          "examples_truncated": 0,
+          "percentage_truncated": 0.0,
+          "tokens_removed": 0
+        },
+        "192": {
+          "examples_truncated": 0,
+          "percentage_truncated": 0.0,
+          "tokens_removed": 0
+        },
+        "256": {
+          "examples_truncated": 0,
+          "percentage_truncated": 0.0,
+          "tokens_removed": 0
+        }
+      }
+    }
+  }
+}

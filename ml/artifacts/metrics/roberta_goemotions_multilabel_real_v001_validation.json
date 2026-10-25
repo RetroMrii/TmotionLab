@@ -1,0 +1,296 @@
+{
+  "threshold": 0.25,
+  "macro_f1": 0.4742850643145467,
+  "micro_f1": 0.6067497631022669,
+  "weighted_f1": 0.5999319763306395,
+  "macro_average_precision": 0.4879197166542489,
+  "micro_average_precision": 0.6424406959227333,
+  "per_label": {
+    "admiration": {
+      "precision": 0.6611842105263158,
+      "recall": 0.8237704918032787,
+      "f1": 0.7335766423357665,
+      "support": 488,
+      "average_precision": 0.7864425778635565
+    },
+    "amusement": {
+      "precision": 0.7348066298342542,
+      "recall": 0.8778877887788779,
+      "f1": 0.8,
+      "support": 303,
+      "average_precision": 0.8110454063456866
+    },
+    "anger": {
+      "precision": 0.4019933554817276,
+      "recall": 0.6205128205128205,
+      "f1": 0.4879032258064516,
+      "support": 195,
+      "average_precision": 0.5093085178050101
+    },
+    "annoyance": {
+      "precision": 0.3634085213032581,
+      "recall": 0.47854785478547857,
+      "f1": 0.4131054131054131,
+      "support": 303,
+      "average_precision": 0.3519110833406758
+    },
+    "approval": {
+      "precision": 0.4087403598971722,
+      "recall": 0.4005037783375315,
+      "f1": 0.40458015267175573,
+      "support": 397,
+      "average_precision": 0.4098887074023388
+    },
+    "caring": {
+      "precision": 0.48214285714285715,
+      "recall": 0.5294117647058824,
+      "f1": 0.5046728971962616,
+      "support": 153,
+      "average_precision": 0.5223775447979051
+    },
+    "confusion": {
+      "precision": 0.42196531791907516,
+      "recall": 0.48026315789473684,
+      "f1": 0.4492307692307692,
+      "support": 152,
+      "average_precision": 0.44390870856655124
+    },
+    "curiosity": {
+      "precision": 0.441025641025641,
+      "recall": 0.6935483870967742,
+      "f1": 0.5391849529780565,
+      "support": 248,
+      "average_precision": 0.5275697969919952
+    },
+    "desire": {
+      "precision": 0.5882352941176471,
+      "recall": 0.5194805194805194,
+      "f1": 0.5517241379310345,
+      "support": 77,
+      "average_precision": 0.5336394695581739
+    },
+    "disappointment": {
+      "precision": 0.33070866141732286,
+      "recall": 0.25766871165644173,
+      "f1": 0.2896551724137931,
+      "support": 163,
+      "average_precision": 0.2660868630569294
+    },
+    "disapproval": {
+      "precision": 0.41194029850746267,
+      "recall": 0.4726027397260274,
+      "f1": 0.44019138755980863,
+      "support": 292,
+      "average_precision": 0.4141902161406022
+    },
+    "disgust": {
+      "precision": 0.43617021276595747,
+      "recall": 0.422680412371134,
+      "f1": 0.4293193717277487,
+      "support": 97,
+      "average_precision": 0.39683251746675047
+    },
+    "embarrassment": {
+      "precision": 0.8421052631578947,
+      "recall": 0.45714285714285713,
+      "f1": 0.5925925925925926,
+      "support": 35,
+      "average_precision": 0.5484273028204417
+    },
+    "excitement": {
+      "precision": 0.3269230769230769,
+      "recall": 0.3541666666666667,
+      "f1": 0.34,
+      "support": 96,
+      "average_precision": 0.3078232654217065
+    },
+    "fear": {
+      "precision": 0.6551724137931034,
+      "recall": 0.6333333333333333,
+      "f1": 0.6440677966101694,
+      "support": 90,
+      "average_precision": 0.6527225290875216
+    },
+    "gratitude": {
+      "precision": 0.8997214484679665,
+      "recall": 0.9022346368715084,
+      "f1": 0.900976290097629,
+      "support": 358,
+      "average_precision": 0.9479522650727207
+    },
+    "grief": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 13,
+      "average_precision": 0.03852253481499617
+    },
+    "joy": {
+      "precision": 0.5792349726775956,
+      "recall": 0.6162790697674418,
+      "f1": 0.5971830985915493,
+      "support": 172,
+      "average_precision": 0.6067461008777023
+    },
+    "love": {
+      "precision": 0.6925373134328359,
+      "recall": 0.9206349206349206,
+      "f1": 0.7904599659284497,
+      "support": 252,
+      "average_precision": 0.821548476240883
+    },
+    "nervousness": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 21,
+      "average_precision": 0.2925390346534709
+    },
+    "optimism": {
+      "precision": 0.6093023255813953,
+      "recall": 0.6267942583732058,
+      "f1": 0.6179245283018868,
+      "support": 209,
+      "average_precision": 0.5760027553329985
+    },
+    "pride": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 15,
+      "average_precision": 0.05138054842548229
+    },
+    "realization": {
+      "precision": 0.44642857142857145,
+      "recall": 0.1968503937007874,
+      "f1": 0.273224043715847,
+      "support": 127,
+      "average_precision": 0.247048386745588
+    },
+    "relief": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 18,
+      "average_precision": 0.15339552306846962
+    },
+    "remorse": {
+      "precision": 0.7123287671232876,
+      "recall": 0.7647058823529411,
+      "f1": 0.7375886524822695,
+      "support": 68,
+      "average_precision": 0.6769199266776424
+    },
+    "sadness": {
+      "precision": 0.4409090909090909,
+      "recall": 0.6783216783216783,
+      "f1": 0.5344352617079889,
+      "support": 143,
+      "average_precision": 0.5140788491555407
+    },
+    "surprise": {
+      "precision": 0.4774193548387097,
+      "recall": 0.5736434108527132,
+      "f1": 0.5211267605633803,
+      "support": 129,
+      "average_precision": 0.5213242099566483
+    },
+    "neutral": {
+      "precision": 0.6300141576215196,
+      "recall": 0.7559456398640997,
+      "f1": 0.6872586872586872,
+      "support": 1766,
+      "average_precision": 0.7321189486309823
+    }
+  },
+  "experiment_id": "roberta_goemotions_multilabel_real_v001",
+  "dataset_version": "goemotions_v001",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "evaluation_split": "validation",
+  "test_evaluated": false,
+  "best_checkpoint": "checkpoint-5408",
+  "best_checkpoint_macro_ap": 0.4879197166542489,
+  "selected_threshold": 0.25,
+  "threshold_search": [
+    {
+      "threshold": 0.1,
+      "macro_f1": 0.44868734170197466
+    },
+    {
+      "threshold": 0.15,
+      "macro_f1": 0.4690875201055507
+    },
+    {
+      "threshold": 0.2,
+      "macro_f1": 0.46965073761669135
+    },
+    {
+      "threshold": 0.25,
+      "macro_f1": 0.4742850643145467
+    },
+    {
+      "threshold": 0.3,
+      "macro_f1": 0.4726909402158904
+    },
+    {
+      "threshold": 0.35,
+      "macro_f1": 0.46534469275804063
+    },
+    {
+      "threshold": 0.4,
+      "macro_f1": 0.45547671682241286
+    },
+    {
+      "threshold": 0.45,
+      "macro_f1": 0.43982407835405996
+    },
+    {
+      "threshold": 0.5,
+      "macro_f1": 0.4201728308044927
+    },
+    {
+      "threshold": 0.55,
+      "macro_f1": 0.3965397233616998
+    },
+    {
+      "threshold": 0.6,
+      "macro_f1": 0.371179411588312
+    },
+    {
+      "threshold": 0.65,
+      "macro_f1": 0.34009400417841673
+    },
+    {
+      "threshold": 0.7,
+      "macro_f1": 0.3010966020820459
+    },
+    {
+      "threshold": 0.75,
+      "macro_f1": 0.2547561216391313
+    },
+    {
+      "threshold": 0.8,
+      "macro_f1": 0.18133736535970543
+    },
+    {
+      "threshold": 0.85,
+      "macro_f1": 0.13048380679515512
+    },
+    {
+      "threshold": 0.9,
+      "macro_f1": 0.08775160844342092
+    }
+  ],
+  "config_sha256": "163ef6d71d05b58a26501091060b57f0e6c5bcd4baa5bc1836d8df20df3c69cc",
+  "dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "torch_version": "2.13.0+cu130",
+  "cuda_runtime": "13.0",
+  "model_files": {
+    "config.json": "560888a08cda16a16905d102a3fa1089d76b65679be650120c850298c464c631",
+    "model.safetensors": "1d1e416386b92d38f0b7aa94d4c1224db5131dd0b83158b9ee10e3813730cb28",
+    "tokenizer.json": "30b0bec51cda9dbebe60fdb69fec39f895d70b2ba62580dae420a2bd5b9fbe1e",
+    "tokenizer_config.json": "2f2141028bec1009d3cbce417eb92e8a9019a2e568e309db3991cae3d20a3d22",
+    "training_args.bin": "0da248af99334bfe2521361b5dd47a7f2f24ab093d39697f35ff02c75ebd6356"
+  }
+}

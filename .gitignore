@@ -1,43 +1,78 @@
-# Python
+# Python environments and caches
+.venv/
+venv/
 __pycache__/
 *.py[cod]
-.venv/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
 .coverage
+.coverage.*
 htmlcov/
+*.egg-info/
+build/
 
-# Node
-frontend/node_modules/
-frontend/dist/
-
-# Editors / OS
+# Local secrets and editor/system files
+.env
+.env.*
+!.env.example
+!.env.*.example
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+*.log
 
-# Local environment
-.env
-.env.*
-!.env.example
+# Frontend dependencies and builds
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/.vite/
 
-# Data: keep reproducible code/config, not raw or generated corpora
-/data/raw/*
-/data/interim/*
-/data/processed/*
-!/data/raw/.gitkeep
-!/data/interim/.gitkeep
-!/data/processed/.gitkeep
+# Downloaded datasets and derived row-level data (including archived DAIR)
+# Track versioned scripts, configs, schemas, reports and manifest JSON files.
+/data/raw/**
+/data/interim/**
+/data/processed/**
+!/data/raw/**/
+!/data/interim/**/
+!/data/processed/**/
+!/data/raw/**/manifest.json
+!/data/interim/**/manifest.json
+!/data/processed/**/manifest.json
 
-# Generated ML artifacts
-/ml/artifacts/models/*
-/ml/artifacts/metrics/*
-/ml/artifacts/logs/*
-/ml/artifacts/figures/*
-/ml/artifacts/configs/*
-/ml/artifacts/tokenizers/*
-/ml/artifacts/predictions/*
-/ml/artifacts/comparisons/*
-/ml/artifacts/interpretations/*
-/ml/artifacts/errors/*
-!/ml/artifacts/**/.gitkeep
+# New and legacy model artifacts: exclude large binaries and row-level predictions.
+# Keep compact metrics JSON and experiment reports eligible for Git.
+/ml/artifacts/models/
+/ml/artifacts/checkpoints/
+/ml/artifacts/tokenizers/
+/ml/artifacts/predictions/
+/ml/artifacts/logs/
+/ml/artifacts/calibration/
+/ml/artifacts/comparisons/
+/ml/artifacts/errors/
+/ml/artifacts/interpretations/
+/DAIR-MODEL-OLD/ml/artifacts/models/
+/DAIR-MODEL-OLD/ml/artifacts/tokenizers/
+/DAIR-MODEL-OLD/ml/artifacts/predictions/
+/DAIR-MODEL-OLD/ml/artifacts/logs/
+
+# Checkpoint / generated weight formats in other folders
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.joblib
+*.pkl
+*.pickle
+optimizer.pt
+scheduler.pt
+trainer_state.json
+rng_state*.pth
+
+# Temporary generated files
+*.tmp
+*.bak
+*.swp
