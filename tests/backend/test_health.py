@@ -15,10 +15,10 @@ def test_health():
 
     assert body["service"] == "TmotionLab API"
 
-    assert body["textcnn_loaded"] is True
+    assert body["textcnn_loaded"] is False
 
-    assert body["model_id"] == "textcnn_dair_v001"
+    assert body["model_id"] == "roberta_goemotions_rare4x_v001"
 
     assert body["artifacts_loaded"] is True
 
-    assert body["version"] == "0.3.0"
+    assert body["version"] == "0.4.0"

@@ -1,3 +1,5 @@
+> Historical P11 transition snapshot. Superseded by [project_state.md](project_state.md) for current status.
+
 # TmotionLab — Current Project State
 
 ## Current Phase

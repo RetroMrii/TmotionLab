@@ -1,0 +1,36 @@
+{
+  "dataset_version": "synthetic_goemotions_v002",
+  "source_experiment": "goemotions_synthetic_pilot_v002",
+  "source_model": "gpt-6.1-terra",
+  "source_manifest_sha256": "7ecfe85538ec894cf736ea33df1f9353b11219136d45c9117a957a02b4108bdc",
+  "source_candidates_sha256": "4341d1a29fe9251a026fab09e1e8b33454d9369884ccd7709b18536ac000ec7a",
+  "source_audit_sha256": "7c9a1c2354d9a0b9ed8ac469ded1e26cb42a53bcc7e4dce798c1feb197a97e15",
+  "real_dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "rows": 299,
+  "sha256": "2aec75790e90dd4e3541b203c2e6509728c4cc444c66e6b1e80224ea682f0bd7",
+  "primary_label_counts": {
+    "grief": 75,
+    "nervousness": 74,
+    "pride": 75,
+    "relief": 75
+  },
+  "excluded_candidate_ids": [
+    "syn_v002_nervousness_007_03"
+  ],
+  "review_policy": {
+    "type": "one_time_exemption",
+    "individual_semantic_review": false,
+    "requested_by": "project_supervisor",
+    "applies_only_to": "synthetic_goemotions_v002",
+    "label_source": "generator_proposed",
+    "training_use": "experimental",
+    "future_datasets_exempt": false
+  },
+  "limitations": [
+    "Synthetic labels were not independently verified by human annotators.",
+    "Automated integrity checks do not prove semantic annotation correctness.",
+    "One confirmed near-duplicate excluded.",
+    "Generated-text distribution may differ from real GoEmotions comments.",
+    "Held-out text was used only for exclusion checks."
+  ]
+}

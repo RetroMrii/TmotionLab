@@ -113,3 +113,62 @@ during initial development is unnecessary.
 **Impact:** Existing backend imports and tests may fail
 temporarily. The original DAIR work remains archived.
 New models receive independent configs and artifacts.
+
+## Decision: P12 versioned GoEmotions serving with offline DAIR compatibility
+
+**Date:** 2026-11-04
+**Status:** implemented and locally verified
+**Context:** P11 is complete; the frozen rare4x seed-42 model exists. DAIR ML code
+was archived and old imports prevent the former API from starting, while offline
+DAIR benchmark artifacts remain valid. Older P11 status and API 0.3.0 statements
+are historical and superseded for integration by this decision.
+
+**Decision:** API 0.4.0 introduces `POST /v1/goemotions/predict` with a version-1,
+28-label multi-label schema. Preserve `/predict` and `/interpret` as historical
+contracts with explicit 503 responses while their runtime is absent. Load the
+frozen local model once per lifespan, verify its files and manifest SHA-256,
+require canonical labels, use 48 tokens and fixed sigmoid threshold >= 0.25.
+CPU is the default. No test-time tuning, downloads, or fabricated predictions.
+
+Read offline DAIR comparisons, errors and metrics from the archive without
+importing or editing archived modules. Registry capabilities reflect working
+subsystems. GoEmotions and offline artifact failures are isolated. `/` and
+`/predict` in React are Analyze; advanced routes remain discoverable and identify
+the six-label historical task. RoBERTa has no TextCNN interpretation capability.
+
+**Alternatives considered:** Breaking `/predict` migration; importing archived
+ML into the new package; loading all historical models. The separate versioned
+route protects old response semantics and avoids unnecessary archive coupling.
+
+**Validation:** 52 backend tests, real direct inference and 16-row validation
+compatibility, live API smoke, browser integration tests, lint/build, artifact
+hash comparison and engineering review. See the P12 review for final results.
+
+**Impact:** The frozen 0.3.0 contract remains historical, not a restriction on new
+routes. DAIR and GoEmotions metrics are never treated as the same benchmark.
+Playwright is a development-only dependency for frontend integration testing.
+Full Reading Studio art direction and portable environment pinning remain follow-ups.
+
+## Decision: approved Reading Studio UX refinement — 2026-11-04
+
+**Authority:** The supervisor explicitly authorized implementation of the frontend investigation proposal, with final overrides. Those overrides supersede the proposal's static idle artwork, automatic reduced-motion suppression and explicit View reading recommendation. The earlier approval-gate document remains a historical record.
+
+**Navigation and icon decision:** Historical Compare has one contextual entry in Analyze, labeled “Compare historical benchmarks,” with DAIR provenance. Remove its Explore/About/legacy recovery/historical evidence entry links; retain saved IDs as text, `/compare`, query prefill and backend support. Explore supports mouse hover, a safe pointer corridor, click/touch toggling, Enter/Space, focus retention, Escape and outside/navigation dismissal. Remove unnecessary Unicode arrows and use limited functional SVGs. Source links explicitly say Download.
+
+**Motion decision:** Prefer full motion in the application; do not change browser or OS settings. Remove automatic reduced-motion media-query suppression and the corresponding JavaScript preference listener/checks. Existing unrelated keyboard interactions remain instant. Preserve the original 61-path artwork; continuous 10-second idle motion accelerates through a 650 ms rate ramp to 3.5× during analyzing and decelerates to idle. No score/label geometry coupling, progress percentages or neural-computation claim. Keep the disclaimer visible in Analyze's context section. Offscreen/hidden artwork pauses without affecting inference.
+
+**Accessibility tradeoff:** System reduced-motion preferences no longer automatically protect users from the application's spatial/ambient effects. The approved scope did not include an in-app reduction/pause control. This is an explicit supervisor choice, not an accessibility improvement. Keyboard focus, disclosure semantics, contrast, status/error announcements and activation guards remain required. Automated axe results do not certify motion accessibility.
+
+**Timing and scrolling decision:** Start inference immediately. Reveal actual success/error only after both inference completion and submission + 1.5 seconds; never add 1.5 seconds after a slow inference. Cancel both network and presentation waits on invalidation. Automatically expose only the leading label/number with the smallest necessary native smooth scroll and 24 px visual-viewport insets; already-visible results do not scroll. Keyboard focus uses preventScroll, and only returns to results when the initiating submit retains focus. A focusable aria-disabled busy submit preserves focus while guarding duplicate activation. No View reading button or reserved action row is added. Native smoothing remains browser-dependent; do not force a custom scroll loop.
+
+**Color decision:** Use exactly the approved nine visual families and 28-label dark/light foreground mapping. Family colors apply to names/bars; actual scores, canonical order, threshold 0.25, authoritative detection membership and neutral co-occurrence remain unchanged. The grouping is editorial presentation, not a scientific taxonomy. Existing model/strategy/state colors elsewhere retain their meaning.
+
+**Scope:** Frontend components/styles/tests and engineering/design documentation only. No backend/model/dataset/archive/dependency edits, commit, push or PR. See `reports/engineering/FRONTEND-UX-REFINEMENT-IMPLEMENTATION-REVIEW.md` for final verification and limitations; supervisor acceptance remains pending.
+
+## Decision: Emotion Signal traveling-wave deformation — 2026-11-04
+
+**Authority:** The supervisor's subsequent Vanta Waves reference explicitly requests evolving ribbon curvature and rejects whole-illustration rotation/scaling/fading as the main motion. This supersedes the previous transform-only signal implementation, while retaining the full-motion preference policy, immediate inference, 1.5-second presentation minimum, minimal native result scroll and all other UX refinements.
+
+**Implementation:** Keep the 61 original ribbons, base path geometry, crossing transform and sage/warm gradients. Precompute each point's spatial wave coefficients; animate `d` using four shared temporal coefficients. Fixed endpoints and smoothly tapered outer-ribbon amplitude preserve the composition. Idle principal phase is 10 seconds; analyzing targets 3.5x speed and 1.75x amplitude. A critically damped response preserves phase and transition velocity when interrupted. Hidden/offscreen/unmounted artwork stops scheduling geometry updates. No React state changes per frame and no added dependency.
+
+**Tradeoff:** Nonrigid SVG geometry repaints and performs SVG layout; the old zero-layout transform profile no longer describes this implementation. Local Chrome profiling supports a capped 60-update/s SVG approach. WebGL would add context/shader/dependency and fallback complexity for a small 61-line artwork; it is unnecessary for the measured local target. Physical mobile hardware/battery performance remains unverified. The previously approved reduced-motion accessibility limitation remains explicit. See `reports/engineering/EMOTION-SIGNAL-WAVES-REVIEW.md` for measurements, regression checks and visual evidence.

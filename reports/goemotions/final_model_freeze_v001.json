@@ -1,0 +1,26 @@
+{
+  "freeze_id": "final_model_freeze_v001",
+  "primary_experiment": "roberta_goemotions_rare4x_v001",
+  "strategy": "rare_oversample",
+  "seed": 42,
+  "checkpoint_selection": "highest_validation_macro_average_precision",
+  "classification_threshold": 0.25,
+  "threshold_selection_split": "validation",
+  "dataset_version": "goemotions_v001",
+  "expected_test_examples": 5427,
+  "model_dir": "ml\\artifacts\\models\\roberta_goemotions_rare4x_v001\\best_model",
+  "model_file_hashes": {
+    "config.json": "560888a08cda16a16905d102a3fa1089d76b65679be650120c850298c464c631",
+    "model.safetensors": "99a54287aa97221ed1910dc5cd60f9a56ace69f936f75921b64c0188826fb34e",
+    "tokenizer.json": "30b0bec51cda9dbebe60fdb69fec39f895d70b2ba62580dae420a2bd5b9fbe1e",
+    "tokenizer_config.json": "2f2141028bec1009d3cbce417eb92e8a9019a2e568e309db3991cae3d20a3d22",
+    "training_args.bin": "70de5f2fe91fba0b1f28abb0a734279307f4a1bb7cf1fb2c3b5ecd02ab31c3db"
+  },
+  "validation_metrics_sha256": "b34141f84a572361552d79e6974ba04dfe32160b7eed1c51889af5534118e867",
+  "provenance_sha256": "f106766cee199d0bf66fb34711311f2e7cb38bb3d9cf1251db69a6f1b4a766a1",
+  "dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "test_evaluated_at_freeze": false,
+  "test_time_tuning_allowed": false,
+  "research_alternative": "roberta_goemotions_hybrid_v001",
+  "seed_selection_rule": "fixed_seed_42_not_best_seed_search"
+}

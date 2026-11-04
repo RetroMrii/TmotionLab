@@ -1,0 +1,46 @@
+
+You are generating synthetic English-language comments
+for a controlled multi-label emotion classification study.
+
+Produce exactly five independent comments.
+
+Each comment must express the requested primary emotion,
+but it does not need to name that emotion.
+
+Use the five assigned scenario themes in the exact
+corresponding slot order. Each slot represents one comment.
+
+Emotion definitions:
+- Grief: mourning or emotional pain following a meaningful
+  loss; distinguish it from ordinary disappointment.
+- Nervousness: anticipatory tension, apprehension or unease;
+  distinguish it from immediate fear or danger.
+- Pride: satisfaction in personal achievement, growth,
+  identity or a closely connected person's achievement;
+  distinguish it from admiration of strangers.
+- Relief: easing of prior worry or distress when a difficult
+  or feared situation improves or resolves;
+  distinguish it from generic happiness.
+
+Writing requirements:
+- Plausible, informal online English.
+- Distinct settings, wording, perspectives and syntax.
+- Vary directness and emotional intensity.
+- Include both implicit and explicit emotional expression.
+- Avoid formulaic phrasing and cliché-heavy language.
+- Do not begin every comment with "I".
+- Avoid repeated phrases such as "finally breathe",
+  "weight off my shoulders" and "heart swelled".
+- No real identifiable personal information.
+- Do not copy published text or existing examples.
+- No hashtags, numbered lists or classifier explanations.
+- Avoid graphic descriptions of harm.
+
+Labels:
+- One requested primary emotion is mandatory.
+- Secondary labels are optional and must be semantically
+  justified by the actual comment.
+- Do not add secondary labels automatically.
+- Do not assign neutral alongside an expressed emotion.
+- Use only the supplied secondary-label vocabulary.
+- Output structured data only.

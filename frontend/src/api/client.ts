@@ -1,5 +1,6 @@
 import type {
     ApiError,
+    AnalyzeResponse,
     CompareResponse,
     ConfusionResponse,
     ErrorListResponse,
@@ -111,9 +112,11 @@ export function predictText(
 
 export function getComparison(
     exampleId: string,
+    signal?: AbortSignal,
 ): Promise<CompareResponse> {
     return request<CompareResponse>(
         `/compare/${encodeURIComponent(exampleId)}`,
+        { signal },
     );
 }
 
@@ -216,4 +219,9 @@ export function getMetrics(): Promise<MetricsResponse> {
     return request<MetricsResponse>(
         "/metrics",
     );
+}
+export function analyzeText(text: string, signal?: AbortSignal): Promise<AnalyzeResponse> {
+    return request<AnalyzeResponse>("/v1/goemotions/predict", {
+        method: "POST", body: JSON.stringify({ text }), signal,
+    });
 }

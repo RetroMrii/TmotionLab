@@ -1,0 +1,111 @@
+{
+  "audit_id": "synthetic_pilot_v002_audit",
+  "experiment_id": "goemotions_synthetic_pilot_v002",
+  "candidate_count": 300,
+  "batch_count": 60,
+  "candidate_file_sha256": "4341d1a29fe9251a026fab09e1e8b33454d9369884ccd7709b18536ac000ec7a",
+  "generation_manifest_sha256": "7ecfe85538ec894cf736ea33df1f9353b11219136d45c9117a957a02b4108bdc",
+  "primary_label_counts": {
+    "grief": 75,
+    "nervousness": 75,
+    "pride": 75,
+    "relief": 75
+  },
+  "scenario_counts": {
+    "grief": {
+      "death of a parent or grandparent": 5,
+      "pregnancy loss or an unrealized future": 5,
+      "death of a sibling or relative": 5,
+      "a keepsake triggering memories": 5,
+      "grieving a lost community or belonging": 5,
+      "loss of a close friend": 5,
+      "loss of a meaningful home": 5,
+      "anniversary of a significant loss": 5,
+      "a family gathering marked by absence": 5,
+      "unexpected reminders of someone gone": 5,
+      "death of a companion animal": 5,
+      "closure of a beloved community place": 5,
+      "a familiar routine changed by loss": 5,
+      "loss of a longstanding relationship": 5,
+      "quiet mourning without explicit emotion words": 5
+    },
+    "nervousness": {
+      "job interview": 5,
+      "first date": 5,
+      "important academic evaluation": 5,
+      "a difficult conversation": 5,
+      "a bureaucratic appointment": 5,
+      "awaiting medical results": 5,
+      "moving somewhere unfamiliar": 5,
+      "uncertain travel conditions": 5,
+      "performing in front of others": 5,
+      "uncertain social reception": 5,
+      "public speaking": 5,
+      "meeting new coworkers": 5,
+      "waiting for an important reply": 5,
+      "first day in a new role": 5,
+      "anticipation expressed through small habits": 5
+    },
+    "pride": {
+      "personal academic progress": 5,
+      "personal recovery and growth": 5,
+      "professional progress": 5,
+      "finishing a physical challenge": 5,
+      "improvement after repeated failure": 5,
+      "learning a difficult practical skill": 5,
+      "completing a long creative project": 5,
+      "overcoming a personal fear": 5,
+      "mentoring someone successfully": 5,
+      "an achievement without external recognition": 5,
+      "a child or sibling's achievement": 5,
+      "community contribution": 5,
+      "a family or cultural milestone": 5,
+      "building or repairing something": 5,
+      "quiet satisfaction in everyday progress": 5
+    },
+    "relief": {
+      "reassuring medical results": 5,
+      "resolving a financial worry": 5,
+      "a technical failure resolved": 5,
+      "a pet returning home": 5,
+      "a travel problem resolved": 5,
+      "recovering something missing": 5,
+      "meeting an important deadline": 5,
+      "a threatening weather event passing": 5,
+      "an administrative error corrected": 5,
+      "finding an acceptable backup plan": 5,
+      "a loved one arriving safely": 5,
+      "an anticipated conflict avoided": 5,
+      "a difficult conversation ending well": 5,
+      "receiving reassuring news": 5,
+      "a subtle easing of prolonged uncertainty": 5
+    }
+  },
+  "returned_models": {
+    "gpt-6.1-terra": 60
+  },
+  "normalized_duplicate_groups": [],
+  "normalized_overlap_by_split": {
+    "train": [],
+    "validation": [],
+    "test": []
+  },
+  "near_duplicate_threshold": 0.82,
+  "near_duplicate_pairs": [
+    {
+      "candidate_a": "syn_v002_nervousness_004_04",
+      "candidate_b": "syn_v002_nervousness_007_03",
+      "similarity": 0.8818
+    }
+  ],
+  "flagged_candidate_count": 2,
+  "automatic_approval_count": 0,
+  "semantic_review_completed": false,
+  "training_approved": false,
+  "limitations": [
+    "No semantic label validation performed.",
+    "Near-duplicate similarity is lexical, not semantic equivalence.",
+    "Real-data overlap checks normalize case and whitespace only.",
+    "Validation and test text accessed solely for exclusion checks."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "experiment_id": "roberta_goemotions_rare4x_v001",
+  "strategy": "rare_oversample",
+  "base_config_sha256": "163ef6d71d05b58a26501091060b57f0e6c5bcd4baa5bc1836d8df20df3c69cc",
+  "real_dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "synthetic_dataset_manifest_sha256": "c793812afadae223582c53c470e7f2bfe62a4595020242771af52aeaf758d4ce",
+  "sampling_audit_sha256": "a40b5c38923d905316adfaf1aec6019677e5b53578d4fb1f5f9265b0e01d912d",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "seed": 42,
+  "expected_optimizer_steps": 5408,
+  "test_evaluated": false
+}

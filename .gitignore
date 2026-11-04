@@ -1,6 +1,8 @@
-# Python environments and caches
+# Local environments, agent material and caches
 .venv/
 venv/
+.agents/
+.codex/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -11,7 +13,19 @@ __pycache__/
 .coverage.*
 htmlcov/
 *.egg-info/
+
+# Dependencies, generated builds and test output
+node_modules/
+dist/
+dist-ssr/
 build/
+coverage/
+.vite/
+test-results/
+playwright-report/
+*.tsbuildinfo
+/frontend/src/data/research.json
+/frontend/public/research/
 
 # Local secrets and editor/system files
 .env
@@ -24,27 +38,84 @@ build/
 Thumbs.db
 *.log
 
-# Frontend dependencies and builds
-frontend/node_modules/
-frontend/dist/
-frontend/coverage/
-frontend/.vite/
+# Reports are private unless explicitly allowed as scientific evidence below.
+/reports/*
+/reports/engineering/
+!/reports/goemotions/
+/reports/goemotions/*
+!/reports/goemotions/multiseed_robustness_v001.json
+!/reports/goemotions/multiseed_rare_label_analysis_v001.json
+!/reports/goemotions/final_heldout_test_v001.json
+!/reports/goemotions/final_model_freeze_v001.json
+!/reports/goemotions/goemotions_research_final_v001.md
+!/reports/goemotions/synthetic_pilot_v002_audit.json
+!/reports/goemotions/multiseed_sampling_audit_v001.json
+!/reports/goemotions/controlled_sampling_audit_v001.json
+!/reports/goemotions/hybrid_sampling_audit_v001.json
+!/reports/goemotions/annotation_audit_v001.json
+# Retain the already tracked aggregate validation/length diagnostics.
+!/reports/goemotions/roberta_goemotions_multilabel_real_v001_diagnostics.json
+!/reports/goemotions/roberta_token_lengths_v001.json
+!/reports/goemotions/tfidf_goemotions_multilabel_v001_diagnostics.json
 
-# Downloaded datasets and derived row-level data (including archived DAIR)
-# Track versioned scripts, configs, schemas, reports and manifest JSON files.
-/data/raw/**
-/data/interim/**
-/data/processed/**
-!/data/raw/**/
-!/data/interim/**/
-!/data/processed/**/
-!/data/raw/**/manifest.json
-!/data/interim/**/manifest.json
-!/data/processed/**/manifest.json
+# Dataset rows and synthetic candidates stay local; retain exact manifests.
+/data/raw/*
+!/data/raw/goemotions_raw_v001/
+/data/raw/goemotions_raw_v001/*
+!/data/raw/goemotions_raw_v001/manifest.json
+!/data/raw/goemotions_simplified_v001/
+/data/raw/goemotions_simplified_v001/*
+!/data/raw/goemotions_simplified_v001/manifest.json
+/data/interim/
+/data/processed/*
+!/data/processed/goemotions_v001/
+/data/processed/goemotions_v001/*
+!/data/processed/goemotions_v001/manifest.json
+!/data/processed/synthetic_goemotions_v002/
+/data/processed/synthetic_goemotions_v002/*
+!/data/processed/synthetic_goemotions_v002/manifest.json
+/data/synthetic/
 
-# New and legacy model artifacts: exclude large binaries and row-level predictions.
-# Keep compact metrics JSON and experiment reports eligible for Git.
-/ml/artifacts/models/
+# Model directories are local except these twelve pinned provenance files.
+/ml/artifacts/models/*
+!/ml/artifacts/models/roberta_goemotions_uniform_v001/
+/ml/artifacts/models/roberta_goemotions_uniform_v001/*
+!/ml/artifacts/models/roberta_goemotions_uniform_v001/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_uniform_v001_seed123/
+/ml/artifacts/models/roberta_goemotions_uniform_v001_seed123/*
+!/ml/artifacts/models/roberta_goemotions_uniform_v001_seed123/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_uniform_v001_seed456/
+/ml/artifacts/models/roberta_goemotions_uniform_v001_seed456/*
+!/ml/artifacts/models/roberta_goemotions_uniform_v001_seed456/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001/
+/ml/artifacts/models/roberta_goemotions_rare4x_v001/*
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed123/
+/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed123/*
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed123/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed456/
+/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed456/*
+!/ml/artifacts/models/roberta_goemotions_rare4x_v001_seed456/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002/
+/ml/artifacts/models/roberta_goemotions_synthetic_v002/*
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed123/
+/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed123/*
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed123/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed456/
+/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed456/*
+!/ml/artifacts/models/roberta_goemotions_synthetic_v002_seed456/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001/
+/ml/artifacts/models/roberta_goemotions_hybrid_v001/*
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed123/
+/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed123/*
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed123/experiment_provenance.json
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed456/
+/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed456/*
+!/ml/artifacts/models/roberta_goemotions_hybrid_v001_seed456/experiment_provenance.json
+
+# Local training/runtime artifacts; historical serving CSVs/metrics remain tracked.
 /ml/artifacts/checkpoints/
 /ml/artifacts/tokenizers/
 /ml/artifacts/predictions/
@@ -58,7 +129,7 @@ frontend/.vite/
 /DAIR-MODEL-OLD/ml/artifacts/predictions/
 /DAIR-MODEL-OLD/ml/artifacts/logs/
 
-# Checkpoint / generated weight formats in other folders
+# Weight/checkpoint formats outside the directories above
 *.pt
 *.pth
 *.ckpt
@@ -67,12 +138,11 @@ frontend/.vite/
 *.joblib
 *.pkl
 *.pickle
-optimizer.pt
-scheduler.pt
+*.npz
+training_args.bin
 trainer_state.json
-rng_state*.pth
 
-# Temporary generated files
+# Temporary files
 *.tmp
 *.bak
 *.swp

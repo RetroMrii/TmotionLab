@@ -1,0 +1,298 @@
+{
+  "threshold": 0.25,
+  "macro_f1": 0.5251951939948584,
+  "micro_f1": 0.6026142825492947,
+  "weighted_f1": 0.59751752869707,
+  "macro_average_precision": 0.522608715027785,
+  "micro_average_precision": 0.639492483060744,
+  "per_label": {
+    "admiration": {
+      "precision": 0.6558966074313409,
+      "recall": 0.8319672131147541,
+      "f1": 0.7335140018066847,
+      "support": 488,
+      "average_precision": 0.7844421507036279
+    },
+    "amusement": {
+      "precision": 0.736986301369863,
+      "recall": 0.8877887788778878,
+      "f1": 0.8053892215568862,
+      "support": 303,
+      "average_precision": 0.8085596708028477
+    },
+    "anger": {
+      "precision": 0.43859649122807015,
+      "recall": 0.6410256410256411,
+      "f1": 0.5208333333333334,
+      "support": 195,
+      "average_precision": 0.5068081750428471
+    },
+    "annoyance": {
+      "precision": 0.3460559796437659,
+      "recall": 0.44884488448844884,
+      "f1": 0.39080459770114945,
+      "support": 303,
+      "average_precision": 0.35160259062271193
+    },
+    "approval": {
+      "precision": 0.41055718475073316,
+      "recall": 0.3526448362720403,
+      "f1": 0.3794037940379404,
+      "support": 397,
+      "average_precision": 0.39908489431732064
+    },
+    "caring": {
+      "precision": 0.47904191616766467,
+      "recall": 0.5228758169934641,
+      "f1": 0.5,
+      "support": 153,
+      "average_precision": 0.5186101295876748
+    },
+    "confusion": {
+      "precision": 0.5106382978723404,
+      "recall": 0.47368421052631576,
+      "f1": 0.49146757679180886,
+      "support": 152,
+      "average_precision": 0.46565338757916025
+    },
+    "curiosity": {
+      "precision": 0.45077720207253885,
+      "recall": 0.7016129032258065,
+      "f1": 0.5488958990536278,
+      "support": 248,
+      "average_precision": 0.5432392555231598
+    },
+    "desire": {
+      "precision": 0.625,
+      "recall": 0.45454545454545453,
+      "f1": 0.5263157894736842,
+      "support": 77,
+      "average_precision": 0.5169171096955597
+    },
+    "disappointment": {
+      "precision": 0.35714285714285715,
+      "recall": 0.24539877300613497,
+      "f1": 0.2909090909090909,
+      "support": 163,
+      "average_precision": 0.27404809010601777
+    },
+    "disapproval": {
+      "precision": 0.41883116883116883,
+      "recall": 0.4417808219178082,
+      "f1": 0.43,
+      "support": 292,
+      "average_precision": 0.4091924639596804
+    },
+    "disgust": {
+      "precision": 0.4659090909090909,
+      "recall": 0.422680412371134,
+      "f1": 0.44324324324324327,
+      "support": 97,
+      "average_precision": 0.4570653007825801
+    },
+    "embarrassment": {
+      "precision": 0.8666666666666667,
+      "recall": 0.37142857142857144,
+      "f1": 0.52,
+      "support": 35,
+      "average_precision": 0.5671094203805627
+    },
+    "excitement": {
+      "precision": 0.3870967741935484,
+      "recall": 0.375,
+      "f1": 0.38095238095238093,
+      "support": 96,
+      "average_precision": 0.32770077713177925
+    },
+    "fear": {
+      "precision": 0.7125,
+      "recall": 0.6333333333333333,
+      "f1": 0.6705882352941176,
+      "support": 90,
+      "average_precision": 0.6534635071649871
+    },
+    "gratitude": {
+      "precision": 0.9119318181818182,
+      "recall": 0.8966480446927374,
+      "f1": 0.9042253521126761,
+      "support": 358,
+      "average_precision": 0.9408412526191237
+    },
+    "grief": {
+      "precision": 0.3333333333333333,
+      "recall": 0.46153846153846156,
+      "f1": 0.3870967741935484,
+      "support": 13,
+      "average_precision": 0.33213004453968037
+    },
+    "joy": {
+      "precision": 0.532258064516129,
+      "recall": 0.5755813953488372,
+      "f1": 0.553072625698324,
+      "support": 172,
+      "average_precision": 0.5804423835181932
+    },
+    "love": {
+      "precision": 0.7012578616352201,
+      "recall": 0.8849206349206349,
+      "f1": 0.7824561403508772,
+      "support": 252,
+      "average_precision": 0.8171720790980875
+    },
+    "nervousness": {
+      "precision": 0.3225806451612903,
+      "recall": 0.47619047619047616,
+      "f1": 0.38461538461538464,
+      "support": 21,
+      "average_precision": 0.47563720665065456
+    },
+    "optimism": {
+      "precision": 0.582089552238806,
+      "recall": 0.5598086124401914,
+      "f1": 0.5707317073170731,
+      "support": 209,
+      "average_precision": 0.5586292602511386
+    },
+    "pride": {
+      "precision": 0.4090909090909091,
+      "recall": 0.6,
+      "f1": 0.4864864864864865,
+      "support": 15,
+      "average_precision": 0.4013438708051867
+    },
+    "realization": {
+      "precision": 0.41509433962264153,
+      "recall": 0.1732283464566929,
+      "f1": 0.24444444444444444,
+      "support": 127,
+      "average_precision": 0.21038736754408646
+    },
+    "relief": {
+      "precision": 0.2222222222222222,
+      "recall": 0.4444444444444444,
+      "f1": 0.2962962962962963,
+      "support": 18,
+      "average_precision": 0.23559189378728151
+    },
+    "remorse": {
+      "precision": 0.7183098591549296,
+      "recall": 0.75,
+      "f1": 0.7338129496402878,
+      "support": 68,
+      "average_precision": 0.6739729500493312
+    },
+    "sadness": {
+      "precision": 0.42410714285714285,
+      "recall": 0.6643356643356644,
+      "f1": 0.5177111716621253,
+      "support": 143,
+      "average_precision": 0.5742866948827945
+    },
+    "surprise": {
+      "precision": 0.49032258064516127,
+      "recall": 0.5891472868217055,
+      "f1": 0.5352112676056338,
+      "support": 129,
+      "average_precision": 0.5219859492249895
+    },
+    "neutral": {
+      "precision": 0.6308068459657702,
+      "recall": 0.7304643261608154,
+      "f1": 0.6769876672789295,
+      "support": 1766,
+      "average_precision": 0.7271261444069188
+    }
+  },
+  "experiment_id": "roberta_goemotions_hybrid_v001_seed456",
+  "strategy": "hybrid",
+  "evaluation_split": "validation",
+  "test_evaluated": false,
+  "selected_threshold": 0.25,
+  "threshold_search": [
+    {
+      "threshold": 0.1,
+      "macro_f1": 0.48016487840908095
+    },
+    {
+      "threshold": 0.15,
+      "macro_f1": 0.5085933397634771
+    },
+    {
+      "threshold": 0.2,
+      "macro_f1": 0.5215527304559149
+    },
+    {
+      "threshold": 0.25,
+      "macro_f1": 0.5251951939948584
+    },
+    {
+      "threshold": 0.3,
+      "macro_f1": 0.5234450379076218
+    },
+    {
+      "threshold": 0.35,
+      "macro_f1": 0.5164315467110994
+    },
+    {
+      "threshold": 0.4,
+      "macro_f1": 0.504892787033288
+    },
+    {
+      "threshold": 0.45,
+      "macro_f1": 0.48475236107699793
+    },
+    {
+      "threshold": 0.5,
+      "macro_f1": 0.46513803776335905
+    },
+    {
+      "threshold": 0.55,
+      "macro_f1": 0.4499656930161291
+    },
+    {
+      "threshold": 0.6,
+      "macro_f1": 0.433912728318829
+    },
+    {
+      "threshold": 0.65,
+      "macro_f1": 0.40058194288703974
+    },
+    {
+      "threshold": 0.7,
+      "macro_f1": 0.3524078662540804
+    },
+    {
+      "threshold": 0.75,
+      "macro_f1": 0.2865035520681901
+    },
+    {
+      "threshold": 0.8,
+      "macro_f1": 0.21741254024054416
+    },
+    {
+      "threshold": 0.85,
+      "macro_f1": 0.1476219440023907
+    },
+    {
+      "threshold": 0.9,
+      "macro_f1": 0.0936709898160756
+    }
+  ],
+  "best_checkpoint": "checkpoint-5408",
+  "best_checkpoint_macro_ap": 0.522608715027785,
+  "optimizer_steps": 5408,
+  "epoch_iteration_history": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "sampling_audit_sha256": "06f98ea770fc772246a00d81dc3dc7f08af2bcf266a89755f495d689e9864a77",
+  "model_files": {
+    "config.json": "560888a08cda16a16905d102a3fa1089d76b65679be650120c850298c464c631",
+    "model.safetensors": "5ced6ef53e2b28202af98cd28ab7539157ea9af896afab3b7b37e8ec19324fed",
+    "tokenizer.json": "30b0bec51cda9dbebe60fdb69fec39f895d70b2ba62580dae420a2bd5b9fbe1e",
+    "tokenizer_config.json": "2f2141028bec1009d3cbce417eb92e8a9019a2e568e309db3991cae3d20a3d22",
+    "training_args.bin": "9907ffb61895f0c114983db2f0a28c7cb58439d9ce61cafdb6a1a8744e1db2b2"
+  }
+}

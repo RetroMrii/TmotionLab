@@ -1,0 +1,50 @@
+
+{
+  "experiment_id": "goemotions_synthetic_pilot_v001",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "prompt_version": "synthetic_emotion_generation_v001",
+  "seed": 42,
+  "examples_per_request": 5,
+  "targets": {
+    "grief": 75,
+    "nervousness": 75,
+    "pride": 75,
+    "relief": 75
+  },
+  "contrast_labels": {
+    "grief": ["sadness", "remorse", "love"],
+    "nervousness": ["fear", "confusion", "excitement"],
+    "pride": ["admiration", "joy", "gratitude"],
+    "relief": ["joy", "optimism", "neutral"]
+  },
+  "allowed_secondary_labels": [
+    "admiration",
+    "amusement",
+    "anger",
+    "annoyance",
+    "approval",
+    "caring",
+    "confusion",
+    "curiosity",
+    "desire",
+    "disappointment",
+    "disapproval",
+    "disgust",
+    "embarrassment",
+    "excitement",
+    "fear",
+    "gratitude",
+    "grief",
+    "joy",
+    "love",
+    "nervousness",
+    "optimism",
+    "pride",
+    "realization",
+    "relief",
+    "remorse",
+    "sadness",
+    "surprise",
+    "neutral"
+  ]
+}

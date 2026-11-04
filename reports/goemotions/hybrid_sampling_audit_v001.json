@@ -1,0 +1,189 @@
+{
+  "experiment": "hybrid_sampling_v001",
+  "strategy": "hybrid",
+  "seed": 42,
+  "epochs": 4,
+  "draws_per_epoch": 43252,
+  "real_oversampling_fraction": 0.5,
+  "synthetic_policy_fraction": 0.5,
+  "previous_audit_sha256": "a40b5c38923d905316adfaf1aec6019677e5b53578d4fb1f5f9265b0e01d912d",
+  "synthetic_manifest_sha256": "c793812afadae223582c53c470e7f2bfe62a4595020242771af52aeaf758d4ce",
+  "epoch_reports": [
+    {
+      "total_draws": 43252,
+      "source_draws": {
+        "real": 42485,
+        "synthetic": 767
+      },
+      "unique_examples": 27231,
+      "synthetic_primary_draws": {
+        "grief": 115,
+        "relief": 242,
+        "pride": 174,
+        "nervousness": 236
+      },
+      "label_occurrences": {
+        "admiration": 4060,
+        "amusement": 2308,
+        "anger": 1503,
+        "annoyance": 2390,
+        "approval": 2731,
+        "caring": 1036,
+        "confusion": 1331,
+        "curiosity": 2097,
+        "desire": 617,
+        "disappointment": 1207,
+        "disapproval": 1886,
+        "disgust": 758,
+        "embarrassment": 324,
+        "excitement": 820,
+        "fear": 615,
+        "gratitude": 2506,
+        "grief": 347,
+        "joy": 1519,
+        "love": 1965,
+        "nervousness": 647,
+        "optimism": 1574,
+        "pride": 435,
+        "realization": 1087,
+        "relief": 628,
+        "remorse": 543,
+        "sadness": 1360,
+        "surprise": 1035,
+        "neutral": 13821
+      }
+    },
+    {
+      "total_draws": 43252,
+      "source_draws": {
+        "real": 42500,
+        "synthetic": 752
+      },
+      "unique_examples": 27069,
+      "synthetic_primary_draws": {
+        "relief": 231,
+        "pride": 167,
+        "nervousness": 243,
+        "grief": 111
+      },
+      "label_occurrences": {
+        "admiration": 3979,
+        "amusement": 2253,
+        "anger": 1482,
+        "annoyance": 2485,
+        "approval": 2881,
+        "caring": 1023,
+        "confusion": 1287,
+        "curiosity": 2075,
+        "desire": 607,
+        "disappointment": 1245,
+        "disapproval": 1957,
+        "disgust": 795,
+        "embarrassment": 277,
+        "excitement": 886,
+        "fear": 639,
+        "gratitude": 2563,
+        "grief": 301,
+        "joy": 1451,
+        "love": 2073,
+        "nervousness": 633,
+        "optimism": 1560,
+        "pride": 425,
+        "realization": 1105,
+        "relief": 601,
+        "remorse": 502,
+        "sadness": 1275,
+        "surprise": 982,
+        "neutral": 13841
+      }
+    },
+    {
+      "total_draws": 43252,
+      "source_draws": {
+        "real": 42499,
+        "synthetic": 753
+      },
+      "unique_examples": 27094,
+      "synthetic_primary_draws": {
+        "pride": 159,
+        "relief": 239,
+        "grief": 105,
+        "nervousness": 250
+      },
+      "label_occurrences": {
+        "admiration": 3969,
+        "amusement": 2208,
+        "anger": 1497,
+        "annoyance": 2438,
+        "approval": 2822,
+        "caring": 1074,
+        "confusion": 1332,
+        "curiosity": 2106,
+        "desire": 582,
+        "disappointment": 1225,
+        "disapproval": 1958,
+        "disgust": 758,
+        "embarrassment": 281,
+        "excitement": 874,
+        "fear": 627,
+        "gratitude": 2674,
+        "grief": 272,
+        "joy": 1468,
+        "love": 2025,
+        "nervousness": 623,
+        "optimism": 1472,
+        "pride": 451,
+        "realization": 1047,
+        "relief": 625,
+        "remorse": 556,
+        "sadness": 1333,
+        "surprise": 1079,
+        "neutral": 13756
+      }
+    },
+    {
+      "total_draws": 43252,
+      "source_draws": {
+        "real": 42538,
+        "synthetic": 714
+      },
+      "unique_examples": 27168,
+      "synthetic_primary_draws": {
+        "relief": 211,
+        "nervousness": 223,
+        "pride": 173,
+        "grief": 107
+      },
+      "label_occurrences": {
+        "admiration": 4008,
+        "amusement": 2188,
+        "anger": 1542,
+        "annoyance": 2473,
+        "approval": 2946,
+        "caring": 1080,
+        "confusion": 1362,
+        "curiosity": 2124,
+        "desire": 634,
+        "disappointment": 1289,
+        "disapproval": 1964,
+        "disgust": 765,
+        "embarrassment": 283,
+        "excitement": 836,
+        "fear": 652,
+        "gratitude": 2562,
+        "grief": 307,
+        "joy": 1477,
+        "love": 2012,
+        "nervousness": 621,
+        "optimism": 1506,
+        "pride": 424,
+        "realization": 1059,
+        "relief": 577,
+        "remorse": 489,
+        "sadness": 1352,
+        "surprise": 1051,
+        "neutral": 13692
+      }
+    }
+  ]
+}

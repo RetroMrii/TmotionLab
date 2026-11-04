@@ -32,7 +32,7 @@ class Settings:
 def load_settings() -> Settings:
     return Settings(
         api_title="TmotionLab API",
-        api_version="0.3.0",
+        api_version="0.4.0",
         api_description=(
             "Inference and analysis API for the TmotionLab NLP laboratory."
         ),

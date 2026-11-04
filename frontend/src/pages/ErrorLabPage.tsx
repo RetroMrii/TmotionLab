@@ -259,6 +259,11 @@ export function ErrorLabPage() {
         offset + PAGE_SIZE < total;
 
 
+    if (error) return <div className="page"><section className="panel" role="alert">
+        <h1>Historical Error Lab unavailable</h1>
+        <p>{error}</p><p>Reload this page after the API recovers. No benchmark counts are shown.</p>
+    </section></div>;
+
     return (
         <div className="page">
             <section className="page-heading">

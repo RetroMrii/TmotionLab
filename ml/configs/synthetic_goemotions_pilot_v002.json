@@ -1,0 +1,83 @@
+
+{
+  "experiment_id": "goemotions_synthetic_pilot_v002",
+  "model": "gpt-6.1-terra",
+  "seed": 42,
+  "examples_per_request": 5,
+  "targets": {
+    "grief": 75,
+    "nervousness": 75,
+    "pride": 75,
+    "relief": 75
+  },
+  "scenario_pools": {
+    "grief": [
+      "death of a parent or grandparent",
+      "loss of a close friend",
+      "death of a companion animal",
+      "pregnancy loss or an unrealized future",
+      "loss of a meaningful home",
+      "closure of a beloved community place",
+      "death of a sibling or relative",
+      "anniversary of a significant loss",
+      "a familiar routine changed by loss",
+      "a keepsake triggering memories",
+      "a family gathering marked by absence",
+      "loss of a longstanding relationship",
+      "grieving a lost community or belonging",
+      "unexpected reminders of someone gone",
+      "quiet mourning without explicit emotion words"
+    ],
+    "nervousness": [
+      "job interview",
+      "awaiting medical results",
+      "public speaking",
+      "first date",
+      "moving somewhere unfamiliar",
+      "meeting new coworkers",
+      "important academic evaluation",
+      "uncertain travel conditions",
+      "waiting for an important reply",
+      "a difficult conversation",
+      "performing in front of others",
+      "first day in a new role",
+      "a bureaucratic appointment",
+      "uncertain social reception",
+      "anticipation expressed through small habits"
+    ],
+    "pride": [
+      "personal academic progress",
+      "learning a difficult practical skill",
+      "a child or sibling's achievement",
+      "personal recovery and growth",
+      "completing a long creative project",
+      "community contribution",
+      "professional progress",
+      "overcoming a personal fear",
+      "a family or cultural milestone",
+      "finishing a physical challenge",
+      "mentoring someone successfully",
+      "building or repairing something",
+      "improvement after repeated failure",
+      "an achievement without external recognition",
+      "quiet satisfaction in everyday progress"
+    ],
+    "relief": [
+      "reassuring medical results",
+      "recovering something missing",
+      "a loved one arriving safely",
+      "resolving a financial worry",
+      "meeting an important deadline",
+      "an anticipated conflict avoided",
+      "a technical failure resolved",
+      "a threatening weather event passing",
+      "a difficult conversation ending well",
+      "a pet returning home",
+      "an administrative error corrected",
+      "receiving reassuring news",
+      "a travel problem resolved",
+      "finding an acceptable backup plan",
+      "a subtle easing of prolonged uncertainty"
+    ]
+  }
+}

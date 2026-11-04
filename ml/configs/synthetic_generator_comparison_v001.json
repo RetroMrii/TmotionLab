@@ -1,0 +1,20 @@
+
+{
+  "experiment_id": "synthetic_generator_comparison_v001",
+  "models": [
+    "gpt-6.1-terra",
+    "gpt-6-luna"
+  ],
+  "prompt_version": "synthetic_emotion_generation_v001",
+  "examples_per_request": 5,
+  "examples_per_label_per_model": 5,
+  "targets": [
+    "grief",
+    "nervousness",
+    "pride",
+    "relief"
+  ],
+  "reasoning_effort": "none",
+  "seed": 42,
+  "require_human_review": true
+}

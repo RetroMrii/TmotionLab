@@ -102,7 +102,7 @@ def interpret(
     if predictor is None:
         raise HTTPException(
             status_code=503,
-            detail=("TextCNN predictor is not loaded"),
+            detail=("Archived DAIR TextCNN runtime is unavailable; GoEmotions does not support TextCNN interpretation"),
         )
 
     try:

@@ -38,7 +38,7 @@ def predict(
     if predictor is None:
         raise HTTPException(
             status_code=503,
-            detail=("TextCNN predictor is not loaded"),
+            detail=("Archived DAIR TextCNN runtime is unavailable; use /v1/goemotions/predict for the separate multi-label task"),
         )
 
     try:

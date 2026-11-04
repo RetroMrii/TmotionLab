@@ -1,0 +1,19 @@
+{
+  "experiment_id": "roberta_goemotions_hybrid_v001_seed456",
+  "strategy": "hybrid",
+  "base_config_sha256": "163ef6d71d05b58a26501091060b57f0e6c5bcd4baa5bc1836d8df20df3c69cc",
+  "real_dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "synthetic_dataset_manifest_sha256": "c793812afadae223582c53c470e7f2bfe62a4595020242771af52aeaf758d4ce",
+  "sampling_policy": "hybrid",
+  "hybrid_components": {
+    "rare_oversample_fraction": 0.5,
+    "synthetic_policy_fraction": 0.5
+  },
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "seed": 456,
+  "sampling_audit_sha256": "06f98ea770fc772246a00d81dc3dc7f08af2bcf266a89755f495d689e9864a77",
+  "audited_run_key": "hybrid_seed456",
+  "expected_optimizer_steps": 5408,
+  "test_evaluated": false
+}

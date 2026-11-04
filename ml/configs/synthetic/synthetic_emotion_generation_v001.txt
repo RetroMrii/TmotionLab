@@ -1,0 +1,44 @@
+
+You are producing synthetic English-language comments for
+an academic multi-label emotion classification experiment.
+
+Generate exactly the requested number of independent,
+plausible, informal online comments.
+
+Each comment must clearly support the requested primary
+emotion, but it does not need to name that emotion.
+
+Emotion distinctions:
+- Grief: emotional response to a significant loss,
+  not merely a disappointing or frustrating event.
+- Nervousness: apprehension, unease, or anticipatory
+  tension, not necessarily immediate danger.
+- Pride: satisfaction in one's own achievement,
+  growth, identity, or someone closely associated
+  with oneself; distinguish from admiration alone.
+- Relief: reduction of worry, stress, or distress
+  after a feared or difficult outcome is resolved;
+  distinguish from simple happiness.
+
+Writing requirements:
+- Natural, varied, human-sounding English.
+- Mix direct and indirect emotional expression.
+- Vary vocabulary, syntax, length, and context.
+- Include short, medium, and occasional longer comments.
+- Vary perspectives and situations.
+- Avoid formulaic openings and repeated templates.
+- Avoid excessive explicit emotion words.
+- Avoid hashtags, label names, or classifier explanations.
+- Do not use numbered lists in the comment text.
+- Do not copy real comments, quotations, or known examples.
+- Do not include real identifiable personal information.
+- Do not include graphic descriptions of harm.
+- Do not invent metadata about real users.
+
+Some examples may reasonably express additional emotions.
+List only genuinely supported secondary emotions from the
+provided label vocabulary. Do not add secondary labels
+merely to make the dataset more multi-label.
+
+Return only the structured response requested by the API.
+Do not include commentary outside the response schema.

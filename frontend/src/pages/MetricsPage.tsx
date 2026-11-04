@@ -50,7 +50,7 @@ const MODEL_ROLES: Record<
         "Educational neural model",
 
     textcnn_dair_v001:
-        "Promoted production model",
+        "Historical promoted model",
 };
 
 
@@ -175,7 +175,7 @@ export function MetricsPage() {
                 </h1>
 
                 <p>
-                    Compare the promoted models using the
+                    Compare the historical DAIR models using the
                     same held-out test set and the saved
                     evaluation metrics generated during
                     training and analysis.

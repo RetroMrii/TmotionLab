@@ -1,448 +1,153 @@
-const LABELS = [
-    "sadness",
-    "joy",
-    "love",
-    "anger",
-    "fear",
-    "surprise",
-];
-
-const PHASES = [
-    {
-        title: "Predict",
-        text:
-            "Run the promoted TextCNN on new English text "
-            + "and inspect its top softmax probabilities.",
-    },
-    {
-        title: "Compare",
-        text:
-            "Compare the three saved model predictions on "
-            + "the exact same held-out benchmark example.",
-    },
-    {
-        title: "Interpret",
-        text:
-            "Map strong TextCNN convolutional activations "
-            + "back to local token spans.",
-    },
-    {
-        title: "Error Lab",
-        text:
-            "Explore benchmark disagreements, confusion "
-            + "pairs, shared errors, and regressions.",
-    },
-];
-
-
+import { Link } from "react-router";
+import { LensMark } from "../components/AppShell";
 export function AboutPage() {
-    return (
-        <div className="page">
-            <section className="page-heading">
-                <div className="eyebrow">
-                    About
-                </div>
-
-                <h1>
-                    TmotionLab methodology
-                </h1>
-
-                <p>
-                    TmotionLab is an interactive NLP
-                    laboratory for studying how several
-                    text-classification model families
-                    behave on the same emotion-classification
-                    problem.
-                </p>
-            </section>
-
-            <section className="about-thesis-grid">
-                {PHASES.map(
-                    (item) => (
-                        <article
-                            className="panel about-thesis-card"
-                            key={item.title}
-                        >
-                            <div className="eyebrow">
-                                {item.title}
-                            </div>
-
-                            <p>
-                                {item.text}
-                            </p>
-                        </article>
-                    ),
-                )}
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    Dataset
-                </div>
-
-                <h2>
-                    Six-class emotion benchmark
-                </h2>
-
-                <p>
-                    The project uses the
-                    {" "}
-                    <strong>
-                        dair-ai/emotion
-                    </strong>
-                    {" "}
-                    dataset configuration used throughout
-                    the training pipeline.
-                </p>
-
-                <div className="about-stat-grid">
-                    <div>
-                        <span className="metric-name">
-                            Training examples
-                        </span>
-
-                        <strong>
-                            16,000
-                        </strong>
-                    </div>
-
-                    <div>
-                        <span className="metric-name">
-                            Validation examples
-                        </span>
-
-                        <strong>
-                            2,000
-                        </strong>
-                    </div>
-
-                    <div>
-                        <span className="metric-name">
-                            Test examples
-                        </span>
-
-                        <strong>
-                            2,000
-                        </strong>
-                    </div>
-
-                    <div>
-                        <span className="metric-name">
-                            Classes
-                        </span>
-
-                        <strong>
-                            6
-                        </strong>
-                    </div>
-                </div>
-
-                <div className="label-chip-row">
-                    {LABELS.map(
-                        (label) => (
-                            <span
-                                className="label-chip"
-                                key={label}
-                            >
-                                {label}
-                            </span>
-                        ),
-                    )}
-                </div>
-            </section>
-
-            <section className="about-model-grid">
-                <article className="panel about-model-card">
-                    <div className="eyebrow">
-                        Baseline
-                    </div>
-
-                    <h2>
-                        TF-IDF + Logistic Regression
-                    </h2>
-
-                    <p>
-                        A classical sparse-text baseline used
-                        as the reference point for later model
-                        comparisons.
-                    </p>
-
-                    <div className="about-model-metrics">
-                        <span>
-                            Accuracy
-                            {" "}
-                            <strong>
-                                83.20%
-                            </strong>
-                        </span>
-
-                        <span>
-                            Macro F1
-                            {" "}
-                            <strong>
-                                0.7301
-                            </strong>
-                        </span>
-                    </div>
-                </article>
-
-                <article className="panel about-model-card">
-                    <div className="eyebrow">
-                        Educational neural model
-                    </div>
-
-                    <h2>
-                        NumPy MLP
-                    </h2>
-
-                    <p>
-                        A manually implemented feed-forward
-                        neural network using NumPy, including
-                        explicit forward propagation,
-                        backpropagation, and optimization.
-                    </p>
-
-                    <div className="about-model-metrics">
-                        <span>
-                            Accuracy
-                            {" "}
-                            <strong>
-                                87.70%
-                            </strong>
-                        </span>
-
-                        <span>
-                            Macro F1
-                            {" "}
-                            <strong>
-                                0.8058
-                            </strong>
-                        </span>
-                    </div>
-                </article>
-
-                <article className="panel about-model-card about-model-promoted">
-                    <div className="eyebrow">
-                        Promoted model
-                    </div>
-
-                    <h2>
-                        PyTorch TextCNN
-                    </h2>
-
-                    <p>
-                        An embedding-based convolutional text
-                        classifier using multiple kernel sizes,
-                        global max pooling, dropout, and a
-                        linear classification head.
-                    </p>
-
-                    <div className="about-model-metrics">
-                        <span>
-                            Accuracy
-                            {" "}
-                            <strong>
-                                89.65%
-                            </strong>
-                        </span>
-
-                        <span>
-                            Macro F1
-                            {" "}
-                            <strong>
-                                0.8510
-                            </strong>
-                        </span>
-                    </div>
-                </article>
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    Interpretation
-                </div>
-
-                <h2>
-                    Architecture-native activation tracing
-                </h2>
-
-                <p>
-                    TextCNN interpretation is based on the
-                    strongest post-ReLU convolutional
-                    activations produced before global max
-                    pooling. The activation position can be
-                    mapped back to the corresponding input
-                    n-gram.
-                </p>
-
-                <div className="about-do-dont-grid">
-                    <div>
-                        <h3>
-                            What it supports
-                        </h3>
-
-                        <p>
-                            Identifying local token regions that
-                            strongly activate individual TextCNN
-                            filters.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3>
-                            What it does not support
-                        </h3>
-
-                        <p>
-                            Claiming that a highlighted phrase
-                            caused the final class prediction,
-                            measuring calibrated class
-                            importance, or identifying a
-                            person&apos;s actual psychological
-                            state.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    Error Lab semantics
-                </div>
-
-                <h2>
-                    Benchmark disagreement is not always
-                    semantic failure
-                </h2>
-
-                <p>
-                    TmotionLab treats a prediction that
-                    differs from the dataset label as an
-                    evaluation error for reproducible
-                    benchmark analysis.
-                </p>
-
-                <p>
-                    Some cases may nevertheless contain
-                    ambiguous emotion boundaries, mixed
-                    emotions, limited textual context, or
-                    questionable annotations. Agreement
-                    among several models is evidence worth
-                    inspecting, but it does not prove that
-                    the benchmark label is incorrect.
-                </p>
-
-                <div className="alert alert-info">
-                    No systematic human relabeling,
-                    annotation adjudication, or
-                    multi-reviewer agreement study was
-                    performed.
-                </div>
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    Scores
-                </div>
-
-                <h2>
-                    Probability and calibration limits
-                </h2>
-
-                <p>
-                    TextCNN uses softmax probabilities for
-                    ranking predictions. These values have
-                    not been calibrated and should not be
-                    interpreted as externally validated
-                    confidence estimates.
-                </p>
-
-                <p>
-                    Raw scores from different model
-                    families are also not assumed to be
-                    directly comparable because each model
-                    produces scores using a different
-                    representation and decision function.
-                </p>
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    System architecture
-                </div>
-
-                <h2>
-                    Training artifacts separated from serving
-                </h2>
-
-                <div className="architecture-flow">
-                    <div>
-                        Dataset
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                    <div>
-                        Training pipeline
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                    <div>
-                        Saved models &amp; analysis artifacts
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                    <div>
-                        FastAPI
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                    <div>
-                        React laboratory
-                    </div>
-                </div>
-
-                <p className="comparison-score-note">
-                    Offline benchmark analysis remains
-                    reproducible through saved artifacts,
-                    while live inference and interpretation
-                    are served through the promoted TextCNN.
-                </p>
-            </section>
-
-            <section className="panel about-section">
-                <div className="eyebrow">
-                    Intended use
-                </div>
-
-                <h2>
-                    Educational and analytical
-                </h2>
-
-                <p>
-                    TmotionLab is designed to demonstrate
-                    machine-learning engineering,
-                    comparative evaluation, model behavior,
-                    and neural-network interpretation.
-                </p>
-
-                <div className="about-limit-banner">
-                    It is not a mental-health diagnostic
-                    system and should not be used to infer
-                    clinical or psychological conditions.
-                </div>
-            </section>
+  return (
+    <article className="page about-page">
+      <header className="about-heading">
+        <p className="eyebrow">About TmotionLab</p>
+        <h1>
+          Language has layers.
+          <br />
+          <span>Look a little closer.</span>
+        </h1>
+        <p className="intro">
+          A small space to explore how machine learning reads emotion in
+          language—and where that reading ends.
+        </p>
+        <div className="about-symbol">
+          <LensMark />
+          <span>
+            A model perspective.
+            <br />
+            Always human context.
+          </span>
         </div>
-    );
+      </header>
+      <section className="about-chapter">
+        <div className="chapter-rail">
+          <span>01</span>
+          <p>The idea</p>
+        </div>
+        <div>
+          <h2>Words carry more than one thing.</h2>
+          <p>
+            A thank-you can hold relief. A goodbye can carry excitement and
+            sadness at once. TmotionLab starts with that ambiguity: a passage
+            can invite several readings, and no single score contains its whole
+            meaning.
+          </p>
+          <p>
+            The reading studio makes a model’s response visible. Write a
+            passage, inspect the ranked emotions, then look behind the reading
+            at the full scores and the text the model actually received. The
+            purpose is curiosity and comparison, with human context close at
+            hand.
+          </p>
+        </div>
+      </section>
+      <section className="about-chapter">
+        <div className="chapter-rail">
+          <span>02</span>
+          <p>The models</p>
+        </div>
+        <div>
+          <h2>From six labels to twenty-eight.</h2>
+          <p>
+            The project’s earlier chapter used the six-label DAIR.AI emotion
+            benchmark. A TF-IDF baseline, an educational NumPy neural network
+            and a TextCNN offered three ways to classify the same saved passage.
+            These models use a single-label softmax over six emotions, with no
+            neutral class and uncalibrated scores. Their historical predictions
+            and benchmark evidence remain available in Compare.
+          </p>
+          <p>
+            The current reading studio uses a RoBERTa model trained on
+            GoEmotions: 27 emotions plus neutral, with independent scores so
+            labels can coexist. It is the frozen Real 4× seed-42 model selected
+            in Study P11. A validation-selected threshold of 0.25 defines
+            detections; rank order alone does not.
+          </p>
+        </div>
+      </section>
+      <blockquote className="about-quote">
+        “A reading is a starting point.
+        <br />
+        <span>Context is what gives it meaning.</span>”
+      </blockquote>
+      <section className="about-chapter">
+        <div className="chapter-rail">
+          <span>03</span>
+          <p>The research</p>
+        </div>
+        <div>
+          <h2>A result should be inspectable.</h2>
+          <p>
+            The research edition follows a practical question: do rare emotions
+            benefit more from generated examples or from more exposure to
+            human-annotated data? Twelve controlled runs compared four sampling
+            strategies across three seeds.
+          </p>
+          <p>
+            The publication explains the study and its limits. The explorer lets
+            you move between individual runs, means, variation and rare-label
+            comparisons. Macro F1 weights labels equally; micro F1 pools label
+            decisions; exact-match accuracy requires the entire predicted label
+            set to match. They measure different aspects of performance. Every
+            result connects to saved metrics and provenance, independently of
+            live API availability. The selected model’s held-out test stays
+            separate from the validation comparisons that informed its
+            selection.
+          </p>
+          <div className="inline-links">
+            <Link to="/research">Read the study</Link>
+            <Link to="/research/experiments">Explore the experiments</Link>
+          </div>
+        </div>
+      </section>
+      <section className="about-chapter">
+        <div className="chapter-rail">
+          <span>04</span>
+          <p>The limits</p>
+        </div>
+        <div>
+          <h2>A perspective, with boundaries.</h2>
+          <p>
+            These are uncalibrated model scores, not measured emotional states
+            or diagnoses. A model can misread irony, cultural context, personal
+            history or language outside its training distribution. The live
+            model reads English text and only the first 48 tokens, including
+            special tokens.
+          </p>
+          <p>
+            The optical signal is an artistic response to the ranked scores. It
+            is not attention, an explanation of the model, or word-level
+            attribution. The current GoEmotions model does not provide token
+            attribution. Historical TextCNN interpretation is unavailable.
+          </p>
+          <details>
+            <summary>Technical notes</summary>
+            <p>
+              Live inference uses independent sigmoid scores across 28 labels.
+              The interface shows the returned detection set and the highest
+              valid ranked scores without forcing a single emotional answer.
+              Empty detection sets and neutral alongside another label are
+              possible.
+            </p>
+            <p>
+              Your text is sent to the configured inference service when you
+              select Analyze. The interface does not save your passages in
+              browser storage. The theme preference is stored locally. This
+              describes frontend behavior, not a server retention policy.
+            </p>
+          </details>
+        </div>
+      </section>
+      <div className="about-close">
+        <h2>Start with a few words.</h2>
+        <Link className="primary-button" to="/">
+          Open the reading studio
+        </Link>
+      </div>
+    </article>
+  );
 }

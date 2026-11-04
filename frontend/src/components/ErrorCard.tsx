@@ -109,7 +109,7 @@ export function ErrorCard({
 
                 {item.interpretation_available && (
                     <span>
-                        interpretation available
+                        saved historical interpretation
                     </span>
                 )}
             </div>

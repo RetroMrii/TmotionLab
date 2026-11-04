@@ -1,0 +1,1566 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TmotionLab API",
+    "description": "Inference and analysis API for the TmotionLab NLP laboratory.",
+    "version": "0.4.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Predict",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Metrics",
+        "operationId": "metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compare/{example_id}": {
+      "get": {
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Compare Example",
+        "operationId": "compare_example_compare__example_id__get",
+        "parameters": [
+          {
+            "name": "example_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Example Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/interpret": {
+      "post": {
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Interpret",
+        "operationId": "interpret_interpret_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InterpretRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InterpretResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/errors": {
+      "get": {
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Errors",
+        "operationId": "errors_errors_get",
+        "parameters": [
+          {
+            "name": "true_label",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "True Label"
+            }
+          },
+          {
+            "name": "predicted_label",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Predicted Label"
+            }
+          },
+          {
+            "name": "min_score",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "default": 0.0,
+              "title": "Min Score"
+            }
+          },
+          {
+            "name": "max_score",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "default": 1.0,
+              "title": "Max Score"
+            }
+          },
+          {
+            "name": "shared_only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Shared Only"
+            }
+          },
+          {
+            "name": "baseline_regression_only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Baseline Regression Only"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/errors/confusions": {
+      "get": {
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Error Confusions",
+        "operationId": "error_confusions_errors_confusions_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfusionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/models": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Models",
+        "operationId": "models_models_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/goemotions/predict": {
+      "post": {
+        "tags": [
+          "GoEmotions v1"
+        ],
+        "summary": "Analyze",
+        "operationId": "analyze_v1_goemotions_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActivationSpan": {
+        "properties": {
+          "kernel_index": {
+            "type": "integer",
+            "title": "Kernel Index"
+          },
+          "kernel_size": {
+            "type": "integer",
+            "title": "Kernel Size"
+          },
+          "filter_index": {
+            "type": "integer",
+            "title": "Filter Index"
+          },
+          "activation": {
+            "type": "number",
+            "title": "Activation"
+          },
+          "token_start": {
+            "type": "integer",
+            "title": "Token Start"
+          },
+          "token_end_exclusive": {
+            "type": "integer",
+            "title": "Token End Exclusive"
+          },
+          "span_tokens": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Span Tokens"
+          },
+          "span_text": {
+            "type": "string",
+            "title": "Span Text"
+          },
+          "contains_padding": {
+            "type": "boolean",
+            "title": "Contains Padding"
+          },
+          "valid_text_span": {
+            "type": "boolean",
+            "title": "Valid Text Span"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kernel_index",
+          "kernel_size",
+          "filter_index",
+          "activation",
+          "token_start",
+          "token_end_exclusive",
+          "span_tokens",
+          "span_text",
+          "contains_padding",
+          "valid_text_span"
+        ],
+        "title": "ActivationSpan"
+      },
+      "AnalyzeRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "AnalyzeRequest"
+      },
+      "AnalyzeResponse": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1",
+            "title": "Schema Version"
+          },
+          "task": {
+            "type": "string",
+            "const": "multi_label",
+            "title": "Task"
+          },
+          "model_id": {
+            "type": "string",
+            "const": "roberta_goemotions_rare4x_v001",
+            "title": "Model Id"
+          },
+          "dataset": {
+            "type": "string",
+            "const": "goemotions_v001",
+            "title": "Dataset"
+          },
+          "seed": {
+            "type": "integer",
+            "const": 42,
+            "title": "Seed"
+          },
+          "threshold": {
+            "type": "number",
+            "const": 0.25,
+            "title": "Threshold"
+          },
+          "score_type": {
+            "type": "string",
+            "const": "sigmoid",
+            "title": "Score Type"
+          },
+          "device": {
+            "type": "string",
+            "title": "Device"
+          },
+          "input": {
+            "$ref": "#/components/schemas/AnalyzedInput"
+          },
+          "scores": {
+            "items": {
+              "$ref": "#/components/schemas/LabelScore"
+            },
+            "type": "array",
+            "maxItems": 28,
+            "minItems": 28,
+            "title": "Scores"
+          },
+          "detected_labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Detected Labels"
+          },
+          "ranked_scores": {
+            "items": {
+              "$ref": "#/components/schemas/LabelScore"
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 5,
+            "title": "Ranked Scores"
+          },
+          "score_note": {
+            "type": "string",
+            "title": "Score Note"
+          },
+          "availability_notes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Availability Notes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "schema_version",
+          "task",
+          "model_id",
+          "dataset",
+          "seed",
+          "threshold",
+          "score_type",
+          "device",
+          "input",
+          "scores",
+          "detected_labels",
+          "ranked_scores",
+          "score_note",
+          "availability_notes"
+        ],
+        "title": "AnalyzeResponse"
+      },
+      "AnalyzedInput": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "tokens": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tokens"
+          },
+          "token_count": {
+            "type": "integer",
+            "title": "Token Count"
+          },
+          "original_token_count": {
+            "type": "integer",
+            "title": "Original Token Count"
+          },
+          "max_tokens": {
+            "type": "integer",
+            "const": 48,
+            "title": "Max Tokens"
+          },
+          "truncated": {
+            "type": "boolean",
+            "title": "Truncated"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "tokens",
+          "token_count",
+          "original_token_count",
+          "max_tokens",
+          "truncated"
+        ],
+        "title": "AnalyzedInput"
+      },
+      "CompareResponse": {
+        "properties": {
+          "example_id": {
+            "type": "string",
+            "title": "Example Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "true_label": {
+            "type": "integer",
+            "title": "True Label"
+          },
+          "true_label_name": {
+            "type": "string",
+            "title": "True Label Name"
+          },
+          "baseline_prediction": {
+            "type": "string",
+            "title": "Baseline Prediction"
+          },
+          "baseline_prediction_id": {
+            "type": "integer",
+            "title": "Baseline Prediction Id"
+          },
+          "baseline_score": {
+            "type": "number",
+            "title": "Baseline Score"
+          },
+          "baseline_correct": {
+            "type": "boolean",
+            "title": "Baseline Correct"
+          },
+          "numpy_prediction": {
+            "type": "string",
+            "title": "Numpy Prediction"
+          },
+          "numpy_prediction_id": {
+            "type": "integer",
+            "title": "Numpy Prediction Id"
+          },
+          "numpy_score": {
+            "type": "number",
+            "title": "Numpy Score"
+          },
+          "numpy_correct": {
+            "type": "boolean",
+            "title": "Numpy Correct"
+          },
+          "textcnn_prediction": {
+            "type": "string",
+            "title": "Textcnn Prediction"
+          },
+          "textcnn_prediction_id": {
+            "type": "integer",
+            "title": "Textcnn Prediction Id"
+          },
+          "textcnn_score": {
+            "type": "number",
+            "title": "Textcnn Score"
+          },
+          "textcnn_correct": {
+            "type": "boolean",
+            "title": "Textcnn Correct"
+          },
+          "all_models_agree": {
+            "type": "boolean",
+            "title": "All Models Agree"
+          },
+          "all_models_correct": {
+            "type": "boolean",
+            "title": "All Models Correct"
+          },
+          "all_models_wrong": {
+            "type": "boolean",
+            "title": "All Models Wrong"
+          },
+          "all_agree_and_correct": {
+            "type": "boolean",
+            "title": "All Agree And Correct"
+          },
+          "all_agree_and_wrong": {
+            "type": "boolean",
+            "title": "All Agree And Wrong"
+          },
+          "baseline_wrong_textcnn_correct": {
+            "type": "boolean",
+            "title": "Baseline Wrong Textcnn Correct"
+          },
+          "baseline_correct_textcnn_wrong": {
+            "type": "boolean",
+            "title": "Baseline Correct Textcnn Wrong"
+          },
+          "numpy_wrong_textcnn_correct": {
+            "type": "boolean",
+            "title": "Numpy Wrong Textcnn Correct"
+          },
+          "numpy_correct_textcnn_wrong": {
+            "type": "boolean",
+            "title": "Numpy Correct Textcnn Wrong"
+          },
+          "baseline_wrong_numpy_correct": {
+            "type": "boolean",
+            "title": "Baseline Wrong Numpy Correct"
+          },
+          "baseline_correct_numpy_wrong": {
+            "type": "boolean",
+            "title": "Baseline Correct Numpy Wrong"
+          },
+          "three_way_disagreement": {
+            "type": "boolean",
+            "title": "Three Way Disagreement"
+          }
+        },
+        "type": "object",
+        "required": [
+          "example_id",
+          "text",
+          "true_label",
+          "true_label_name",
+          "baseline_prediction",
+          "baseline_prediction_id",
+          "baseline_score",
+          "baseline_correct",
+          "numpy_prediction",
+          "numpy_prediction_id",
+          "numpy_score",
+          "numpy_correct",
+          "textcnn_prediction",
+          "textcnn_prediction_id",
+          "textcnn_score",
+          "textcnn_correct",
+          "all_models_agree",
+          "all_models_correct",
+          "all_models_wrong",
+          "all_agree_and_correct",
+          "all_agree_and_wrong",
+          "baseline_wrong_textcnn_correct",
+          "baseline_correct_textcnn_wrong",
+          "numpy_wrong_textcnn_correct",
+          "numpy_correct_textcnn_wrong",
+          "baseline_wrong_numpy_correct",
+          "baseline_correct_numpy_wrong",
+          "three_way_disagreement"
+        ],
+        "title": "CompareResponse"
+      },
+      "ConfusionPair": {
+        "properties": {
+          "true_label_name": {
+            "type": "string",
+            "title": "True Label Name"
+          },
+          "textcnn_prediction": {
+            "type": "string",
+            "title": "Textcnn Prediction"
+          },
+          "confusion_pair": {
+            "type": "string",
+            "title": "Confusion Pair"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          },
+          "mean_textcnn_score": {
+            "type": "number",
+            "title": "Mean Textcnn Score"
+          },
+          "max_textcnn_score": {
+            "type": "number",
+            "title": "Max Textcnn Score"
+          },
+          "high_score_errors": {
+            "type": "integer",
+            "title": "High Score Errors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "true_label_name",
+          "textcnn_prediction",
+          "confusion_pair",
+          "count",
+          "mean_textcnn_score",
+          "max_textcnn_score",
+          "high_score_errors"
+        ],
+        "title": "ConfusionPair"
+      },
+      "ConfusionResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ConfusionPair"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "benchmark_note": {
+            "type": "string",
+            "title": "Benchmark Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "benchmark_note"
+        ],
+        "title": "ConfusionResponse"
+      },
+      "EmotionProbability": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "probability": {
+            "type": "number",
+            "title": "Probability"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "probability"
+        ],
+        "title": "EmotionProbability"
+      },
+      "ErrorItem": {
+        "properties": {
+          "error_rank": {
+            "type": "integer",
+            "title": "Error Rank"
+          },
+          "example_id": {
+            "type": "string",
+            "title": "Example Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "true_label": {
+            "type": "integer",
+            "title": "True Label"
+          },
+          "true_label_name": {
+            "type": "string",
+            "title": "True Label Name"
+          },
+          "textcnn_prediction_id": {
+            "type": "integer",
+            "title": "Textcnn Prediction Id"
+          },
+          "textcnn_prediction": {
+            "type": "string",
+            "title": "Textcnn Prediction"
+          },
+          "textcnn_score": {
+            "type": "number",
+            "title": "Textcnn Score"
+          },
+          "confusion_pair": {
+            "type": "string",
+            "title": "Confusion Pair"
+          },
+          "high_score_error": {
+            "type": "boolean",
+            "title": "High Score Error"
+          },
+          "baseline_prediction": {
+            "type": "string",
+            "title": "Baseline Prediction"
+          },
+          "baseline_score": {
+            "type": "number",
+            "title": "Baseline Score"
+          },
+          "baseline_correct": {
+            "type": "boolean",
+            "title": "Baseline Correct"
+          },
+          "numpy_prediction": {
+            "type": "string",
+            "title": "Numpy Prediction"
+          },
+          "numpy_score": {
+            "type": "number",
+            "title": "Numpy Score"
+          },
+          "numpy_correct": {
+            "type": "boolean",
+            "title": "Numpy Correct"
+          },
+          "all_models_agree": {
+            "type": "boolean",
+            "title": "All Models Agree"
+          },
+          "all_models_wrong": {
+            "type": "boolean",
+            "title": "All Models Wrong"
+          },
+          "all_agree_and_wrong": {
+            "type": "boolean",
+            "title": "All Agree And Wrong"
+          },
+          "baseline_correct_textcnn_wrong": {
+            "type": "boolean",
+            "title": "Baseline Correct Textcnn Wrong"
+          },
+          "numpy_correct_textcnn_wrong": {
+            "type": "boolean",
+            "title": "Numpy Correct Textcnn Wrong"
+          },
+          "three_way_disagreement": {
+            "type": "boolean",
+            "title": "Three Way Disagreement"
+          },
+          "interpretation_available": {
+            "type": "boolean",
+            "title": "Interpretation Available"
+          },
+          "interpretation_cohort": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interpretation Cohort"
+          },
+          "padding_activation_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Padding Activation Count"
+          },
+          "top_activation_span_1": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Activation Span 1"
+          },
+          "top_activation_span_2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Activation Span 2"
+          },
+          "top_activation_span_3": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Activation Span 3"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_rank",
+          "example_id",
+          "text",
+          "true_label",
+          "true_label_name",
+          "textcnn_prediction_id",
+          "textcnn_prediction",
+          "textcnn_score",
+          "confusion_pair",
+          "high_score_error",
+          "baseline_prediction",
+          "baseline_score",
+          "baseline_correct",
+          "numpy_prediction",
+          "numpy_score",
+          "numpy_correct",
+          "all_models_agree",
+          "all_models_wrong",
+          "all_agree_and_wrong",
+          "baseline_correct_textcnn_wrong",
+          "numpy_correct_textcnn_wrong",
+          "three_way_disagreement",
+          "interpretation_available"
+        ],
+        "title": "ErrorItem"
+      },
+      "ErrorListResponse": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ErrorItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "benchmark_note": {
+            "type": "string",
+            "title": "Benchmark Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "offset",
+          "limit",
+          "items",
+          "benchmark_note"
+        ],
+        "title": "ErrorListResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InterpretRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "top_k": {
+            "type": "integer",
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Top K",
+            "default": 10
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "InterpretRequest"
+      },
+      "InterpretResponse": {
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "tokens": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tokens"
+          },
+          "prediction": {
+            "$ref": "#/components/schemas/InterpretationPrediction"
+          },
+          "scores": {
+            "items": {
+              "$ref": "#/components/schemas/InterpretationScore"
+            },
+            "type": "array",
+            "title": "Scores"
+          },
+          "top_text_spans": {
+            "items": {
+              "$ref": "#/components/schemas/ActivationSpan"
+            },
+            "type": "array",
+            "title": "Top Text Spans"
+          },
+          "padding_activation_count": {
+            "type": "integer",
+            "title": "Padding Activation Count"
+          },
+          "interpretation_note": {
+            "type": "string",
+            "title": "Interpretation Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_id",
+          "text",
+          "tokens",
+          "prediction",
+          "scores",
+          "top_text_spans",
+          "padding_activation_count",
+          "interpretation_note"
+        ],
+        "title": "InterpretResponse"
+      },
+      "InterpretationPrediction": {
+        "properties": {
+          "label_id": {
+            "type": "integer",
+            "title": "Label Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label_id",
+          "label",
+          "score"
+        ],
+        "title": "InterpretationPrediction"
+      },
+      "InterpretationScore": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "score"
+        ],
+        "title": "InterpretationScore"
+      },
+      "LabelScore": {
+        "properties": {
+          "label_id": {
+            "type": "integer",
+            "maximum": 27.0,
+            "minimum": 0.0,
+            "title": "Label Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label_id",
+          "label",
+          "score"
+        ],
+        "title": "LabelScore"
+      },
+      "MetricsResponse": {
+        "properties": {
+          "models": {
+            "items": {
+              "$ref": "#/components/schemas/ModelMetrics"
+            },
+            "type": "array",
+            "title": "Models"
+          }
+        },
+        "type": "object",
+        "required": [
+          "models"
+        ],
+        "title": "MetricsResponse"
+      },
+      "ModelMetadata": {
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "implementation": {
+            "type": "string",
+            "title": "Implementation"
+          },
+          "runtime_loaded": {
+            "type": "boolean",
+            "title": "Runtime Loaded"
+          },
+          "capabilities": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Capabilities"
+          },
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "task": {
+            "type": "string",
+            "title": "Task"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "prediction_endpoint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prediction Endpoint"
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels",
+            "default": []
+          },
+          "accuracy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accuracy"
+          },
+          "macro_f1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Macro F1"
+          },
+          "weighted_f1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weighted F1"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_id",
+          "display_name",
+          "role",
+          "implementation",
+          "runtime_loaded",
+          "capabilities",
+          "dataset",
+          "task",
+          "status"
+        ],
+        "title": "ModelMetadata"
+      },
+      "ModelMetrics": {
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "accuracy": {
+            "type": "number",
+            "title": "Accuracy"
+          },
+          "macro_f1": {
+            "type": "number",
+            "title": "Macro F1"
+          },
+          "weighted_f1": {
+            "type": "number",
+            "title": "Weighted F1"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_id",
+          "accuracy",
+          "macro_f1",
+          "weighted_f1"
+        ],
+        "title": "ModelMetrics"
+      },
+      "ModelsResponse": {
+        "properties": {
+          "models": {
+            "items": {
+              "$ref": "#/components/schemas/ModelMetadata"
+            },
+            "type": "array",
+            "title": "Models"
+          }
+        },
+        "type": "object",
+        "required": [
+          "models"
+        ],
+        "title": "ModelsResponse"
+      },
+      "PredictRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "include_distribution": {
+            "type": "boolean",
+            "title": "Include Distribution",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "PredictRequest"
+      },
+      "PredictResponse": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "title": "Mode"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "top_prediction": {
+            "$ref": "#/components/schemas/EmotionProbability"
+          },
+          "top_3": {
+            "items": {
+              "$ref": "#/components/schemas/EmotionProbability"
+            },
+            "type": "array",
+            "title": "Top 3"
+          },
+          "input": {
+            "$ref": "#/components/schemas/PredictionInput"
+          },
+          "probability_note": {
+            "type": "string",
+            "title": "Probability Note"
+          },
+          "distribution": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/EmotionProbability"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distribution"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "model_id",
+          "top_prediction",
+          "top_3",
+          "input",
+          "probability_note"
+        ],
+        "title": "PredictResponse"
+      },
+      "PredictionInput": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "tokens": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tokens"
+          },
+          "token_count": {
+            "type": "integer",
+            "title": "Token Count"
+          },
+          "truncated": {
+            "type": "boolean",
+            "title": "Truncated"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "tokens",
+          "token_count",
+          "truncated"
+        ],
+        "title": "PredictionInput"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

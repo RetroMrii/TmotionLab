@@ -67,22 +67,8 @@ def test_interpret():
             },
         )
 
-    assert response.status_code == 200
-
-    body = response.json()
-
-    assert body["model_id"] == "textcnn_dair_v001"
-
-    assert len(body["top_text_spans"]) <= 5
-
-    assert body["prediction"]["label"] in {
-        "sadness",
-        "joy",
-        "love",
-        "anger",
-        "fear",
-        "surprise",
-    }
+    assert response.status_code == 503
+    assert "Archived DAIR" in response.json()["error"]["message"]
 
 
 def test_interpret_rejects_blank_text():

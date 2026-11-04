@@ -71,19 +71,23 @@ def main() -> None:
 
     models = request_json(f"{base}/models")
 
-    assert len(models["models"]) == 3
+    assert len(models["models"]) == 4
+    assert models["models"][0]["capabilities"] == ["live_predict"]
 
     print("[PASS] /models")
 
     prediction = request_json(
-        f"{base}/predict",
+        f"{base}/v1/goemotions/predict",
         method="POST",
         payload={"text": ("I feel extremely nervous about tomorrow.")},
     )
 
-    assert len(prediction["top_3"]) == 3
+    assert len(prediction["scores"]) == 28
+    assert prediction["threshold"] == 0.25
+    assert prediction["task"] == "multi_label"
+    assert prediction["detected_labels"] == [s["label"] for s in prediction["scores"] if s["score"] >= 0.25]
 
-    print("[PASS] /predict")
+    print("[PASS] /v1/goemotions/predict (real multi-label inference)")
 
     comparison = request_json(f"{base}/compare/dair_test_001837")
 
@@ -91,18 +95,18 @@ def main() -> None:
 
     print("[PASS] /compare")
 
-    interpretation = request_json(
-        f"{base}/interpret",
-        method="POST",
-        payload={
-            "text": ("I feel extremely nervous about tomorrow."),
-            "top_k": 5,
-        },
-    )
+    for legacy in ("predict", "interpret"):
+        try:
+            request_json(f"{base}/{legacy}", method="POST", payload={"text": "Hello"})
+        except RuntimeError as exc:
+            assert "503" in str(exc) and "Archived DAIR" in str(exc)
+        else:
+            raise AssertionError(f"Unexpected live legacy runtime: {legacy}")
+        print(f"[PASS] /{legacy} explicit archived-runtime 503")
 
-    assert len(interpretation["top_text_spans"]) <= 5
-
-    print("[PASS] /interpret")
+    metrics = request_json(f"{base}/metrics")
+    assert len(metrics["models"]) == 3
+    print("[PASS] /metrics (DAIR only)")
 
     errors = request_json(f"{base}/errors?limit=5")
 

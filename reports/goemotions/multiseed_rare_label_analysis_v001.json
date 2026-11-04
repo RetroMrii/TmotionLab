@@ -1,0 +1,2126 @@
+{
+  "analysis_id": "multiseed_rare_label_analysis_v001",
+  "split": "validation",
+  "test_evaluated": false,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "target_labels": [
+    "grief",
+    "nervousness",
+    "pride",
+    "relief"
+  ],
+  "support": {
+    "grief": 13,
+    "nervousness": 21,
+    "pride": 15,
+    "relief": 18
+  },
+  "runs": {
+    "uniform": {
+      "42": {
+        "experiment_id": "roberta_goemotions_uniform_v001",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.0,
+        "rare_macro_ap": 0.12648830568575167,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.0263884638420364
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.20509322948081118
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.13361668098491095
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.1408548484352482
+          }
+        },
+        "prediction_sha256": "f1dccbb057455c5b0601612f8a5bc3332ceceb2b421bd0b92b02de6a3ab9d7af",
+        "metrics_sha256": "8d4576f01a1da9d726892ae453ba4439c60e77bd35f2304b69ac341f6254bfd1"
+      },
+      "123": {
+        "experiment_id": "roberta_goemotions_uniform_v001_seed123",
+        "threshold": 0.2,
+        "rare_macro_f1": 0.0,
+        "rare_macro_ap": 0.11148506190317704,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.0525289008674844
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.28175233624462215
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.029935755829894144
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.0817232546707075
+          }
+        },
+        "prediction_sha256": "ae8567ff1c5a7ee8b89d2b78b7533f3247ea113ee910d2052726d96f29211430",
+        "metrics_sha256": "ee00739d2da528f1ff2d9818f685c1b43194ba4429f7773318cd065f3098b2cc"
+      },
+      "456": {
+        "experiment_id": "roberta_goemotions_uniform_v001_seed456",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.0,
+        "rare_macro_ap": 0.26130066805968744,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.06964656778505714
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.3304057048510126
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.5969931569295697
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 0,
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "average_precision": 0.04815724267311042
+          }
+        },
+        "prediction_sha256": "87626a7807cbf0512678f2fad4dba50cae00d36b5e7468327259204eeaf33a9b",
+        "metrics_sha256": "300a0f22c13040981d2273b9e169f45cdfac78e9b5c12a97f592f3e70bfe8885"
+      }
+    },
+    "rare4x": {
+      "42": {
+        "experiment_id": "roberta_goemotions_rare4x_v001",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.3566431126879741,
+        "rare_macro_ap": 0.34597827677488124,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 22,
+            "true_positives": 7,
+            "false_positives": 15,
+            "false_negatives": 6,
+            "precision": 0.3181818181818182,
+            "recall": 0.5384615384615384,
+            "f1": 0.4,
+            "average_precision": 0.2873390175452335
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 61,
+            "true_positives": 9,
+            "false_positives": 52,
+            "false_negatives": 12,
+            "precision": 0.14754098360655737,
+            "recall": 0.42857142857142855,
+            "f1": 0.21951219512195122,
+            "average_precision": 0.3895542937972808
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 16,
+            "true_positives": 9,
+            "false_positives": 7,
+            "false_negatives": 6,
+            "precision": 0.5625,
+            "recall": 0.6,
+            "f1": 0.5806451612903226,
+            "average_precision": 0.5193065192393893
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 35,
+            "true_positives": 6,
+            "false_positives": 29,
+            "false_negatives": 12,
+            "precision": 0.17142857142857143,
+            "recall": 0.3333333333333333,
+            "f1": 0.22641509433962265,
+            "average_precision": 0.1877132765176213
+          }
+        },
+        "prediction_sha256": "89ef083cc9cb20764bed762eb3334301bf98a111934d886e3a077d2b9f36df54",
+        "metrics_sha256": "b34141f84a572361552d79e6974ba04dfe32160b7eed1c51889af5534118e867"
+      },
+      "123": {
+        "experiment_id": "roberta_goemotions_rare4x_v001_seed123",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.3953234921001038,
+        "rare_macro_ap": 0.3682327764535144,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 12,
+            "true_positives": 5,
+            "false_positives": 7,
+            "false_negatives": 8,
+            "precision": 0.4166666666666667,
+            "recall": 0.38461538461538464,
+            "f1": 0.4,
+            "average_precision": 0.22698237326633072
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 48,
+            "true_positives": 9,
+            "false_positives": 39,
+            "false_negatives": 12,
+            "precision": 0.1875,
+            "recall": 0.42857142857142855,
+            "f1": 0.2608695652173913,
+            "average_precision": 0.4305606089540532
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 14,
+            "true_positives": 10,
+            "false_positives": 4,
+            "false_negatives": 5,
+            "precision": 0.7142857142857143,
+            "recall": 0.6666666666666666,
+            "f1": 0.6896551724137931,
+            "average_precision": 0.5666435321732742
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 34,
+            "true_positives": 6,
+            "false_positives": 28,
+            "false_negatives": 12,
+            "precision": 0.17647058823529413,
+            "recall": 0.3333333333333333,
+            "f1": 0.23076923076923078,
+            "average_precision": 0.24874459142039945
+          }
+        },
+        "prediction_sha256": "0950d65504571a57707067b8fda7f2069be6d1f08f5e4ee1300586a04ad4dda1",
+        "metrics_sha256": "7f39ef39413699fa355f360b966d9f30de401632addd6436878f4474361bf29e"
+      },
+      "456": {
+        "experiment_id": "roberta_goemotions_rare4x_v001_seed456",
+        "threshold": 0.3,
+        "rare_macro_f1": 0.34156843087137906,
+        "rare_macro_ap": 0.3541974754924556,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 18,
+            "true_positives": 5,
+            "false_positives": 13,
+            "false_negatives": 8,
+            "precision": 0.2777777777777778,
+            "recall": 0.38461538461538464,
+            "f1": 0.3225806451612903,
+            "average_precision": 0.297654656880869
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 40,
+            "true_positives": 9,
+            "false_positives": 31,
+            "false_negatives": 12,
+            "precision": 0.225,
+            "recall": 0.42857142857142855,
+            "f1": 0.29508196721311475,
+            "average_precision": 0.397935530067254
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 17,
+            "true_positives": 7,
+            "false_positives": 10,
+            "false_negatives": 8,
+            "precision": 0.4117647058823529,
+            "recall": 0.4666666666666667,
+            "f1": 0.4375,
+            "average_precision": 0.38714913726565675
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 27,
+            "true_positives": 7,
+            "false_positives": 20,
+            "false_negatives": 11,
+            "precision": 0.25925925925925924,
+            "recall": 0.3888888888888889,
+            "f1": 0.3111111111111111,
+            "average_precision": 0.3340505777560428
+          }
+        },
+        "prediction_sha256": "4f219a2dfdc365a45eef914a871f4fed166a7ad34769a78f4ab754e113929144",
+        "metrics_sha256": "61beca9ac215ae5bc7a62d1abdef87b1a2f7e59bc692817b3109423f4d39b620"
+      }
+    },
+    "synthetic": {
+      "42": {
+        "experiment_id": "roberta_goemotions_synthetic_v002",
+        "threshold": 0.2,
+        "rare_macro_f1": 0.31664415175053473,
+        "rare_macro_ap": 0.31135894688445037,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 5,
+            "true_positives": 2,
+            "false_positives": 3,
+            "false_negatives": 11,
+            "precision": 0.4,
+            "recall": 0.15384615384615385,
+            "f1": 0.2222222222222222,
+            "average_precision": 0.22019514563246828
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 26,
+            "true_positives": 9,
+            "false_positives": 17,
+            "false_negatives": 12,
+            "precision": 0.34615384615384615,
+            "recall": 0.42857142857142855,
+            "f1": 0.3829787234042553,
+            "average_precision": 0.3433336516068855
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 12,
+            "true_positives": 7,
+            "false_positives": 5,
+            "false_negatives": 8,
+            "precision": 0.5833333333333334,
+            "recall": 0.4666666666666667,
+            "f1": 0.5185185185185185,
+            "average_precision": 0.5360364593002327
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 10,
+            "true_positives": 2,
+            "false_positives": 8,
+            "false_negatives": 16,
+            "precision": 0.2,
+            "recall": 0.1111111111111111,
+            "f1": 0.14285714285714285,
+            "average_precision": 0.1458705309982151
+          }
+        },
+        "prediction_sha256": "a488963738d06be674c867fcebbfd2a01c662ed5ff4ddf04ed11bbe78c409e70",
+        "metrics_sha256": "1c2d5fb2962a7b46a39410a3d9e93263331ec9f655ab1b35ef874d9dd47ecd48"
+      },
+      "123": {
+        "experiment_id": "roberta_goemotions_synthetic_v002_seed123",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.2730054164836774,
+        "rare_macro_ap": 0.2836392383602906,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 7,
+            "true_positives": 1,
+            "false_positives": 6,
+            "false_negatives": 12,
+            "precision": 0.14285714285714285,
+            "recall": 0.07692307692307693,
+            "f1": 0.1,
+            "average_precision": 0.1771018577990076
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 23,
+            "true_positives": 9,
+            "false_positives": 14,
+            "false_negatives": 12,
+            "precision": 0.391304347826087,
+            "recall": 0.42857142857142855,
+            "f1": 0.4090909090909091,
+            "average_precision": 0.31589093866040363
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 8,
+            "true_positives": 5,
+            "false_positives": 3,
+            "false_negatives": 10,
+            "precision": 0.625,
+            "recall": 0.3333333333333333,
+            "f1": 0.43478260869565216,
+            "average_precision": 0.5075180661479274
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 9,
+            "true_positives": 2,
+            "false_positives": 7,
+            "false_negatives": 16,
+            "precision": 0.2222222222222222,
+            "recall": 0.1111111111111111,
+            "f1": 0.14814814814814814,
+            "average_precision": 0.13404609083382377
+          }
+        },
+        "prediction_sha256": "9c562c17592635da538a6d2e8595a85df1ce0c3c65090b0cffc27f1155732993",
+        "metrics_sha256": "adb2c090fa089deef31955d5c1ffbabd750383023ad449b2abab3281ab1f9508"
+      },
+      "456": {
+        "experiment_id": "roberta_goemotions_synthetic_v002_seed456",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.4305555555555555,
+        "rare_macro_ap": 0.3250165722839362,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 7,
+            "true_positives": 5,
+            "false_positives": 2,
+            "false_negatives": 8,
+            "precision": 0.7142857142857143,
+            "recall": 0.38461538461538464,
+            "f1": 0.5,
+            "average_precision": 0.4455145364086546
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 21,
+            "true_positives": 9,
+            "false_positives": 12,
+            "false_negatives": 12,
+            "precision": 0.42857142857142855,
+            "recall": 0.42857142857142855,
+            "f1": 0.42857142857142855,
+            "average_precision": 0.3010080018804206
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 13,
+            "true_positives": 8,
+            "false_positives": 5,
+            "false_negatives": 7,
+            "precision": 0.6153846153846154,
+            "recall": 0.5333333333333333,
+            "f1": 0.5714285714285714,
+            "average_precision": 0.45474046604781276
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 18,
+            "true_positives": 4,
+            "false_positives": 14,
+            "false_negatives": 14,
+            "precision": 0.2222222222222222,
+            "recall": 0.2222222222222222,
+            "f1": 0.2222222222222222,
+            "average_precision": 0.09880328479885679
+          }
+        },
+        "prediction_sha256": "905dad9743a8388cb9f52dbbda0b35bfba02cb47235253b820a8309ea04a5247",
+        "metrics_sha256": "c0729de13a7e06fc279b7dab56b7addc640b6e3cbd16a06571ef6096e70d0beb"
+      }
+    },
+    "hybrid": {
+      "42": {
+        "experiment_id": "roberta_goemotions_hybrid_v001",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.3821470104341395,
+        "rare_macro_ap": 0.34142719423966555,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 25,
+            "true_positives": 7,
+            "false_positives": 18,
+            "false_negatives": 6,
+            "precision": 0.28,
+            "recall": 0.5384615384615384,
+            "f1": 0.3684210526315789,
+            "average_precision": 0.31187200482572713
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 40,
+            "true_positives": 10,
+            "false_positives": 30,
+            "false_negatives": 11,
+            "precision": 0.25,
+            "recall": 0.47619047619047616,
+            "f1": 0.32786885245901637,
+            "average_precision": 0.4258832376375028
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 13,
+            "true_positives": 8,
+            "false_positives": 5,
+            "false_negatives": 7,
+            "precision": 0.6153846153846154,
+            "recall": 0.5333333333333333,
+            "f1": 0.5714285714285714,
+            "average_precision": 0.4557631087440677
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 28,
+            "true_positives": 6,
+            "false_positives": 22,
+            "false_negatives": 12,
+            "precision": 0.21428571428571427,
+            "recall": 0.3333333333333333,
+            "f1": 0.2608695652173913,
+            "average_precision": 0.17219042575136453
+          }
+        },
+        "prediction_sha256": "c5a2513777a00e32f147f39c97ec7b85844363ba7e6712ed5d2cac669eaf4661",
+        "metrics_sha256": "e635c631417eeef85264cda9d8b567da97c806763ffe24e714e53218e514b466"
+      },
+      "123": {
+        "experiment_id": "roberta_goemotions_hybrid_v001_seed123",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.36083869986309014,
+        "rare_macro_ap": 0.3599461873783573,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 13,
+            "true_positives": 4,
+            "false_positives": 9,
+            "false_negatives": 9,
+            "precision": 0.3076923076923077,
+            "recall": 0.3076923076923077,
+            "f1": 0.3076923076923077,
+            "average_precision": 0.2852091792324247
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 34,
+            "true_positives": 11,
+            "false_positives": 23,
+            "false_negatives": 10,
+            "precision": 0.3235294117647059,
+            "recall": 0.5238095238095238,
+            "f1": 0.4,
+            "average_precision": 0.4259014643052773
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 22,
+            "true_positives": 10,
+            "false_positives": 12,
+            "false_negatives": 5,
+            "precision": 0.45454545454545453,
+            "recall": 0.6666666666666666,
+            "f1": 0.5405405405405406,
+            "average_precision": 0.5325562635135767
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 23,
+            "true_positives": 4,
+            "false_positives": 19,
+            "false_negatives": 14,
+            "precision": 0.17391304347826086,
+            "recall": 0.2222222222222222,
+            "f1": 0.1951219512195122,
+            "average_precision": 0.19611784246215055
+          }
+        },
+        "prediction_sha256": "95a096f830ed2e6521f36b4be6ac175f15207ecae8e0cb8221a29a02ecb3b37a",
+        "metrics_sha256": "fe96f71a30cc78fad5569847d63972eb19f26cf7f776e7cc08c5080ea8aa0563"
+      },
+      "456": {
+        "experiment_id": "roberta_goemotions_hybrid_v001_seed456",
+        "threshold": 0.25,
+        "rare_macro_f1": 0.38862373539792894,
+        "rare_macro_ap": 0.3611757539457008,
+        "per_label": {
+          "grief": {
+            "support": 13,
+            "predicted_positives": 18,
+            "true_positives": 6,
+            "false_positives": 12,
+            "false_negatives": 7,
+            "precision": 0.3333333333333333,
+            "recall": 0.46153846153846156,
+            "f1": 0.3870967741935484,
+            "average_precision": 0.33213004453968037
+          },
+          "nervousness": {
+            "support": 21,
+            "predicted_positives": 31,
+            "true_positives": 10,
+            "false_positives": 21,
+            "false_negatives": 11,
+            "precision": 0.3225806451612903,
+            "recall": 0.47619047619047616,
+            "f1": 0.38461538461538464,
+            "average_precision": 0.47563720665065456
+          },
+          "pride": {
+            "support": 15,
+            "predicted_positives": 22,
+            "true_positives": 9,
+            "false_positives": 13,
+            "false_negatives": 6,
+            "precision": 0.4090909090909091,
+            "recall": 0.6,
+            "f1": 0.4864864864864865,
+            "average_precision": 0.4013438708051867
+          },
+          "relief": {
+            "support": 18,
+            "predicted_positives": 36,
+            "true_positives": 8,
+            "false_positives": 28,
+            "false_negatives": 10,
+            "precision": 0.2222222222222222,
+            "recall": 0.4444444444444444,
+            "f1": 0.2962962962962963,
+            "average_precision": 0.23559189378728151
+          }
+        },
+        "prediction_sha256": "ae1183b75e5c1193ab65693e245ed46f3b4b8429695426011ed69624a7c09cf7",
+        "metrics_sha256": "2d83950c1bdfe1022103b07097915184d855b058e3d97e43a439b335edc88b45"
+      }
+    }
+  },
+  "summary": {
+    "uniform": {
+      "rare_macro_f1": {
+        "mean": 0.0,
+        "sample_std": 0.0,
+        "by_seed": {
+          "42": 0.0,
+          "123": 0.0,
+          "456": 0.0
+        }
+      },
+      "rare_macro_ap": {
+        "mean": 0.1664246785495387,
+        "sample_std": 0.08250675348204672,
+        "by_seed": {
+          "42": 0.12648830568575167,
+          "123": 0.11148506190317704,
+          "456": 0.26130066805968744
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "precision": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "recall": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "average_precision": {
+            "mean": 0.04952131083152598,
+            "sample_std": 0.021785318165099033,
+            "by_seed": {
+              "42": 0.0263884638420364,
+              "123": 0.0525289008674844,
+              "456": 0.06964656778505714
+            }
+          },
+          "true_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_negatives": {
+            "mean": 13.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 13.0,
+              "123": 13.0,
+              "456": 13.0
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "precision": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "recall": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "average_precision": {
+            "mean": 0.27241709019214866,
+            "sample_std": 0.06317566172979118,
+            "by_seed": {
+              "42": 0.20509322948081118,
+              "123": 0.28175233624462215,
+              "456": 0.3304057048510126
+            }
+          },
+          "true_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_negatives": {
+            "mean": 21.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 21.0,
+              "123": 21.0,
+              "456": 21.0
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "precision": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "recall": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "average_precision": {
+            "mean": 0.2535151979147916,
+            "sample_std": 0.30194414186562424,
+            "by_seed": {
+              "42": 0.13361668098491095,
+              "123": 0.029935755829894144,
+              "456": 0.5969931569295697
+            }
+          },
+          "true_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_negatives": {
+            "mean": 15.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 15.0,
+              "123": 15.0,
+              "456": 15.0
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "precision": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "recall": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "average_precision": {
+            "mean": 0.0902451152596887,
+            "sample_std": 0.04693269765772796,
+            "by_seed": {
+              "42": 0.1408548484352482,
+              "123": 0.0817232546707075,
+              "456": 0.04815724267311042
+            }
+          },
+          "true_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_positives": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.0,
+              "123": 0.0,
+              "456": 0.0
+            }
+          },
+          "false_negatives": {
+            "mean": 18.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 18.0,
+              "123": 18.0,
+              "456": 18.0
+            }
+          }
+        }
+      }
+    },
+    "rare4x": {
+      "rare_macro_f1": {
+        "mean": 0.3645116785531523,
+        "sample_std": 0.027727917312827026,
+        "by_seed": {
+          "42": 0.3566431126879741,
+          "123": 0.3953234921001038,
+          "456": 0.34156843087137906
+        }
+      },
+      "rare_macro_ap": {
+        "mean": 0.35613617624028376,
+        "sample_std": 0.011253204407136333,
+        "by_seed": {
+          "42": 0.34597827677488124,
+          "123": 0.3682327764535144,
+          "456": 0.3541974754924556
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": 0.3741935483870968,
+            "sample_std": 0.04469808535661621,
+            "by_seed": {
+              "42": 0.4,
+              "123": 0.4,
+              "456": 0.3225806451612903
+            }
+          },
+          "precision": {
+            "mean": 0.33754208754208753,
+            "sample_std": 0.07143980603609006,
+            "by_seed": {
+              "42": 0.3181818181818182,
+              "123": 0.4166666666666667,
+              "456": 0.2777777777777778
+            }
+          },
+          "recall": {
+            "mean": 0.4358974358974359,
+            "sample_std": 0.08882311833686547,
+            "by_seed": {
+              "42": 0.5384615384615384,
+              "123": 0.38461538461538464,
+              "456": 0.38461538461538464
+            }
+          },
+          "average_precision": {
+            "mean": 0.2706586825641444,
+            "sample_std": 0.03817483594115949,
+            "by_seed": {
+              "42": 0.2873390175452335,
+              "123": 0.22698237326633072,
+              "456": 0.297654656880869
+            }
+          },
+          "true_positives": {
+            "mean": 5.666666666666667,
+            "sample_std": 1.1547005383792515,
+            "by_seed": {
+              "42": 7.0,
+              "123": 5.0,
+              "456": 5.0
+            }
+          },
+          "false_positives": {
+            "mean": 11.666666666666666,
+            "sample_std": 4.163331998932265,
+            "by_seed": {
+              "42": 15.0,
+              "123": 7.0,
+              "456": 13.0
+            }
+          },
+          "false_negatives": {
+            "mean": 7.333333333333333,
+            "sample_std": 1.1547005383792515,
+            "by_seed": {
+              "42": 6.0,
+              "123": 8.0,
+              "456": 8.0
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.25848790918415243,
+            "sample_std": 0.03784113935352762,
+            "by_seed": {
+              "42": 0.21951219512195122,
+              "123": 0.2608695652173913,
+              "456": 0.29508196721311475
+            }
+          },
+          "precision": {
+            "mean": 0.18668032786885247,
+            "sample_std": 0.038736012984841875,
+            "by_seed": {
+              "42": 0.14754098360655737,
+              "123": 0.1875,
+              "456": 0.225
+            }
+          },
+          "recall": {
+            "mean": 0.42857142857142855,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.42857142857142855,
+              "123": 0.42857142857142855,
+              "456": 0.42857142857142855
+            }
+          },
+          "average_precision": {
+            "mean": 0.40601681093952935,
+            "sample_std": 0.021664713154957473,
+            "by_seed": {
+              "42": 0.3895542937972808,
+              "123": 0.4305606089540532,
+              "456": 0.397935530067254
+            }
+          },
+          "true_positives": {
+            "mean": 9.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 9.0,
+              "123": 9.0,
+              "456": 9.0
+            }
+          },
+          "false_positives": {
+            "mean": 40.666666666666664,
+            "sample_std": 10.598742063723098,
+            "by_seed": {
+              "42": 52.0,
+              "123": 39.0,
+              "456": 31.0
+            }
+          },
+          "false_negatives": {
+            "mean": 12.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 12.0,
+              "123": 12.0,
+              "456": 12.0
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": 0.5692667779013719,
+            "sample_std": 0.1264620830532492,
+            "by_seed": {
+              "42": 0.5806451612903226,
+              "123": 0.6896551724137931,
+              "456": 0.4375
+            }
+          },
+          "precision": {
+            "mean": 0.5628501400560224,
+            "sample_std": 0.15126080814239617,
+            "by_seed": {
+              "42": 0.5625,
+              "123": 0.7142857142857143,
+              "456": 0.4117647058823529
+            }
+          },
+          "recall": {
+            "mean": 0.5777777777777777,
+            "sample_std": 0.10183501544346309,
+            "by_seed": {
+              "42": 0.6,
+              "123": 0.6666666666666666,
+              "456": 0.4666666666666667
+            }
+          },
+          "average_precision": {
+            "mean": 0.49103306289277343,
+            "sample_std": 0.09302741908249916,
+            "by_seed": {
+              "42": 0.5193065192393893,
+              "123": 0.5666435321732742,
+              "456": 0.38714913726565675
+            }
+          },
+          "true_positives": {
+            "mean": 8.666666666666666,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 9.0,
+              "123": 10.0,
+              "456": 7.0
+            }
+          },
+          "false_positives": {
+            "mean": 7.0,
+            "sample_std": 3.0,
+            "by_seed": {
+              "42": 7.0,
+              "123": 4.0,
+              "456": 10.0
+            }
+          },
+          "false_negatives": {
+            "mean": 6.333333333333333,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 6.0,
+              "123": 5.0,
+              "456": 8.0
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": 0.2560984787399882,
+            "sample_std": 0.04769205296810101,
+            "by_seed": {
+              "42": 0.22641509433962265,
+              "123": 0.23076923076923078,
+              "456": 0.3111111111111111
+            }
+          },
+          "precision": {
+            "mean": 0.2023861396410416,
+            "sample_std": 0.049318042182358454,
+            "by_seed": {
+              "42": 0.17142857142857143,
+              "123": 0.17647058823529413,
+              "456": 0.25925925925925924
+            }
+          },
+          "recall": {
+            "mean": 0.35185185185185186,
+            "sample_std": 0.03207501495497923,
+            "by_seed": {
+              "42": 0.3333333333333333,
+              "123": 0.3333333333333333,
+              "456": 0.3888888888888889
+            }
+          },
+          "average_precision": {
+            "mean": 0.25683614856468784,
+            "sample_std": 0.07350344485941182,
+            "by_seed": {
+              "42": 0.1877132765176213,
+              "123": 0.24874459142039945,
+              "456": 0.3340505777560428
+            }
+          },
+          "true_positives": {
+            "mean": 6.333333333333333,
+            "sample_std": 0.5773502691896257,
+            "by_seed": {
+              "42": 6.0,
+              "123": 6.0,
+              "456": 7.0
+            }
+          },
+          "false_positives": {
+            "mean": 25.666666666666668,
+            "sample_std": 4.932882862316247,
+            "by_seed": {
+              "42": 29.0,
+              "123": 28.0,
+              "456": 20.0
+            }
+          },
+          "false_negatives": {
+            "mean": 11.666666666666666,
+            "sample_std": 0.5773502691896257,
+            "by_seed": {
+              "42": 12.0,
+              "123": 12.0,
+              "456": 11.0
+            }
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "rare_macro_f1": {
+        "mean": 0.34006837459658923,
+        "sample_std": 0.08134514270900416,
+        "by_seed": {
+          "42": 0.31664415175053473,
+          "123": 0.2730054164836774,
+          "456": 0.4305555555555555
+        }
+      },
+      "rare_macro_ap": {
+        "mean": 0.3066715858428924,
+        "sample_std": 0.021083155736455948,
+        "by_seed": {
+          "42": 0.31135894688445037,
+          "123": 0.2836392383602906,
+          "456": 0.3250165722839362
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": 0.2740740740740741,
+            "sample_std": 0.20497917188180315,
+            "by_seed": {
+              "42": 0.2222222222222222,
+              "123": 0.1,
+              "456": 0.5
+            }
+          },
+          "precision": {
+            "mean": 0.41904761904761906,
+            "sample_std": 0.2861900800250804,
+            "by_seed": {
+              "42": 0.4,
+              "123": 0.14285714285714285,
+              "456": 0.7142857142857143
+            }
+          },
+          "recall": {
+            "mean": 0.20512820512820515,
+            "sample_std": 0.16012815380508713,
+            "by_seed": {
+              "42": 0.15384615384615385,
+              "123": 0.07692307692307693,
+              "456": 0.38461538461538464
+            }
+          },
+          "average_precision": {
+            "mean": 0.2809371799467102,
+            "sample_std": 0.1441476241881073,
+            "by_seed": {
+              "42": 0.22019514563246828,
+              "123": 0.1771018577990076,
+              "456": 0.4455145364086546
+            }
+          },
+          "true_positives": {
+            "mean": 2.6666666666666665,
+            "sample_std": 2.0816659994661326,
+            "by_seed": {
+              "42": 2.0,
+              "123": 1.0,
+              "456": 5.0
+            }
+          },
+          "false_positives": {
+            "mean": 3.6666666666666665,
+            "sample_std": 2.0816659994661326,
+            "by_seed": {
+              "42": 3.0,
+              "123": 6.0,
+              "456": 2.0
+            }
+          },
+          "false_negatives": {
+            "mean": 10.333333333333334,
+            "sample_std": 2.0816659994661326,
+            "by_seed": {
+              "42": 11.0,
+              "123": 12.0,
+              "456": 8.0
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.4068803536888643,
+            "sample_std": 0.022876595190375867,
+            "by_seed": {
+              "42": 0.3829787234042553,
+              "123": 0.4090909090909091,
+              "456": 0.42857142857142855
+            }
+          },
+          "precision": {
+            "mean": 0.3886765408504539,
+            "sample_std": 0.041271582233004304,
+            "by_seed": {
+              "42": 0.34615384615384615,
+              "123": 0.391304347826087,
+              "456": 0.42857142857142855
+            }
+          },
+          "recall": {
+            "mean": 0.42857142857142855,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 0.42857142857142855,
+              "123": 0.42857142857142855,
+              "456": 0.42857142857142855
+            }
+          },
+          "average_precision": {
+            "mean": 0.3200775307159032,
+            "sample_std": 0.021471162543542654,
+            "by_seed": {
+              "42": 0.3433336516068855,
+              "123": 0.31589093866040363,
+              "456": 0.3010080018804206
+            }
+          },
+          "true_positives": {
+            "mean": 9.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 9.0,
+              "123": 9.0,
+              "456": 9.0
+            }
+          },
+          "false_positives": {
+            "mean": 14.333333333333334,
+            "sample_std": 2.516611478423583,
+            "by_seed": {
+              "42": 17.0,
+              "123": 14.0,
+              "456": 12.0
+            }
+          },
+          "false_negatives": {
+            "mean": 12.0,
+            "sample_std": 0.0,
+            "by_seed": {
+              "42": 12.0,
+              "123": 12.0,
+              "456": 12.0
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": 0.508243232880914,
+            "sample_std": 0.06890004284470626,
+            "by_seed": {
+              "42": 0.5185185185185185,
+              "123": 0.43478260869565216,
+              "456": 0.5714285714285714
+            }
+          },
+          "precision": {
+            "mean": 0.607905982905983,
+            "sample_std": 0.02181685668446808,
+            "by_seed": {
+              "42": 0.5833333333333334,
+              "123": 0.625,
+              "456": 0.6153846153846154
+            }
+          },
+          "recall": {
+            "mean": 0.4444444444444444,
+            "sample_std": 0.10183501544346311,
+            "by_seed": {
+              "42": 0.4666666666666667,
+              "123": 0.3333333333333333,
+              "456": 0.5333333333333333
+            }
+          },
+          "average_precision": {
+            "mean": 0.49943166383199095,
+            "sample_std": 0.04124684298871567,
+            "by_seed": {
+              "42": 0.5360364593002327,
+              "123": 0.5075180661479274,
+              "456": 0.45474046604781276
+            }
+          },
+          "true_positives": {
+            "mean": 6.666666666666667,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 7.0,
+              "123": 5.0,
+              "456": 8.0
+            }
+          },
+          "false_positives": {
+            "mean": 4.333333333333333,
+            "sample_std": 1.1547005383792515,
+            "by_seed": {
+              "42": 5.0,
+              "123": 3.0,
+              "456": 5.0
+            }
+          },
+          "false_negatives": {
+            "mean": 8.333333333333334,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 8.0,
+              "123": 10.0,
+              "456": 7.0
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": 0.1710758377425044,
+            "sample_std": 0.04437300044236023,
+            "by_seed": {
+              "42": 0.14285714285714285,
+              "123": 0.14814814814814814,
+              "456": 0.2222222222222222
+            }
+          },
+          "precision": {
+            "mean": 0.21481481481481482,
+            "sample_std": 0.01283000598199167,
+            "by_seed": {
+              "42": 0.2,
+              "123": 0.2222222222222222,
+              "456": 0.2222222222222222
+            }
+          },
+          "recall": {
+            "mean": 0.14814814814814814,
+            "sample_std": 0.06415002990995841,
+            "by_seed": {
+              "42": 0.1111111111111111,
+              "123": 0.1111111111111111,
+              "456": 0.2222222222222222
+            }
+          },
+          "average_precision": {
+            "mean": 0.1262399688769652,
+            "sample_std": 0.02448536442860845,
+            "by_seed": {
+              "42": 0.1458705309982151,
+              "123": 0.13404609083382377,
+              "456": 0.09880328479885679
+            }
+          },
+          "true_positives": {
+            "mean": 2.6666666666666665,
+            "sample_std": 1.1547005383792515,
+            "by_seed": {
+              "42": 2.0,
+              "123": 2.0,
+              "456": 4.0
+            }
+          },
+          "false_positives": {
+            "mean": 9.666666666666666,
+            "sample_std": 3.7859388972001824,
+            "by_seed": {
+              "42": 8.0,
+              "123": 7.0,
+              "456": 14.0
+            }
+          },
+          "false_negatives": {
+            "mean": 15.333333333333334,
+            "sample_std": 1.1547005383792515,
+            "by_seed": {
+              "42": 16.0,
+              "123": 16.0,
+              "456": 14.0
+            }
+          }
+        }
+      }
+    },
+    "hybrid": {
+      "rare_macro_f1": {
+        "mean": 0.3772031485650529,
+        "sample_std": 0.014537309845824997,
+        "by_seed": {
+          "42": 0.3821470104341395,
+          "123": 0.36083869986309014,
+          "456": 0.38862373539792894
+        }
+      },
+      "rare_macro_ap": {
+        "mean": 0.3541830451879079,
+        "sample_std": 0.011063984749908745,
+        "by_seed": {
+          "42": 0.34142719423966555,
+          "123": 0.3599461873783573,
+          "456": 0.3611757539457008
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": 0.35440337817247836,
+            "sample_std": 0.04151672823113177,
+            "by_seed": {
+              "42": 0.3684210526315789,
+              "123": 0.3076923076923077,
+              "456": 0.3870967741935484
+            }
+          },
+          "precision": {
+            "mean": 0.307008547008547,
+            "sample_std": 0.026673240478344632,
+            "by_seed": {
+              "42": 0.28,
+              "123": 0.3076923076923077,
+              "456": 0.3333333333333333
+            }
+          },
+          "recall": {
+            "mean": 0.4358974358974359,
+            "sample_std": 0.11750194089630357,
+            "by_seed": {
+              "42": 0.5384615384615384,
+              "123": 0.3076923076923077,
+              "456": 0.46153846153846156
+            }
+          },
+          "average_precision": {
+            "mean": 0.30973707619927743,
+            "sample_std": 0.023533175316464042,
+            "by_seed": {
+              "42": 0.31187200482572713,
+              "123": 0.2852091792324247,
+              "456": 0.33213004453968037
+            }
+          },
+          "true_positives": {
+            "mean": 5.666666666666667,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 7.0,
+              "123": 4.0,
+              "456": 6.0
+            }
+          },
+          "false_positives": {
+            "mean": 13.0,
+            "sample_std": 4.58257569495584,
+            "by_seed": {
+              "42": 18.0,
+              "123": 9.0,
+              "456": 12.0
+            }
+          },
+          "false_negatives": {
+            "mean": 7.333333333333333,
+            "sample_std": 1.5275252316519468,
+            "by_seed": {
+              "42": 6.0,
+              "123": 9.0,
+              "456": 7.0
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.37082807902480036,
+            "sample_std": 0.037990695676453544,
+            "by_seed": {
+              "42": 0.32786885245901637,
+              "123": 0.4,
+              "456": 0.38461538461538464
+            }
+          },
+          "precision": {
+            "mean": 0.2987033523086654,
+            "sample_std": 0.042181007978632126,
+            "by_seed": {
+              "42": 0.25,
+              "123": 0.3235294117647059,
+              "456": 0.3225806451612903
+            }
+          },
+          "recall": {
+            "mean": 0.49206349206349204,
+            "sample_std": 0.02749286996141078,
+            "by_seed": {
+              "42": 0.47619047619047616,
+              "123": 0.5238095238095238,
+              "456": 0.47619047619047616
+            }
+          },
+          "average_precision": {
+            "mean": 0.4424739695311449,
+            "sample_std": 0.028720207263118292,
+            "by_seed": {
+              "42": 0.4258832376375028,
+              "123": 0.4259014643052773,
+              "456": 0.47563720665065456
+            }
+          },
+          "true_positives": {
+            "mean": 10.333333333333334,
+            "sample_std": 0.5773502691896257,
+            "by_seed": {
+              "42": 10.0,
+              "123": 11.0,
+              "456": 10.0
+            }
+          },
+          "false_positives": {
+            "mean": 24.666666666666668,
+            "sample_std": 4.725815626252609,
+            "by_seed": {
+              "42": 30.0,
+              "123": 23.0,
+              "456": 21.0
+            }
+          },
+          "false_negatives": {
+            "mean": 10.666666666666666,
+            "sample_std": 0.5773502691896257,
+            "by_seed": {
+              "42": 11.0,
+              "123": 10.0,
+              "456": 11.0
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": 0.5328185328185329,
+            "sample_std": 0.042994319404092804,
+            "by_seed": {
+              "42": 0.5714285714285714,
+              "123": 0.5405405405405406,
+              "456": 0.4864864864864865
+            }
+          },
+          "precision": {
+            "mean": 0.493006993006993,
+            "sample_std": 0.1083916083916084,
+            "by_seed": {
+              "42": 0.6153846153846154,
+              "123": 0.45454545454545453,
+              "456": 0.4090909090909091
+            }
+          },
+          "recall": {
+            "mean": 0.6,
+            "sample_std": 0.06666666666666665,
+            "by_seed": {
+              "42": 0.5333333333333333,
+              "123": 0.6666666666666666,
+              "456": 0.6
+            }
+          },
+          "average_precision": {
+            "mean": 0.46322108102094367,
+            "sample_std": 0.06592335711208262,
+            "by_seed": {
+              "42": 0.4557631087440677,
+              "123": 0.5325562635135767,
+              "456": 0.4013438708051867
+            }
+          },
+          "true_positives": {
+            "mean": 9.0,
+            "sample_std": 1.0,
+            "by_seed": {
+              "42": 8.0,
+              "123": 10.0,
+              "456": 9.0
+            }
+          },
+          "false_positives": {
+            "mean": 10.0,
+            "sample_std": 4.358898943540674,
+            "by_seed": {
+              "42": 5.0,
+              "123": 12.0,
+              "456": 13.0
+            }
+          },
+          "false_negatives": {
+            "mean": 6.0,
+            "sample_std": 1.0,
+            "by_seed": {
+              "42": 7.0,
+              "123": 5.0,
+              "456": 6.0
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": 0.25076260424439994,
+            "sample_std": 0.051338825663538735,
+            "by_seed": {
+              "42": 0.2608695652173913,
+              "123": 0.1951219512195122,
+              "456": 0.2962962962962963
+            }
+          },
+          "precision": {
+            "mean": 0.20347365999539913,
+            "sample_std": 0.025905975685380844,
+            "by_seed": {
+              "42": 0.21428571428571427,
+              "123": 0.17391304347826086,
+              "456": 0.2222222222222222
+            }
+          },
+          "recall": {
+            "mean": 0.3333333333333333,
+            "sample_std": 0.1111111111111111,
+            "by_seed": {
+              "42": 0.3333333333333333,
+              "123": 0.2222222222222222,
+              "456": 0.4444444444444444
+            }
+          },
+          "average_precision": {
+            "mean": 0.20130005400026554,
+            "sample_std": 0.032016839703454175,
+            "by_seed": {
+              "42": 0.17219042575136453,
+              "123": 0.19611784246215055,
+              "456": 0.23559189378728151
+            }
+          },
+          "true_positives": {
+            "mean": 6.0,
+            "sample_std": 2.0,
+            "by_seed": {
+              "42": 6.0,
+              "123": 4.0,
+              "456": 8.0
+            }
+          },
+          "false_positives": {
+            "mean": 23.0,
+            "sample_std": 4.58257569495584,
+            "by_seed": {
+              "42": 22.0,
+              "123": 19.0,
+              "456": 28.0
+            }
+          },
+          "false_negatives": {
+            "mean": 12.0,
+            "sample_std": 2.0,
+            "by_seed": {
+              "42": 12.0,
+              "123": 14.0,
+              "456": 10.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "paired_vs_rare4x": {
+    "uniform": {
+      "rare_macro_f1": {
+        "mean": -0.3645116785531523,
+        "sample_std": 0.027727917312827026,
+        "by_seed": {
+          "42": -0.3566431126879741,
+          "123": -0.3953234921001038,
+          "456": -0.34156843087137906
+        }
+      },
+      "rare_macro_ap": {
+        "mean": -0.18971149769074502,
+        "sample_std": 0.08588857927143917,
+        "by_seed": {
+          "42": -0.21948997108912957,
+          "123": -0.25674771455033735,
+          "456": -0.09289680743276818
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": -0.3741935483870968,
+            "sample_std": 0.04469808535661621,
+            "by_seed": {
+              "42": -0.4,
+              "123": -0.4,
+              "456": -0.3225806451612903
+            }
+          },
+          "average_precision": {
+            "mean": -0.22113737173261844,
+            "sample_std": 0.04365594273814887,
+            "by_seed": {
+              "42": -0.2609505537031971,
+              "123": -0.17445347239884632,
+              "456": -0.22800808909581188
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": -0.25848790918415243,
+            "sample_std": 0.03784113935352762,
+            "by_seed": {
+              "42": -0.21951219512195122,
+              "123": -0.2608695652173913,
+              "456": -0.29508196721311475
+            }
+          },
+          "average_precision": {
+            "mean": -0.1335997207473807,
+            "sample_std": 0.05993082436414064,
+            "by_seed": {
+              "42": -0.1844610643164696,
+              "123": -0.14880827270943103,
+              "456": -0.0675298252162414
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": -0.5692667779013719,
+            "sample_std": 0.1264620830532492,
+            "by_seed": {
+              "42": -0.5806451612903226,
+              "123": -0.6896551724137931,
+              "456": -0.4375
+            }
+          },
+          "average_precision": {
+            "mean": -0.23751786497798183,
+            "sample_std": 0.39471647581386415,
+            "by_seed": {
+              "42": -0.38568983825447833,
+              "123": -0.5367077763433801,
+              "456": 0.20984401966391292
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": -0.2560984787399882,
+            "sample_std": 0.04769205296810101,
+            "by_seed": {
+              "42": -0.22641509433962265,
+              "123": -0.23076923076923078,
+              "456": -0.3111111111111111
+            }
+          },
+          "average_precision": {
+            "mean": -0.16659103330499914,
+            "sample_std": 0.11951803446334947,
+            "by_seed": {
+              "42": -0.04685842808237309,
+              "123": -0.16702133674969194,
+              "456": -0.28589333508293235
+            }
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "rare_macro_f1": {
+        "mean": -0.024443303956563116,
+        "sample_std": 0.10650800799282414,
+        "by_seed": {
+          "42": -0.039998960937439376,
+          "123": -0.12231807561642644,
+          "456": 0.08898712468417647
+        }
+      },
+      "rare_macro_ap": {
+        "mean": -0.04946459039739135,
+        "sample_std": 0.030543843010597566,
+        "by_seed": {
+          "42": -0.03461932989043087,
+          "123": -0.08459353809322379,
+          "456": -0.029180903208519404
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": -0.10011947431302272,
+            "sample_std": 0.24800286120611684,
+            "by_seed": {
+              "42": -0.1777777777777778,
+              "123": -0.30000000000000004,
+              "456": 0.1774193548387097
+            }
+          },
+          "average_precision": {
+            "mean": 0.010278497382565763,
+            "sample_std": 0.11946122133848441,
+            "by_seed": {
+              "42": -0.06714387191276522,
+              "123": -0.04988051546732311,
+              "456": 0.14785987952778562
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.1483924445047119,
+            "sample_std": 0.014989265889657323,
+            "by_seed": {
+              "42": 0.1634665282823041,
+              "123": 0.14822134387351782,
+              "456": 0.1334894613583138
+            }
+          },
+          "average_precision": {
+            "mean": -0.08593928022362608,
+            "sample_std": 0.03552285964059933,
+            "by_seed": {
+              "42": -0.04622064219039529,
+              "123": -0.11466967029364955,
+              "456": -0.09692752818683342
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": -0.061023545020457905,
+            "sample_std": 0.1944029148221029,
+            "by_seed": {
+              "42": -0.06212664277180413,
+              "123": -0.254872563718141,
+              "456": 0.1339285714285714
+            }
+          },
+          "average_precision": {
+            "mean": 0.008398600939217515,
+            "sample_std": 0.0637678989009466,
+            "by_seed": {
+              "42": 0.016729940060843385,
+              "123": -0.05912546602534685,
+              "456": 0.06759132878215601
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": -0.08502264099748379,
+            "sample_std": 0.00338087790140517,
+            "by_seed": {
+              "42": -0.0835579514824798,
+              "123": -0.08262108262108264,
+              "456": -0.0888888888888889
+            }
+          },
+          "average_precision": {
+            "mean": -0.13059617968772264,
+            "sample_std": 0.09767743799366048,
+            "by_seed": {
+              "42": -0.0418427455194062,
+              "123": -0.11469850058657569,
+              "456": -0.235247292957186
+            }
+          }
+        }
+      }
+    },
+    "hybrid": {
+      "rare_macro_f1": {
+        "mean": 0.012691470011900538,
+        "sample_std": 0.04225299484518401,
+        "by_seed": {
+          "42": 0.025503897746165405,
+          "123": -0.03448479223701367,
+          "456": 0.04705530452654988
+        }
+      },
+      "rare_macro_ap": {
+        "mean": -0.0019531310523758596,
+        "sample_std": 0.007957138876211061,
+        "by_seed": {
+          "42": -0.004551082535215689,
+          "123": -0.008286589075157058,
+          "456": 0.006978278453245168
+        }
+      },
+      "per_label": {
+        "grief": {
+          "f1": {
+            "mean": -0.019790170214618447,
+            "sample_std": 0.07907375787834219,
+            "by_seed": {
+              "42": -0.031578947368421095,
+              "123": -0.09230769230769231,
+              "456": 0.06451612903225806
+            }
+          },
+          "average_precision": {
+            "mean": 0.039078393635133,
+            "sample_std": 0.01731210854916488,
+            "by_seed": {
+              "42": 0.024532987280493634,
+              "123": 0.058226805966094,
+              "456": 0.03447538765881136
+            }
+          }
+        },
+        "nervousness": {
+          "f1": {
+            "mean": 0.11234016984064792,
+            "sample_std": 0.025037318389876707,
+            "by_seed": {
+              "42": 0.10835665733706515,
+              "123": 0.13913043478260873,
+              "456": 0.08953341740226989
+            }
+          },
+          "average_precision": {
+            "mean": 0.03645715859161556,
+            "sample_std": 0.04118056031401815,
+            "by_seed": {
+              "42": 0.036328943840222006,
+              "123": -0.00465914464877587,
+              "456": 0.07770167658340055
+            }
+          }
+        },
+        "pride": {
+          "f1": {
+            "mean": -0.036448245082839094,
+            "sample_std": 0.10181937712638489,
+            "by_seed": {
+              "42": -0.009216589861751223,
+              "123": -0.14911463187325258,
+              "456": 0.048986486486486513
+            }
+          },
+          "average_precision": {
+            "mean": -0.027811981871829743,
+            "sample_std": 0.03924715502680827,
+            "by_seed": {
+              "42": -0.06354341049532158,
+              "123": -0.03408726865969758,
+              "456": 0.014194733539529936
+            }
+          }
+        },
+        "relief": {
+          "f1": {
+            "mean": -0.005335874495588255,
+            "sample_std": 0.0359993275691508,
+            "by_seed": {
+              "42": 0.03445447087776865,
+              "123": -0.03564727954971858,
+              "456": -0.014814814814814836
+            }
+          },
+          "average_precision": {
+            "mean": -0.055536094564422316,
+            "sample_std": 0.04154438982751502,
+            "by_seed": {
+              "42": -0.015522850766256757,
+              "123": -0.0526267489582489,
+              "456": -0.09845868396876128
+            }
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Only three paired random seeds.",
+    "Rare-label validation support is small.",
+    "F1 thresholds were tuned on validation.",
+    "AP evaluates ranking without threshold selection.",
+    "Synthetic labels are LLM-proposed, not independently human-verified.",
+    "The validation set has been used in exploratory treatment development."
+  ]
+}

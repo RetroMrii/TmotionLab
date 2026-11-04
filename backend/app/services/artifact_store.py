@@ -7,20 +7,23 @@ from typing import Any
 import pandas as pd
 
 
-COMPARISON_PATH = Path("ml/artifacts/comparisons/dair_v001_model_comparison.csv")
+ROOT = Path(__file__).resolve().parents[3]
+# The archive is read-only. Offline reports do not require archived Python imports.
+ARTIFACT_ROOT = ROOT / "DAIR-MODEL-OLD/ml/artifacts"
+COMPARISON_PATH = ARTIFACT_ROOT / "comparisons/dair_v001_model_comparison.csv"
 
-ERRORS_PATH = Path("ml/artifacts/errors/textcnn_dair_v001_errors.csv")
+ERRORS_PATH = ARTIFACT_ROOT / "errors/textcnn_dair_v001_errors.csv"
 
-CONFUSIONS_PATH = Path("ml/artifacts/errors/textcnn_dair_v001_confusion_pairs.csv")
+CONFUSIONS_PATH = ARTIFACT_ROOT / "errors/textcnn_dair_v001_confusion_pairs.csv"
 
 METRIC_PATHS = {
-    "baseline_tfidf_dair_v001": Path(
-        "ml/artifacts/metrics/baseline_tfidf_dair_v001_metrics.json"
+    "baseline_tfidf_dair_v001": ARTIFACT_ROOT / Path(
+        "metrics/baseline_tfidf_dair_v001_metrics.json"
     ),
-    "numpy_mlp_dair_v002": Path(
-        "ml/artifacts/metrics/numpy_mlp_dair_v002_metrics.json"
+    "numpy_mlp_dair_v002": ARTIFACT_ROOT / Path(
+        "metrics/numpy_mlp_dair_v002_metrics.json"
     ),
-    "textcnn_dair_v001": Path("ml/artifacts/metrics/textcnn_dair_v001_metrics.json"),
+    "textcnn_dair_v001": ARTIFACT_ROOT / "metrics/textcnn_dair_v001_metrics.json",
 }
 
 

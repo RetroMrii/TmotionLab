@@ -10,9 +10,15 @@ class ModelMetadata(BaseModel):
     implementation: str
     runtime_loaded: bool
     capabilities: list[str]
-    accuracy: float
-    macro_f1: float
-    weighted_f1: float
+    dataset: str
+    task: str
+    status: str
+    prediction_endpoint: str | None = None
+    threshold: float | None = None
+    labels: list[str] = []
+    accuracy: float | None = None
+    macro_f1: float | None = None
+    weighted_f1: float | None = None
 
 
 class ModelsResponse(BaseModel):

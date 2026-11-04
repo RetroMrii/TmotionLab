@@ -10,6 +10,8 @@ export interface HealthResponse {
     status: "ok" | "degraded";
     service: string;
     version: string;
+    goemotions_loaded: boolean;
+    diagnostics: Record<string, string>;
     textcnn_loaded: boolean;
     artifacts_loaded: boolean;
     model_id: string | null;
@@ -22,9 +24,15 @@ export interface ModelMetadata {
     implementation: string;
     runtime_loaded: boolean;
     capabilities: string[];
-    accuracy: number;
-    macro_f1: number;
-    weighted_f1: number;
+    dataset: string;
+    task: "single_label" | "multi_label";
+    status: string;
+    prediction_endpoint: string | null;
+    threshold: number | null;
+    labels: string[];
+    accuracy: number | null;
+    macro_f1: number | null;
+    weighted_f1: number | null;
 }
 
 export interface ModelsResponse {
@@ -211,4 +219,26 @@ export interface ModelMetrics {
 
 export interface MetricsResponse {
     models: ModelMetrics[];
+}
+export interface LabelScore {
+    label_id: number;
+    label: string;
+    score: number;
+}
+
+export interface AnalyzeResponse {
+    schema_version: "1";
+    task: "multi_label";
+    model_id: "roberta_goemotions_rare4x_v001";
+    dataset: "goemotions_v001";
+    seed: 42;
+    threshold: 0.25;
+    score_type: "sigmoid";
+    device: string;
+    input: PredictionInput & { original_token_count: number; max_tokens: 48 };
+    scores: LabelScore[];
+    detected_labels: string[];
+    ranked_scores: LabelScore[];
+    score_note: string;
+    availability_notes: string[];
 }
