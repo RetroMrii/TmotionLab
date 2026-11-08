@@ -8,8 +8,7 @@ import {
 import { Link } from "react-router";
 import {
   analyzeText,
-  getHealth,
-  getModels,
+  checkReadingService,
   TmotionApiError,
 } from "../api/client";
 import { EmotionSignal } from "../components/EmotionSignal";
@@ -145,28 +144,26 @@ export function PredictPage() {
   }, []);
   useEffect(() => {
     let active = true;
-    Promise.all([getModels(), getHealth()])
-      .then(([registry, health]) => {
-        if (!active) return;
-        const model = registry.models.find(
-          (item) => item.model_id === "roberta_goemotions_rare4x_v001",
-        );
-        setAvailability(
-          model?.runtime_loaded &&
-            model.capabilities.includes("live_predict") &&
-            health.goemotions_loaded
-            ? "Reading service available · GoEmotions · 28 labels"
-            : "Reading service unavailable · You can retry when the service recovers.",
-        );
+  
+    checkReadingService()
+      .then(() => {
+        if (active) {
+          setAvailability(
+            "Reading service available · GoEmotions · 28 labels",
+          );
+        }
       })
       .catch(() => {
-        if (active)
+        if (active) {
           setAvailability(
-            "Reading service status unavailable · Try Analyze to reconnect.",
+            "Reading service unavailable · Try Analyze to reconnect.",
           );
+        }
       });
-    const ids = requestId,
-      pending = controller;
+  
+    const ids = requestId;
+    const pending = controller;
+  
     return () => {
       active = false;
       ids.current++;
