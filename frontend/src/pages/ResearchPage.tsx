@@ -7,6 +7,7 @@ import {
   SeedTable,
   ValidationPlot,
 } from "../components/ResearchFigures";
+import { TidalDotField } from "../components/TidalDotField";
 import { research } from "../data/research";
 const CONTENTS = [
   ["abstract", "Abstract"],
@@ -23,6 +24,7 @@ const CONTENTS = [
 export function ResearchPage() {
   return (
     <article className="page paper-page">
+      <TidalDotField analyzing={false} />
       <header className="paper-heading">
         <p className="eyebrow">
           TmotionLab Research <span className="paper-divider">/</span> Study P11

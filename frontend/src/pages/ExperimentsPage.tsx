@@ -7,6 +7,7 @@ import {
   ValidationPlot,
 } from "../components/ResearchFigures";
 import { HistoricalEvidence } from "../components/HistoricalEvidence";
+import { TidalDotField } from "../components/TidalDotField";
 import {
   runs,
   strategies,
@@ -35,6 +36,7 @@ export function ExperimentsPage() {
   }
   return (
     <div className="page explorer-page">
+      <TidalDotField analyzing={false} />
       <header className="page-heading">
         <p className="eyebrow">Study P11 / Experiment explorer</p>
         <h1>

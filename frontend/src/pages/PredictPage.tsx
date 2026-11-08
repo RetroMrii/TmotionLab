@@ -13,6 +13,7 @@ import {
   TmotionApiError,
 } from "../api/client";
 import { EmotionSignal } from "../components/EmotionSignal";
+import { TidalDotField } from "../components/TidalDotField";
 import { InterfaceIcon } from "../components/InterfaceIcon";
 import { emotionFamilies, emotionFamily } from "../emotionColors";
 import { keyboardInput, motionTokens } from "../motion";
@@ -263,6 +264,7 @@ export function PredictPage() {
   const leading = ranked[0];
   return (
     <div className="page analyze-page" ref={page}>
+      <TidalDotField analyzing={loading} />
       <section className="analyze-heading">
         <p className="eyebrow">A different perspective</p>
         <h1>
