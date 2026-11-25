@@ -1,4 +1,4 @@
-"""Read-only serving of the frozen P11 candidate; never imports archived ML code."""
+"""Read-only serving of promoted OPT-010; never imports archived ML code."""
 from __future__ import annotations
 
 import hashlib
@@ -10,9 +10,11 @@ from pathlib import Path
 from threading import Lock
 
 ROOT = Path(__file__).resolve().parents[3]
-MODEL_ID = "roberta_goemotions_rare4x_v001"
-MODEL_DIR = ROOT / "ml/artifacts/models" / MODEL_ID / "best_model"
-FREEZE_PATH = ROOT / "reports/goemotions/final_model_freeze_v001.json"
+MODEL_ID = "roberta_goemotions_synthetic10_v001"
+MODEL_DIR = ROOT / "ml/artifacts/optimization/opt010/synthetic10/best_model"
+FREEZE_PATH = ROOT / "backend/model-manifests/goemotions_synthetic10_v001.json"
+VALIDATION_PREDICTIONS = MODEL_DIR.parent / "validation_predictions.jsonl"
+THRESHOLD_POLICY = "fixed_global_inherited_0.25"
 MANIFEST_PATH = ROOT / "data/processed/goemotions_v001/manifest.json"
 THRESHOLD = 0.25
 MAX_TOKENS = 48
@@ -34,6 +36,7 @@ def verify_artifacts(model_dir=MODEL_DIR, freeze_path=FREEZE_PATH, manifest_path
     if (freeze["primary_experiment"] != MODEL_ID or freeze["seed"] != 42
             or freeze["classification_threshold"] != THRESHOLD
             or freeze["threshold_selection_split"] != "validation"
+            or freeze["threshold_policy"] != THRESHOLD_POLICY
             or freeze["dataset_version"] != "goemotions_v001"
             or freeze["test_time_tuning_allowed"] is not False):
         raise ValueError("Unexpected frozen model/threshold provenance")
@@ -92,7 +95,9 @@ class GoEmotionsPredictor:
         self.model = AutoModelForSequenceClassification.from_pretrained(
             MODEL_DIR, local_files_only=True,
         )
-        if self.model.config.num_labels != 28 or self.model.config.id2label != dict(enumerate(self.labels)):
+        if (self.model.config.num_labels != 28
+                or self.model.config.id2label != dict(enumerate(self.labels))
+                or self.model.config.label2id != {label: i for i, label in enumerate(self.labels)}):
             raise ValueError("Loaded classifier has an invalid label mapping")
         self.model.eval()
         try:

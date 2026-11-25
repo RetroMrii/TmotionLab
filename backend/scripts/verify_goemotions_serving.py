@@ -1,7 +1,7 @@
-"""Read-only P12 verification. Never reads the GoEmotions test split or writes research files."""
+"""Read-only active-model verification; never reads test data or writes research files."""
 import json
 from itertools import islice
-from backend.app.services.goemotions import GoEmotionsPredictor, MODEL_ID, ROOT, verify_artifacts
+from backend.app.services.goemotions import GoEmotionsPredictor, MODEL_ID, ROOT, VALIDATION_PREDICTIONS, verify_artifacts
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     predictor = GoEmotionsPredictor()
     with (ROOT / "data/processed/goemotions_v001/validation.jsonl").open(encoding="utf-8") as stream:
         source = [json.loads(line) for line in islice(stream, 16)]
-    with (ROOT / f"ml/artifacts/predictions/{MODEL_ID}_validation.jsonl").open(encoding="utf-8") as stream:
+    with VALIDATION_PREDICTIONS.open(encoding="utf-8") as stream:
         saved = [json.loads(line) for line in islice(stream, 16)]
     if len(source) != 16 or len(saved) != 16:
         raise ValueError("Missing validation fixture rows")

@@ -182,3 +182,43 @@ Full Reading Studio art direction and portable environment pinning remain follow
 **Performance:** One Canvas, cached spatial coefficients, eight drawing buckets, bounded density, 1x backing resolution, at most 12 paints/s desktop and 10 paints/s at widths up to 768px. Hidden/offscreen work pauses; unmount removes frames, observers and listeners. No new dependency. The ambient field deliberately has a much smaller budget than the foreground ribbons. The internal `reports/engineering/TIDAL-DOT-FIELD-REVIEW.md` records local profiling and validation; physical mobile battery/GPU behavior remains unverified.
 
 **Motion accessibility:** The new field explicitly honors `prefers-reduced-motion` with a static rendering, including live preference changes. This is a scoped exception to the earlier full-motion application policy, not a change to existing ribbon or page animations. A CSS field also covers unavailable/lost Canvas rendering. The background is decorative, hidden from accessibility APIs, and cannot receive pointer or keyboard focus. It does not depict model computation or emotion intensity.
+
+## Decision: Promote OPT-010 synthetic10 — 2026-11-23
+
+**Authority:** Explicit supervisor approval promotes the original checkpoint at
+`ml/artifacts/optimization/opt010/synthetic10/best_model` under the production ID
+`roberta_goemotions_synthetic10_v001`. This supersedes older optimization-log
+no-promotion instructions without rewriting those records. No training or new
+held-out test evaluation is authorized or performed.
+
+**Evidence:** Saved predictions reproduce macro AP 0.5183329791101571, macro F1
+0.5208970777876761 and micro F1 0.5968855589833995 on 5,426 validation examples.
+The decision uses validation macro AP among controlled OPT-010 mixtures and
+accepts the micro F1 tradeoff. Weighted BCE's earlier higher AP remains disclosed.
+Single seed, repeated validation selection and tiny rare-label supports preclude
+claims of proven unseen-data superiority. Current selection bootstrap and
+multi-seed replication were skipped by the supervisor. Both final DeBERTa runs
+completed; synthetic10 was inferior on AP to the chosen RoBERTa model.
+
+**Integration:** Reuse existing 28-label serving, freeze all five source-file
+hashes in a new serving manifest, retain .25 global threshold and schema 1.
+API 0.5.0 documents the model identity change and additive threshold-policy
+metadata. Preserve legacy DAIR schemas/saved routes and already-unavailable live
+TextCNN APIs. No RoBERTa activation explanation is introduced. Keep existing UI,
+add current research evidence and mark old held-out metrics historical.
+
+**Transport:** Local FastAPI becomes the default; previously configured Gradio
+requires explicit opt-in and a matching model ID. Existing user debugging edits
+are retained. External deployment is a separate decision, not silently performed.
+
+**Motion reconciliation:** The inspected frontend already animates the dot field
+under either system preference and mounts it on Research/Explorer. The supervisor's
+later always-on request supersedes the earlier static reduced-motion field entry
+above. Production motion code is untouched in this promotion. Tests now verify
+that current behavior; no settings tab or settings copy is introduced. Hidden or
+offscreen rendering still pauses and unavailable Canvas retains its fallback.
+
+**Reproducibility:** P11's 38 original pins and immutable experiment files remain
+unchanged. New aggregate optimization evidence contains no row-level text or
+predictions; a read-only verifier reproduces saved validation metrics. Model
+provisioning and original research-file provisioning remain local prerequisites.

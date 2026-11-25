@@ -29,9 +29,9 @@ startup to override it. The API must allow the frontend origin through CORS.
 - `/compare`: saved DAIR.AI example IDs; three historical models. Optional
   `?example=...` prefills an ID. Its sole contextual entry is “Compare historical
   benchmarks” beneath Analyze; the route also supports direct navigation.
-- `/research`: an editorial paper grounded in completed P11 artifacts.
+- `/research`: current OPT-007–012 optimization evidence followed by the historical P11 paper.
 - `/research/experiments`: all twelve validation runs, mean/sample SD controls,
-  per-run provenance, rare-label paired differences and a separate frozen test.
+  per-run provenance, rare-label paired differences and a separate historical rare4x frozen test (not a synthetic10 evaluation).
 - `/errors`, `/metrics`: compatibility redirects to
   `/research/experiments#historical`, preserving historical metrics, errors and
   confusion pairs through the existing API.
@@ -84,3 +84,25 @@ see the root README for local setup and backend validation-fixture limitations.
 See [art direction](../docs/reading_studio_art_direction.md) and
 [validation](../docs/reading_studio_validation.md) for exact executed results,
 screenshots, source provenance, motion review and verification limits.
+
+## Primary model and inference transport
+
+The primary model is `roberta_goemotions_synthetic10_v001` (OPT-010). HTTP FastAPI
+is the default transport. `VITE_HF_SPACE_ID` alone no longer selects Gradio;
+explicit `VITE_INFERENCE_TRANSPORT=gradio` is required for that retained adapter.
+A remote `/analyze` must return the current GoEmotions schema and model ID. Both
+transports reject a different model ID. External deployment is not part of the
+local promotion. Existing request cancellation, minimum 1.5-second presentation,
+result reveal and all visual design behavior remain unchanged.
+
+`src/data/optimization.json` is a versioned aggregate snapshot verified from eight
+saved validation runs, with per-label deltas and source hashes. It contains no
+individual text/predictions and needs no backend to render. Regeneration uses
+`python -m backend.scripts.verify_model_promotion --write` from the root and needs
+local original artifacts; verification without `--write` is read-only. This
+snapshot is separate from the unchanged 38-source P11 exporter and lockfile.
+
+For a fresh browser evidence directory, set `TMOTIONLAB_QA_OUTPUT` (relative to
+`frontend/`) before tests, e.g. `../reports/engineering/model-promotion`. Tests now
+check the current always-animated dot field under both motion preferences and
+its existing Research placement. No settings UI is added.

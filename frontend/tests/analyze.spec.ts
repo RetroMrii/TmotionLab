@@ -42,7 +42,7 @@ function fixture(text: string, detected: string[] = ["joy", "neutral"]) {
   return {
     schema_version: "1",
     task: "multi_label",
-    model_id: "roberta_goemotions_rare4x_v001",
+    model_id: "roberta_goemotions_synthetic10_v001",
     dataset: "goemotions_v001",
     seed: 42,
     threshold: 0.25,
@@ -67,6 +67,28 @@ async function submit(page: Page, text = "I love this, thank you so much!") {
   await page.getByLabel("English text", { exact: true }).fill(text);
   await page.getByRole("button", { name: "Analyze text", exact: true }).click();
 }
+
+test("an older model response cannot masquerade as the promoted checkpoint", async ({ page }) => {
+  await page.route(endpoint, route => route.fulfill({ json: {
+    ...fixture("A passage"), model_id: "roberta_goemotions_rare4x_v001",
+  } }));
+  await page.goto("/");
+  await submit(page);
+  await expect(page.getByRole("alert")).toContainText("model");
+  await expect(page.locator(".reading")).toHaveCount(0);
+});
+
+test("current optimization evidence remains distinct from the historical study", async ({ page }) => {
+  await page.goto("/research#current-model");
+  const current = page.locator("#current-model");
+  await expect(current.locator("tbody tr").first()).toBeVisible();
+  await expect(current).toContainText("0.518333");
+  await expect(current).toContainText("No independent post-selection test result");
+  await current.getByText("What changed across the optimization studies?").click();
+  await expect(current.locator("tbody tr")).toHaveCount(36);
+  await expect(current).toContainText("0.509283");
+  await expect(page.locator("#heldout")).toContainText("rare4x");
+});
 async function theme(page: Page, value: string) {
   await page.addInitScript(
     (v) => localStorage.setItem("tmotionlab-theme", v),
@@ -80,7 +102,7 @@ async function overflow(page: Page) {
     ),
   ).toBe(true);
 }
-const output = "../reports/engineering/ux-refinement/screenshots";
+const output = `${process.env.TMOTIONLAB_QA_OUTPUT ?? "../reports/engineering/ux-refinement"}/screenshots`;
 mkdirSync(output, { recursive: true });
 
 async function signalRate(page: Page) {
@@ -608,7 +630,7 @@ test("real connection refusal preserves text and static research remains availab
 }) => {
   await page.goto("http://127.0.0.1:5174/");
   await expect(page.locator(".service-status")).toContainText(
-    "status unavailable",
+    "Reading service unavailable",
   );
   await submit(page, "This text stays here.");
   await expect(page.getByRole("alert")).toContainText(

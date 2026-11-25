@@ -1,0 +1,216 @@
+{
+  "experiment_id": "goemotions_synthetic_large_scale",
+  "dataset_status": "UNAPPROVED_CANDIDATES",
+  "generator_model": "gpt-6-luna",
+  "seed": 42,
+  "candidate_target": 42000,
+  "accepted_target": 30000,
+  "examples_per_request": 10,
+  "primary_label_quotas": {
+    "admiration": 1000,
+    "amusement": 1000,
+    "anger": 1000,
+    "annoyance": 3000,
+    "approval": 3000,
+    "caring": 1000,
+    "confusion": 1000,
+    "curiosity": 1000,
+    "desire": 1000,
+    "disappointment": 3000,
+    "disapproval": 1000,
+    "disgust": 1000,
+    "embarrassment": 1000,
+    "excitement": 1000,
+    "fear": 1000,
+    "gratitude": 1000,
+    "grief": 3000,
+    "joy": 1000,
+    "love": 1000,
+    "nervousness": 3000,
+    "optimism": 1000,
+    "pride": 1000,
+    "realization": 3000,
+    "relief": 3000,
+    "remorse": 1000,
+    "sadness": 1000,
+    "surprise": 1000,
+    "neutral": 1000
+  },
+  "domains": [
+    "work and colleagues",
+    "school and studying",
+    "home routines",
+    "friends and family",
+    "technology and devices",
+    "hobbies and crafts",
+    "sports and games",
+    "commuting and travel",
+    "entertainment and media",
+    "online communities",
+    "shopping and services",
+    "health-related uncertainty without diagnosis",
+    "community events",
+    "food and cooking",
+    "weather and outdoor plans",
+    "personal projects",
+    "pets and animals",
+    "housing and neighbors",
+    "bureaucratic errands",
+    "creative work"
+  ],
+  "scenario_actions": [
+    "a small plan changes unexpectedly",
+    "someone offers feedback",
+    "a long-awaited response arrives",
+    "a repeated problem becomes clear",
+    "a promised outcome falls through",
+    "an everyday task succeeds",
+    "a discussion takes a surprising turn",
+    "a minor mistake has consequences",
+    "someone shares personal news",
+    "a disagreement remains unresolved",
+    "an ordinary item disappears or is recovered",
+    "a deadline approaches or passes",
+    "a quiet observation changes perspective",
+    "a decision has an unforeseen consequence",
+    "a familiar routine feels different",
+    "someone notices an overlooked detail",
+    "an interaction is unexpectedly kind or inconsiderate",
+    "a situation improves after uncertainty",
+    "someone compares expectations with reality",
+    "an ambiguous message needs interpretation"
+  ],
+  "voices": [
+    "casual first-person reply",
+    "reply addressing someone else",
+    "brief observation",
+    "understated reflection",
+    "skeptical conversational reaction",
+    "informal third-person observation",
+    "short question with emotional context",
+    "matter-of-fact follow-up"
+  ],
+  "difficulties": [
+    "explicit",
+    "implicit",
+    "subtle_contrast"
+  ],
+  "length_bands": [
+    "brief",
+    "short",
+    "short",
+    "medium",
+    "medium",
+    "long"
+  ],
+  "contrast_labels": {
+    "approval": [
+      "admiration",
+      "disapproval"
+    ],
+    "admiration": [
+      "approval",
+      "pride"
+    ],
+    "annoyance": [
+      "anger",
+      "disapproval"
+    ],
+    "anger": [
+      "annoyance",
+      "fear"
+    ],
+    "realization": [
+      "curiosity",
+      "confusion"
+    ],
+    "curiosity": [
+      "realization",
+      "confusion"
+    ],
+    "disappointment": [
+      "sadness",
+      "disapproval"
+    ],
+    "sadness": [
+      "disappointment",
+      "grief"
+    ],
+    "grief": [
+      "sadness",
+      "disappointment"
+    ],
+    "nervousness": [
+      "fear",
+      "excitement"
+    ],
+    "fear": [
+      "nervousness",
+      "surprise"
+    ],
+    "pride": [
+      "admiration",
+      "joy"
+    ],
+    "relief": [
+      "joy",
+      "optimism"
+    ],
+    "optimism": [
+      "desire",
+      "relief"
+    ],
+    "excitement": [
+      "joy",
+      "surprise"
+    ],
+    "neutral": [
+      "approval",
+      "curiosity"
+    ]
+  },
+  "generation_only": true,
+  "allowed_secondary_labels": [
+    "admiration",
+    "amusement",
+    "anger",
+    "annoyance",
+    "approval",
+    "caring",
+    "confusion",
+    "curiosity",
+    "desire",
+    "disappointment",
+    "disapproval",
+    "disgust",
+    "embarrassment",
+    "excitement",
+    "fear",
+    "gratitude",
+    "grief",
+    "joy",
+    "love",
+    "nervousness",
+    "optimism",
+    "pride",
+    "realization",
+    "relief",
+    "remorse",
+    "sadness",
+    "surprise",
+    "neutral"
+  ],
+  "output_root": "data/synthetic/goemotions_large_scale",
+  "quality_policy": {
+    "independent_blind_annotation_required": true,
+    "human_review_sample_required": true,
+    "autoapprove": false,
+    "normalized_dedup_required": true,
+    "evaluation_split_exclusion_only": true
+  },
+  "notes": [
+    "Quota distribution is an experimental planning choice, not a validated optimum.",
+    "Model identifier must be explicitly set and its API availability verified before spending.",
+    "Generator-proposed labels are unverified and must not be exported directly into training."
+  ]
+}

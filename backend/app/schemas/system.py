@@ -15,6 +15,7 @@ class ModelMetadata(BaseModel):
     status: str
     prediction_endpoint: str | None = None
     threshold: float | None = None
+    threshold_policy: str | None = None
     labels: list[str] = []
     accuracy: float | None = None
     macro_f1: float | None = None

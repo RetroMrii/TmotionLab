@@ -1,0 +1,28 @@
+{
+  "primary_experiment": "roberta_goemotions_synthetic10_v001",
+  "source_experiment": "OPT-010 synthetic10",
+  "model_directory": "ml/artifacts/optimization/opt010/synthetic10/best_model",
+  "seed": 42,
+  "classification_threshold": 0.25,
+  "threshold_selection_split": "validation",
+  "threshold_policy": "fixed_global_inherited_0.25",
+  "dataset_version": "goemotions_v001",
+  "test_time_tuning_allowed": false,
+  "selection_metric": "validation_macro_average_precision",
+  "independent_test_evaluated": false,
+  "dataset_manifest_sha256": "6766e63f00362b9ab7be90f98ce5e6bb957a34e080bf19ee3178942b577ed109",
+  "validation_predictions": "ml/artifacts/optimization/opt010/synthetic10/validation_predictions.jsonl",
+  "validation_predictions_sha256": "81458e20cad60fee6582b029acaca53304a536d8693714921f83461ed98d5281",
+  "validation_metrics": {
+    "macro_average_precision": 0.5183329791101571,
+    "macro_f1": 0.5208970777876761,
+    "micro_f1": 0.5968855589833995
+  },
+  "model_file_hashes": {
+    "config.json": "560888a08cda16a16905d102a3fa1089d76b65679be650120c850298c464c631",
+    "model.safetensors": "ff3514b4fadfed2bf855b636575fa74c4d166d98febf21f2031e0d22b0b07ae2",
+    "tokenizer.json": "30b0bec51cda9dbebe60fdb69fec39f895d70b2ba62580dae420a2bd5b9fbe1e",
+    "tokenizer_config.json": "2f2141028bec1009d3cbce417eb92e8a9019a2e568e309db3991cae3d20a3d22",
+    "training_args.bin": "24703d108d4dbb9837271a83e217385cfb37fd8601dd4d17e7617a264311f596"
+  }
+}

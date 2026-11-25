@@ -2,7 +2,7 @@ import { test, expect, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const output = "../reports/engineering/tidal-dot-field";
+const output = `${process.env.TMOTIONLAB_QA_OUTPUT ?? "../reports/engineering/tidal-dot-field"}/tidal`;
 mkdirSync(`${output}/screenshots`, { recursive: true });
 const endpoint = "**/v1/goemotions/predict";
 const pixels = (page: Page) => page.locator(".tidal-field canvas").evaluate(node => (node as HTMLCanvasElement).toDataURL());
@@ -51,12 +51,12 @@ for (const width of [1440, 1024, 768, 390]) for (const theme of ["dark", "light"
     await shot("menu");
     await page.getByRole("link", { name: /Research overview/ }).click();
     await expect(page).toHaveURL(/\/research$/);
-    await expect(page.locator(".tidal-field")).toHaveCount(0);
+    await expect(page.locator(".tidal-field")).toHaveCount(1);
     await shot("research");
   });
 }
 
-test("reduced motion is static, theme changes repaint, resize caps backing resolution", async ({ page }) => {
+test("both motion preferences animate, theme changes repaint, resize caps backing resolution", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.locator(".tidal-field")).toHaveAttribute("data-ready", "true");
@@ -65,13 +65,13 @@ test("reduced motion is static, theme changes repaint, resize caps backing resol
   const ribbon = await page.locator(".emotion-signal path").first().getAttribute("d");
   await page.mouse.move(1100, 250);
   await page.waitForTimeout(400);
-  expect(await pixels(page)).toBe(first);
+  expect(await pixels(page)).not.toBe(first);
   expect(await page.locator(".emotion-signal path").first().getAttribute("d")).not.toBe(ribbon);
   await page.locator(".theme-toggle").click();
   expect(await pixels(page)).not.toBe(first);
   const second = await pixels(page);
   await page.waitForTimeout(200);
-  expect(await pixels(page)).toBe(second);
+  expect(await pixels(page)).not.toBe(second);
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.waitForTimeout(250);
   expect(await pixels(page)).not.toBe(second);

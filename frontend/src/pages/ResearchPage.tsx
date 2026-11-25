@@ -9,7 +9,9 @@ import {
 } from "../components/ResearchFigures";
 import { TidalDotField } from "../components/TidalDotField";
 import { research } from "../data/research";
+import { OptimizationSummary } from "../components/OptimizationSummary";
 const CONTENTS = [
+  ["current-model", "Current model"],
   ["abstract", "Abstract"],
   ["question", "Research question"],
   ["data", "Data & preparation"],
@@ -67,6 +69,8 @@ export function ResearchPage() {
           </p>
         </aside>
         <div className="paper-body">
+          <OptimizationSummary />
+          <p className="notice">Historical Study P11 follows. Its original 12-run evidence and rare4x held-out evaluation remain unchanged.</p>
           <section id="abstract" className="research-section abstract">
             <p className="eyebrow">01 / Abstract</p>
             <h2>
@@ -378,7 +382,7 @@ export function ResearchPage() {
               Synthetic text provided useful signal for some rare emotions,
               particularly nervousness, without demonstrating a reliable overall
               advantage over real-data oversampling. The frozen Real 4× seed-42
-              model is the basis of the live reading studio. Its output remains
+              model was the original basis of the reading studio. OPT-010 synthetic10 now powers live Analyze. Its output remains
               one model’s perspective on language, to be interpreted with human
               context.
             </p>

@@ -3,7 +3,7 @@
   "info": {
     "title": "TmotionLab API",
     "description": "Inference and analysis API for the TmotionLab NLP laboratory.",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "paths": {
     "/health": {
@@ -507,7 +507,7 @@
           },
           "model_id": {
             "type": "string",
-            "const": "roberta_goemotions_rare4x_v001",
+            "const": "roberta_goemotions_synthetic10_v001",
             "title": "Model Id"
           },
           "dataset": {
@@ -1316,6 +1316,17 @@
               }
             ],
             "title": "Threshold"
+          },
+          "threshold_policy": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold Policy"
           },
           "labels": {
             "items": {

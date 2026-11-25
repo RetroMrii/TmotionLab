@@ -9,7 +9,7 @@ def test_default_settings():
 
     assert settings.api_title == "TmotionLab API"
 
-    assert settings.api_version == "0.4.0"
+    assert settings.api_version == "0.5.0"
 
 
 def test_parse_origins():

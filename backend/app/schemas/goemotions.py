@@ -25,7 +25,7 @@ class AnalyzedInput(BaseModel):
 class AnalyzeResponse(BaseModel):
     schema_version: Literal["1"]
     task: Literal["multi_label"]
-    model_id: Literal["roberta_goemotions_rare4x_v001"]
+    model_id: Literal["roberta_goemotions_synthetic10_v001"]
     dataset: Literal["goemotions_v001"]
     seed: Literal[42]
     threshold: Literal[0.25]

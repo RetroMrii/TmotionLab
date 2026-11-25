@@ -277,8 +277,9 @@ export function HeldoutSection() {
       className="research-section heldout-section"
       tabIndex={-1}
     >
-      <p className="eyebrow">Frozen model · held-out test</p>
+      <p className="eyebrow">Historical P11 rare4x · held-out test</p>
       <h2>One final evaluation.</h2>
+      <p>These results do not evaluate the currently deployed OPT-010 synthetic10 model.</p>
       <p>
         Only the selected Real 4× model, seed 42, was evaluated on the official
         test set: {test.examples.toLocaleString("en-US")} examples, threshold{" "}

@@ -3,14 +3,14 @@ import { createHash } from "node:crypto";
 import { REST_RIBBONS } from "../src/components/ribbonMotion";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
-const output = "../reports/engineering/ux-refinement";
+const output = process.env.TMOTIONLAB_QA_OUTPUT ?? "../reports/engineering/ux-refinement";
 mkdirSync(`${output}/screenshots`, { recursive: true });
 const endpoint = "**/v1/goemotions/predict";
 const labels: string[] = JSON.parse(readFileSync("../data/processed/goemotions_v001/manifest.json", "utf8")).label_names;
 function fixture(text: string) {
   const scores = labels.map((label, label_id) => ({ label, label_id, score: (label_id + 30) / 100 }));
   return {
-    schema_version: "1", task: "multi_label", model_id: "roberta_goemotions_rare4x_v001",
+    schema_version: "1", task: "multi_label", model_id: "roberta_goemotions_synthetic10_v001",
     dataset: "goemotions_v001", seed: 42, threshold: .25, score_type: "sigmoid", device: "cpu",
     input: { text, tokens: ["<s>", text, "</s>"], token_count: 3, original_token_count: 3, max_tokens: 48, truncated: false },
     scores, ranked_scores: [...scores].sort((a,b) => b.score-a.score).slice(0,5),

@@ -1,9 +1,31 @@
-# TmotionLab API 0.4.0
+# TmotionLab API 0.5.0
 
 FastAPI exposes live OpenAPI at `/openapi.json` and Swagger at `/docs`.
 `docs/openapi.json` is the checked-in schema snapshot. CORS defaults to
 localhost/127.0.0.1 port 5173; configure exported `TMOTIONLAB_CORS_ORIGINS`
 before startup. No runtime network download or synthetic fallback is permitted.
+
+## Migration from API 0.4.0
+
+API 0.5.0 changes the primary checkpoint from `roberta_goemotions_rare4x_v001`
+to `roberta_goemotions_synthetic10_v001`. The v1 response remains schema `1`:
+28 labels, sigmoid scores, canonical full-score order, top-five ranking and
+threshold 0.25 are unchanged. Predictions and the literal `model_id` change;
+consumers pinning the previous ID must explicitly update. OpenAPI records the new
+literal. This is a documented model-version migration, not a six-to-28 schema
+substitution. `GET /models` adds nullable `threshold_policy`; the primary value is
+`fixed_global_inherited_0.25`. Historical entries leave it null.
+
+Local weights now load from `ml/artifacts/optimization/opt010/synthetic10/best_model`.
+The prior model and freeze remain untouched; there is no new public old-model
+selection endpoint. Legacy `/predict` and `/interpret` retain their original
+contracts and already-unavailable behavior. No activation method explains RoBERTa.
+
+The frontend defaults to HTTP, with `VITE_API_BASE_URL`. The previous configured
+Gradio adapter remains explicitly selectable with `VITE_INFERENCE_TRANSPORT=gradio`
+and `VITE_HF_SPACE_ID`; `/analyze` must return the same schema and current model ID.
+Both transports reject mismatched model identities. No remote Space is deployed
+or certified by this local migration.
 
 ## GoEmotions v1
 
@@ -11,14 +33,14 @@ before startup. No runtime network download or synthetic fallback is permitted.
 Text must be a string of 1–5000 characters and contain non-whitespace. Extra
 parameters, including threshold overrides, are rejected. Input is preserved
 exactly, including whitespace. The local tokenizer uses truncation, padding=True
-and max_length=48, matching final evaluation (single-item requests need no pad).
+and max_length=48, matching the selected training/validation configuration (single-item requests need no pad).
 
 The response includes:
 
 | Field | Meaning |
 | --- | --- |
 | `schema_version`, `task` | `"1"`, `"multi_label"` |
-| `model_id`, `dataset`, `seed` | Frozen rare4x model, `goemotions_v001`, 42 |
+| `model_id`, `dataset`, `seed` | `roberta_goemotions_synthetic10_v001`, `goemotions_v001`, 42 |
 | `threshold`, `score_type` | Fixed 0.25, `sigmoid` |
 | `scores` | All 28 `{label_id,label,score}` entries in frozen manifest order |
 | `detected_labels` | Canonical-order labels whose scores are **>= 0.25**; may be empty |
@@ -35,7 +57,7 @@ Neutral is learned and can coexist with other detections. Scores are not
 calibrated confidence or evidence of a person's psychological state.
 
 Model loading happens once per application lifespan. All five model-directory
-files and the processed manifest must match the final freeze SHA-256 hashes.
+files and the processed manifest must match `backend/model-manifests/goemotions_synthetic10_v001.json` SHA-256 hashes.
 The loaded model and manifest label mappings must agree. No raw `num_labels`
 config field is required: Transformers derives it from `id2label`. Weights are
 local only; eval/inference modes and deterministic algorithms are enabled.
@@ -46,7 +68,7 @@ it is not replaced with fabricated output. Restart after fixing startup failures
 
 ## Compatibility and historical tools
 
-| Route | API 0.4.0 behavior |
+| Route | API 0.5.0 behavior |
 | --- | --- |
 | `GET /health` | 200, `status=ok` when GoEmotions loads, otherwise degraded. Also reports `goemotions_loaded`, `textcnn_loaded=false`, `artifacts_loaded`, `model_id`, diagnostics. Check flags as well as HTTP status. |
 | `GET /models` | Always discoverable; four registry entries, dataset/task/status and only currently functioning capabilities. GoEmotions has `live_predict` only. Archived entries have no live capabilities. Historical metric fields are null for GoEmotions. |

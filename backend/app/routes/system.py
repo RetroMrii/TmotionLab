@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request
 from backend.app.schemas.system import ModelsResponse
-from backend.app.services.goemotions import MODEL_ID, THRESHOLD
+from backend.app.services.goemotions import MODEL_ID, THRESHOLD, THRESHOLD_POLICY
 
 router = APIRouter(tags=["system"])
 HISTORICAL = {
@@ -16,13 +16,14 @@ def models(request: Request):
     store = getattr(request.app.state, "artifact_store", None)
     rows = {row["model_id"]: row for row in store.get_metrics()} if store else {}
     output = [{
-        "model_id": MODEL_ID, "display_name": "GoEmotions RoBERTa (real rare-label 4x, seed 42)",
+        "model_id": MODEL_ID, "display_name": "GoEmotions RoBERTa (OPT-010, 10% synthetic, seed 42)",
         "role": "production", "implementation": "Transformers / PyTorch",
         "runtime_loaded": predictor is not None,
         "status": "available" if predictor else "unavailable",
         "dataset": "goemotions_v001", "task": "multi_label",
         "capabilities": ["live_predict"] if predictor else [],
         "prediction_endpoint": "/v1/goemotions/predict", "threshold": THRESHOLD,
+        "threshold_policy": THRESHOLD_POLICY,
         "labels": predictor.labels if predictor else [],
     }]
     for model_id, (name, implementation) in HISTORICAL.items():

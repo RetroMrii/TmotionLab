@@ -6,11 +6,25 @@ import pytest
 from fastapi.testclient import TestClient
 import backend.app.main as main
 from backend.app.services.goemotions import (
-    FREEZE_PATH, MANIFEST_PATH, MODEL_DIR, MODEL_ID, ROOT,
+    FREEZE_PATH, MANIFEST_PATH, MODEL_DIR, MODEL_ID, ROOT, VALIDATION_PREDICTIONS,
     score_payload, verify_artifacts,
 )
 
 ROUTE = "/v1/goemotions/predict"
+
+
+def test_promoted_registry_and_maximum_request():
+    with TestClient(main.app) as client:
+        model = client.get("/models").json()["models"][0]
+        assert model["model_id"] == MODEL_ID
+        assert model["dataset"] == "goemotions_v001"
+        assert model["task"] == "multi_label"
+        assert model["threshold_policy"] == "fixed_global_inherited_0.25"
+        assert len(model["labels"]) == 28
+        response = client.post(ROUTE, json={"text": "hello " * 833 + "hi"})
+        assert response.status_code == 200
+        assert len(response.json()["input"]["text"]) == 5000
+        assert response.json()["input"]["truncated"] is True
 
 
 @pytest.mark.parametrize("indices", [[], [0], [0, 18, 27]])
@@ -64,7 +78,7 @@ def test_validation_fixture_compatibility(real_predictor):
     # Read only validation rows; never consult held-out test examples.
     with (ROOT / "data/processed/goemotions_v001/validation.jsonl").open(encoding="utf-8") as stream:
         rows = [json.loads(line) for line in islice(stream, 16)]
-    path = ROOT / f"ml/artifacts/predictions/{MODEL_ID}_validation.jsonl"
+    path = VALIDATION_PREDICTIONS
     with path.open(encoding="utf-8") as stream:
         expected = [json.loads(line) for line in islice(stream, 16)]
     max_difference = 0

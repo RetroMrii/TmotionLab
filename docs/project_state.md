@@ -1,4 +1,34 @@
-# TmotionLab current state — Reading Studio after P12, 2026-11-04
+# TmotionLab current state — 2026-11-23
+
+The approved primary model is **`roberta_goemotions_synthetic10_v001`**, OPT-010
+RoBERTa-base synthetic10, seed 42. API **0.5.0** retains GoEmotions schema 1 on
+`POST /v1/goemotions/predict`. Fixed global threshold 0.25, canonical 28 sigmoid
+scores and 48-token/5,000-character limits are unchanged. Local startup verifies
+`backend/model-manifests/goemotions_synthetic10_v001.json` and loads the original
+`ml/artifacts/optimization/opt010/synthetic10/best_model` without copying it.
+
+Validation: macro AP 0.518333, macro F1 0.520897, micro F1 0.596886. Selection
+reused validation and a single seed; there is no independent post-selection test
+result. Historical rare4x held-out results below do not describe the current model.
+See [optimization history](optimization_history.md) and [model card](model_card.md).
+
+Analyze defaults to local HTTP FastAPI. The retained Gradio adapter is explicitly
+opt-in and rejects wrong model IDs. A remote Space is not updated by this change.
+Reading Studio, all 61 ribbons, the existing always-animated dot field, 1.5-second
+presentation minimum, cancellation, result reveal, colors and routes are preserved.
+Research now adds the current eight-run optimization evidence before the original
+P11 paper; the twelve-run explorer stays explicitly historical.
+
+Current checks and limitations are recorded in
+`reports/engineering/TMOTIONLAB-MODEL-PROMOTION-REVIEW.md`. The supervisor reviews
+acceptance and controls Git/deployment. No training, test-set evaluation, weight
+modification, archive rewrite, dependency upgrade or deployment was performed.
+The following dated snapshot is retained for historical context, not runtime
+configuration.
+
+---
+
+# Historical snapshot — Reading Studio after P12, 2026-11-04
 
 P11 research is complete. P12 integrates the frozen
 `roberta_goemotions_rare4x_v001` seed-42 candidate into FastAPI and React.

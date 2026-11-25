@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from backend.app.services.goemotions import MODEL_ID
 from urllib.error import HTTPError
 from urllib.request import (
     Request,
@@ -82,6 +83,8 @@ def main() -> None:
         payload={"text": ("I feel extremely nervous about tomorrow.")},
     )
 
+    assert prediction["model_id"] == MODEL_ID
+    assert health["model_id"] == MODEL_ID
     assert len(prediction["scores"]) == 28
     assert prediction["threshold"] == 0.25
     assert prediction["task"] == "multi_label"

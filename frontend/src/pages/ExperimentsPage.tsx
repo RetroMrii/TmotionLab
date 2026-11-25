@@ -59,6 +59,8 @@ export function ExperimentsPage() {
       <p className="provenance-note">
         GoEmotions simplified / 28-label multi-label / validation experiments
       </p>
+      <p className="notice">This explorer preserves the historical P11 twelve-run study. Live Analyze now uses OPT-010 synthetic10.
+        {" "}<Link to="/research#current-model">Read the current model’s validation evidence</Link>. The held-out panel below is for rare4x only.</p>
       <section id="validation" className="research-section" tabIndex={-1}>
         <div className="section-heading">
           <div>

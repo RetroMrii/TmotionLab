@@ -17,8 +17,8 @@ def test_health():
 
     assert body["textcnn_loaded"] is False
 
-    assert body["model_id"] == "roberta_goemotions_rare4x_v001"
+    assert body["model_id"] == "roberta_goemotions_synthetic10_v001"
 
     assert body["artifacts_loaded"] is True
 
-    assert body["version"] == "0.4.0"
+    assert body["version"] == "0.5.0"

@@ -29,6 +29,7 @@ export interface ModelMetadata {
     status: string;
     prediction_endpoint: string | null;
     threshold: number | null;
+    threshold_policy: string | null;
     labels: string[];
     accuracy: number | null;
     macro_f1: number | null;
@@ -229,7 +230,7 @@ export interface LabelScore {
 export interface AnalyzeResponse {
     schema_version: "1";
     task: "multi_label";
-    model_id: "roberta_goemotions_rare4x_v001";
+    model_id: "roberta_goemotions_synthetic10_v001";
     dataset: "goemotions_v001";
     seed: 42;
     threshold: 0.25;

@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync } from "node:fs";
 import { advanceWave, REST_RIBBONS, ribbonFrame, waveAmplitude, waveRate, type WaveMotion } from "../src/components/ribbonMotion";
 
-const output = "../reports/engineering/wave-motion/screenshots";
+const output = `${process.env.TMOTIONLAB_QA_OUTPUT ?? "../reports/engineering/wave-motion"}/screenshots`;
 mkdirSync(output, { recursive: true });
 const endpoint = "**/v1/goemotions/predict";
 const pathData = (page: Page) => page.locator(".emotion-signal path").evaluateAll(nodes => nodes.map(node => node.getAttribute("d")));

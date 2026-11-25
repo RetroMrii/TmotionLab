@@ -12,6 +12,7 @@ import type {
     PredictResponse,
 } from "../types/api";
 import { Client } from "@gradio/client";
+import { PRIMARY_MODEL_ID } from "../model";
 const API_BASE_URL =
     import.meta.env.VITE_API_BASE_URL ??
     "http://127.0.0.1:8000";
@@ -19,32 +20,42 @@ const API_BASE_URL =
 const HF_SPACE_ID = import.meta.env.VITE_HF_SPACE_ID as
     | string
     | undefined;
-  
+const USE_GRADIO = import.meta.env.VITE_INFERENCE_TRANSPORT === "gradio";
+
   type GradioClient = Awaited<ReturnType<typeof Client.connect>>;
-  
+
   let spaceConnection: Promise<GradioClient> | null = null;
-  
+
   function getSpaceClient(): Promise<GradioClient> {
     if (!HF_SPACE_ID) {
       return Promise.reject(
         new Error("VITE_HF_SPACE_ID is not configured."),
       );
     }
-  
+
     if (!spaceConnection) {
-      spaceConnection = Client.connect(HF_SPACE_ID).catch((error) => {
+        spaceConnection = Client.connect(HF_SPACE_ID, {
+            events: ["data", "status"],
+          }).catch((error) => {
         spaceConnection = null;
         throw error;
       });
     }
-  
+
     return spaceConnection;
   }
-  
+
   export async function checkReadingService(): Promise<void> {
+    if (!USE_GRADIO) {
+      const health = await getHealth();
+      if (!health.goemotions_loaded || health.model_id !== PRIMARY_MODEL_ID) {
+        throw new Error("The promoted model is not available on the configured API.");
+      }
+      return;
+    }
     const client = await getSpaceClient();
     const api = await client.view_api();
-  
+
     if (!api.named_endpoints?.["/analyze"]) {
       throw new Error("The Space does not expose /analyze.");
     }
@@ -260,34 +271,62 @@ export async function analyzeText(
     signal?: AbortSignal,
   ): Promise<AnalyzeResponse> {
     signal?.throwIfAborted();
-  
+    if (!USE_GRADIO) {
+      const result = await request<AnalyzeResponse>("/v1/goemotions/predict", {
+        method: "POST", body: JSON.stringify({ text }), signal,
+      });
+      if (!result || typeof result.model_id !== "string") throw new Error("Invalid analysis response");
+      if (result.model_id !== PRIMARY_MODEL_ID) throw new TmotionApiError("The configured API is serving a different model.", 502, "model_mismatch");
+      return result;
+    }
+
     const client = await getSpaceClient();
-  
+
     signal?.throwIfAborted();
-  
+
     const job = client.submit("/analyze", [text]);
-  
+
     const cancel = () => job.cancel();
-  
+
     signal?.addEventListener("abort", cancel, { once: true });
-  
+
     try {
       signal?.throwIfAborted();
-  
+
       for await (const message of job) {
         signal?.throwIfAborted();
-  
-        if (message.type !== "data") continue;
-  
-        const result = message.data?.[0] as unknown;
-  
-        if (!result || typeof result !== "object") {
-          throw new Error("Invalid Gradio prediction response.");
+
+        console.log("[TmotionLab Gradio] Event:", message);
+
+        if (message.type === "status") {
+          if (message.stage === "error") {
+            throw new Error(
+              `Gradio inference failed: ${message.message ?? message.code ?? "Unknown server error"}`
+            );
+          }
+
+          continue;
         }
-  
+
+        if (message.type !== "data") continue;
+
+        console.log("[TmotionLab Gradio] Data:", message.data);
+
+        const result = message.data?.[0] as unknown;
+
+        if (!result || typeof result !== "object") {
+          throw new Error(
+            "Gradio returned data, but the prediction format is invalid."
+          );
+        }
+
+        if (typeof (result as AnalyzeResponse).model_id !== "string") throw new Error("Invalid analysis response");
+        if ((result as AnalyzeResponse).model_id !== PRIMARY_MODEL_ID) {
+          throw new TmotionApiError("The configured Space has not been promoted to the current model.", 502, "model_mismatch");
+        }
         return result as AnalyzeResponse;
       }
-  
+
       signal?.throwIfAborted();
       throw new Error("The Space returned no prediction.");
     } finally {

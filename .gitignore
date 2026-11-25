@@ -41,6 +41,7 @@ Thumbs.db
 # Reports are private unless explicitly allowed as scientific evidence below.
 /reports/*
 /reports/engineering/
+/ml/artifacts/optimization/
 !/reports/goemotions/
 /reports/goemotions/*
 !/reports/goemotions/multiseed_robustness_v001.json

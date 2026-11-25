@@ -144,7 +144,7 @@ export function PredictPage() {
   }, []);
   useEffect(() => {
     let active = true;
-  
+
     checkReadingService()
       .then(() => {
         if (active) {
@@ -160,10 +160,10 @@ export function PredictPage() {
           );
         }
       });
-  
+
     const ids = requestId;
     const pending = controller;
-  
+
     return () => {
       active = false;
       ids.current++;
@@ -244,10 +244,14 @@ export function PredictPage() {
       setResult(outcome.value);
       setAvailability("Last reading completed · GoEmotions · 28 labels");
     } catch (caught) {
+      console.error("[TmotionLab Analyze] Request failed:", caught);
+
       if (current !== requestId.current) return;
       setAvailability("Last reading request failed · You can retry.");
       setError(
-        caught instanceof TmotionApiError && caught.status === 503
+        caught instanceof TmotionApiError && caught.code === "model_mismatch"
+          ? "The configured service is using a different model. Please contact the project maintainer."
+          : caught instanceof TmotionApiError && caught.status === 503
           ? "The reading service is temporarily unavailable."
           : caught instanceof TypeError
             ? "We couldn’t reach the reading service. Check your connection and try again."
@@ -506,6 +510,7 @@ export function PredictPage() {
             Model scores offer a perspective on language. Human context still
             matters.
           </p>
+          <p className="caption">RoBERTa · OPT-010 synthetic10 · 28 independent emotion scores. Selected on validation data; scores are uncalibrated.</p>
           <p className="signal-disclaimer">The signal is decorative artwork, not model activity, emotional intensity or an explanation of a prediction.</p>
           <div className="inline-links">
             <Link to="/about">About the project</Link>

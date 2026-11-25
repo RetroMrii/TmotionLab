@@ -63,8 +63,9 @@ export function AboutPage() {
           <p>
             The current reading studio uses a RoBERTa model trained on
             GoEmotions: 27 emotions plus neutral, with independent scores so
-            labels can coexist. It is the frozen Real 4× seed-42 model selected
-            in Study P11. A validation-selected threshold of 0.25 defines
+            labels can coexist. It is OPT-010 synthetic10: real rare-label 4× sampling
+            with 10% synthetic draws, seed 42. Selection used validation macro AP; no independent post-selection test result is available.
+            A fixed global threshold of 0.25 defines
             detections; rank order alone does not.
           </p>
         </div>
@@ -94,7 +95,7 @@ export function AboutPage() {
             decisions; exact-match accuracy requires the entire predicted label
             set to match. They measure different aspects of performance. Every
             result connects to saved metrics and provenance, independently of
-            live API availability. The selected model’s held-out test stays
+            live API availability. The historical rare4x model’s held-out test stays
             separate from the validation comparisons that informed its
             selection.
           </p>
@@ -119,7 +120,7 @@ export function AboutPage() {
             special tokens.
           </p>
           <p>
-            The optical signal is an artistic response to the ranked scores. It
+            The optical signal is decorative motion responding to request state. It
             is not attention, an explanation of the model, or word-level
             attribution. The current GoEmotions model does not provide token
             attribution. Historical TextCNN interpretation is unavailable.
